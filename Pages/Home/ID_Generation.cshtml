@@ -1,0 +1,137 @@
+﻿@page
+@model ID_GenerationModel
+
+<div class="container">
+    <h1>PWD ID Card Generator</h1>
+
+    <div class="form-container">
+        <h2>Enter ID Information</h2>
+        <form id="idForm">
+            <div class="form-group">
+                <h3>Front ID Information</h3>
+                <div class="form-row">
+                    <label for="pwdIdNo">PWD ID NO.:</label>
+                    <input type="text" id="pwdIdNo" required>
+                </div>
+                <div class="form-row">
+                    <label for="name">NAME:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-row">
+                    <label for="disabilityType">TYPE OF DISABILITY:</label>
+                    <input type="text" id="disabilityType" required>
+                </div>
+                <div class="form-row">
+                    <label for="expiresOn">EXPIRES ON:</label>
+                    <input type="date" id="expiresOn" required>
+                </div>
+                <div class="form-row">
+                    <label>SIGNATURE:</label>
+                    <div class="canvas-container">
+                        <canvas id="signatureCanvas" width="300" height="100"></canvas>
+                        <button type="button" id="clearSignature">Clear</button>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>IMAGE:</label>
+                    <div class="camera-container">
+                        <video id="cameraFeed" width="300" height="225" autoplay playsinline></video>
+                        <canvas id="captureCanvas" width="300" height="225" style="display:none;"></canvas>
+                        <div class="camera-buttons">
+                            <button type="button" id="startCamera">Start Camera</button>
+                            <button type="button" id="captureImage">Capture</button>
+                        </div>
+                        <div class="preview-container">
+                            <img id="capturedImage" src="" alt="Captured image will appear here" width="150" height="150">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h3>Back ID Information</h3>
+                <div class="form-row">
+                    <label for="address">ADDRESS:</label>
+                    <input type="text" id="address" placeholder="Apt/House Number, Bldg Name, Str Name" required>
+                </div>
+                <div class="form-row">
+                    <label for="address2">ADDRESS LINE 2:</label>
+                    <input type="text" id="address2" placeholder="Brgy, City, Country, Zip Code" required>
+                </div>
+                <div class="form-row">
+                    <label for="dateOfBirth">DATE OF BIRTH:</label>
+                    <input type="date" id="dateOfBirth" required>
+                </div>
+                <div class="form-row">
+                    <label for="sex">SEX:</label>
+                    <select id="sex" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="dateIssued">DATE ISSUED:</label>
+                    <input type="date" id="dateIssued" required>
+                </div>
+                <div class="form-row">
+                    <label for="bloodType">BLOOD TYPE:</label>
+                    <select id="bloodType" required>
+                        <option value="">Select</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="guardian">PARENT/GUARDIAN/EMERGENCY CONTACT:</label>
+                    <input type="text" id="guardian" required>
+                </div>
+                <div class="form-row">
+                    <label for="contactNumber">CONTACT NUMBER:</label>
+                    <input type="text" id="contactNumber" required>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" id="previewButton">Preview ID</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="preview-section">
+        <h2>ID Preview</h2>
+        <div class="id-preview-container">
+            <div class="id-preview front-preview">
+                <h3>Front ID</h3>
+                <div id="frontIdPreview" class="id-card-preview"></div>
+                <button type="button" id="printFrontButton">Print Front ID</button>
+            </div>
+            <div class="id-preview back-preview">
+                <h3>Back ID</h3>
+                <div id="backIdPreview" class="id-card-preview"></div>
+                <button type="button" id="printBackButton">Print Back ID</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading indicator for print preparation -->
+    <div id="printLoading" class="print-loading" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Preparing ID cards for printing...</p>
+    </div>
+
+    <div id="printArea" class="print-area">
+        <!-- IDs for printing will be dynamically generated here -->
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+
