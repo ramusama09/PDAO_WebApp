@@ -1,0 +1,389 @@
+@page
+@model PDAO_WebApp.Pages.Home.ProfileModel
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+<div class="dashboard-container">
+    <div class="dashboard-header fade-in">
+        <h2 class="dashboard-title">User Profile</h2>
+        <p class="dashboard-subtitle">Manage your personal information and account settings</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="dashboard-card user-profile-card mb-4 fade-in" style="animation-delay: 0.1s;">
+                <div class="card-header">
+                    <h5 class="mb-0">User Profile</h5>
+                </div>
+                <div class="card-body text-center">
+                    <div class="profile-avatar-container">
+                        <img src="~/img/default_face.jpg" alt="Profile Image" class="profile-avatar mb-3">
+                    </div>
+                    <h4 id="user-display-name" class="profile-name">Loading...</h4>
+                    <p id="user-email" class="profile-email">Loading...</p>
+                    <p id="user-contact" class="profile-contact">Contact: Loading...</p>
+                </div>
+            </div>
+            
+            <div class="dashboard-card emergency-contact-card fade-in" style="animation-delay: 0.2s;">
+                <div class="card-header">
+                    <h5 class="mb-0">Emergency Contact</h5>
+                </div>
+                <div class="card-body">
+                    <p id="emergency-contact-name" class="mb-1">Name: Loading...</p>
+                    <p id="emergency-contact-number" class="mb-0">Number: Loading...</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="dashboard-card personal-info-card mb-4 fade-in" style="animation-delay: 0.3s;">
+                <div class="card-header">
+                    <h5 class="mb-0">Personal Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div class="info-group">
+                                <label>Address Line 1</label>
+                                <p id="user-address1" class="info-value">Loading...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-group">
+                                <label>Address Line 2</label>
+                                <p id="user-address2" class="info-value">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <div class="info-group">
+                                <label>Birth Date</label>
+                                <p id="user-birthdate" class="info-value">Loading...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info-group">
+                                <label>Age</label>
+                                <p id="user-age" class="info-value">Loading...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info-group">
+                                <label>Sex</label>
+                                <p id="user-sex" class="info-value">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-card account-info-card fade-in" style="animation-delay: 0.4s;">
+                <div class="card-header">
+                    <h5 class="mb-0">Account Information</h5>
+                </div>
+                <div class="card-body">
+                    <div id="auth-error" class="auth-error"></div>
+                    <div id="auth-success" class="auth-success"></div>
+                    
+                    <form id="profileForm" class="auth-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="Your first name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Your last name">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Your email" readonly>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="contactNumber" class="form-label">Contact Number</label>
+                                    <input type="tel" class="form-control" id="contactNumber" placeholder="Your contact number">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="sex" class="form-label">Sex</label>
+                                    <select class="form-control" id="sex">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="emergencyContactName" class="form-label">Emergency Contact Name</label>
+                                    <input type="text" class="form-control" id="emergencyContactName" placeholder="Emergency contact name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="emergencyContactNumber" class="form-label">Emergency Contact Number</label>
+                                    <input type="tel" class="form-control" id="emergencyContactNumber" placeholder="Emergency contact number">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mt-4 mb-3 section-subtitle">Change Password</h5>
+                        
+                        <div class="form-group mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password">
+                        </div>
+                        
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn dashboard-btn">Update Profile</button>
+                            <button type="button" id="resetPasswordBtn" class="btn dashboard-btn-outline">Reset Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get profile elements
+            // Display elements
+            const userDisplayName = document.getElementById('user-display-name');
+            const userEmail = document.getElementById('user-email');
+            const userContact = document.getElementById('user-contact');
+            const userAddress1 = document.getElementById('user-address1');
+            const userAddress2 = document.getElementById('user-address2');
+            const userBirthdate = document.getElementById('user-birthdate');
+            const userAge = document.getElementById('user-age');
+            const userSex = document.getElementById('user-sex');
+            const emergencyContactName = document.getElementById('emergency-contact-name');
+            const emergencyContactNumber = document.getElementById('emergency-contact-number');
+            
+            // Form elements
+            const firstNameInput = document.getElementById('firstName');
+            const lastNameInput = document.getElementById('lastName');
+            const emailInput = document.getElementById('email');
+            const contactNumberInput = document.getElementById('contactNumber');
+            const sexInput = document.getElementById('sex');
+            const emergencyContactNameInput = document.getElementById('emergencyContactName');
+            const emergencyContactNumberInput = document.getElementById('emergencyContactNumber');
+            
+            const profileForm = document.getElementById('profileForm');
+            const resetPasswordBtn = document.getElementById('resetPasswordBtn');
+            const authError = document.getElementById('auth-error');
+            const authSuccess = document.getElementById('auth-success');
+            
+            // Check if user is authenticated
+            auth.onAuthStateChanged(async (user) => {
+                if (user) {
+                    // Update UI with basic user data
+                    userDisplayName.textContent = user.displayName || 'User';
+                    userEmail.textContent = user.email;
+                    emailInput.value = user.email;
+                    
+                    // Get additional user data from database
+                    try {
+                        const userSnapshot = await database.ref(`users/${user.uid}`).once('value');
+                        const userData = userSnapshot.val();
+                        
+                        if (userData) {
+                            // Update display elements
+                            firstNameInput.value = userData.firstName || '';
+                            lastNameInput.value = userData.lastName || '';
+                            contactNumberInput.value = userData.contactNumber || '';
+                            sexInput.value = userData.sex || 'other';
+                            emergencyContactNameInput.value = userData.emergencyContactName || '';
+                            emergencyContactNumberInput.value = userData.emergencyContactNumber || '';
+                            
+                            // Update display sections
+                            userContact.textContent = `Contact: ${userData.contactNumber || 'Not provided'}`;
+                            userAddress1.textContent = userData.addressLine1 || 'Not provided';
+                            userAddress2.textContent = userData.addressLine2 || 'Not provided';
+                            
+                            // Format birth date
+                            if (userData.birthDate) {
+                                const birthDate = new Date(userData.birthDate);
+                                userBirthdate.textContent = birthDate.toLocaleDateString();
+                            } else {
+                                userBirthdate.textContent = 'Not provided';
+                            }
+                            
+                            userAge.textContent = userData.age || 'Not provided';
+                            
+                            // Capitalize sex
+                            if (userData.sex) {
+                                userSex.textContent = userData.sex.charAt(0).toUpperCase() + userData.sex.slice(1);
+                            } else {
+                                userSex.textContent = 'Not provided';
+                            }
+                            
+                            // Emergency contact
+                            emergencyContactName.textContent = `Name: ${userData.emergencyContactName || 'Not provided'}`;
+                            emergencyContactNumber.textContent = `Number: ${userData.emergencyContactNumber || 'Not provided'}`;
+                        }
+                    } catch (error) {
+                        console.error('Error fetching user data:', error);
+                    }
+                } else {
+                    // Redirect to login if not authenticated
+                    window.location.href = '/Identity/Login';
+                }
+            });
+            
+            // Handle profile form submission
+            profileForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Hide previous messages
+                authError.style.display = 'none';
+                authSuccess.style.display = 'none';
+                
+                const user = auth.currentUser;
+                if (!user) {
+                    window.location.href = '/Identity/Login';
+                    return;
+                }
+                
+                const firstName = firstNameInput.value.trim();
+                const lastName = lastNameInput.value.trim();
+                const fullName = `${firstName} ${lastName}`;
+                const contactNumber = contactNumberInput.value.trim();
+                const sex = sexInput.value;
+                const emergencyContactName = emergencyContactNameInput.value.trim();
+                const emergencyContactNumber = emergencyContactNumberInput.value.trim();
+                const currentPassword = document.getElementById('currentPassword').value;
+                const newPassword = document.getElementById('newPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                try {
+                    // Update profile information
+                    const updates = {};
+                    updates['firstName'] = firstName;
+                    updates['lastName'] = lastName;
+                    updates['fullName'] = fullName;
+                    updates['contactNumber'] = contactNumber;
+                    updates['sex'] = sex;
+                    updates['emergencyContactName'] = emergencyContactName;
+                    updates['emergencyContactNumber'] = emergencyContactNumber;
+                    
+                    // Update display name if changed
+                    if (fullName !== user.displayName) {
+                        await user.updateProfile({
+                            displayName: fullName
+                        });
+                    }
+                    
+                    // Update user data in database
+                    await database.ref(`users/${user.uid}`).update(updates);
+                    
+                    // Update password if provided
+                    if (currentPassword && newPassword && confirmPassword) {
+                        if (newPassword !== confirmPassword) {
+                            authError.textContent = 'New passwords do not match.';
+                            authError.style.display = 'block';
+                            return;
+                        }
+                        
+                        if (newPassword.length < 6) {
+                            authError.textContent = 'New password must be at least 6 characters long.';
+                            authError.style.display = 'block';
+                            return;
+                        }
+                        
+                        // Reauthenticate user before changing password
+                        const credential = firebase.auth.EmailAuthProvider.credential(
+                            user.email,
+                            currentPassword
+                        );
+                        
+                        await user.reauthenticateWithCredential(credential);
+                        await user.updatePassword(newPassword);
+                        
+                        // Clear password fields
+                        document.getElementById('currentPassword').value = '';
+                        document.getElementById('newPassword').value = '';
+                        document.getElementById('confirmPassword').value = '';
+                    }
+                    
+                    // Show success message
+                    authSuccess.textContent = 'Profile updated successfully!';
+                    authSuccess.style.display = 'block';
+                    
+                    // Update display elements
+                    userDisplayName.textContent = fullName || 'User';
+                    userContact.textContent = `Contact: ${contactNumber || 'Not provided'}`;
+                    userSex.textContent = sex.charAt(0).toUpperCase() + sex.slice(1);
+                    emergencyContactName.textContent = `Name: ${emergencyContactName || 'Not provided'}`;
+                    emergencyContactNumber.textContent = `Number: ${emergencyContactNumber || 'Not provided'}`;
+                    
+                } catch (error) {
+                    // Handle errors
+                    let errorMessage = 'An error occurred updating your profile.';
+                    
+                    if (error.code === 'auth/wrong-password') {
+                        errorMessage = 'Current password is incorrect.';
+                    } else if (error.code === 'auth/weak-password') {
+                        errorMessage = 'New password is too weak.';
+                    } else if (error.code === 'auth/requires-recent-login') {
+                        errorMessage = 'Please log out and log in again before changing your password.';
+                    }
+                    
+                    authError.textContent = errorMessage;
+                    authError.style.display = 'block';
+                    console.error('Profile update error:', error);
+                }
+            });
+            
+            // Handle password reset
+            resetPasswordBtn.addEventListener('click', async () => {
+                // Hide previous messages
+                authError.style.display = 'none';
+                authSuccess.style.display = 'none';
+                
+                const user = auth.currentUser;
+                if (!user) {
+                    window.location.href = '/Identity/Login';
+                    return;
+                }
+                
+                try {
+                    await auth.sendPasswordResetEmail(user.email);
+                    
+                    authSuccess.textContent = 'Password reset email sent! Check your inbox.';
+                    authSuccess.style.display = 'block';
+                } catch (error) {
+                    authError.textContent = 'Error sending password reset email. Please try again later.';
+                    authError.style.display = 'block';
+                    console.error('Password reset error:', error);
+                }
+            });
+        });
+    </script>
+} 

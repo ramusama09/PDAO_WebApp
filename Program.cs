@@ -23,4 +23,22 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+// Set the default page to login
+app.MapGet("/", context => {
+    context.Response.Redirect("/Identity/Login");
+    return Task.CompletedTask;
+});
+
+// Add Home/Index route to avoid redirect loops
+app.MapGet("/Home/Index", context => {
+    context.Response.Redirect("/Home");
+    return Task.CompletedTask;
+});
+
+// Support Profile page at the new location
+app.MapGet("/Identity/Profile", context => {
+    context.Response.Redirect("/Home/Profile");
+    return Task.CompletedTask;
+});
+
 app.Run();

@@ -1,0 +1,317 @@
+@page
+@model PDAO_WebApp.Pages.Home.IndexModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="dashboard-container">
+    <div class="dashboard-header fade-in">
+        <h2 class="dashboard-title">Welcome to PDAO Dashboard</h2>
+        <p class="dashboard-subtitle">Your personal portal for PDAO services and information</p>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-4 mb-4 mb-md-0">
+            <div class="dashboard-card dashboard-stat-card fade-in" style="animation-delay: 0.1s;">
+                <div class="stat-icon">
+                    <i class="bi bi-calendar-check"></i>
+                </div>
+                <div class="stat-value" id="days-registered">--</div>
+                <div class="stat-label">Days Registered</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+            <div class="dashboard-card dashboard-stat-card fade-in" style="animation-delay: 0.2s;">
+                <div class="stat-icon">
+                    <i class="bi bi-clock-history"></i>
+                </div>
+                <div class="stat-value" id="last-login">--</div>
+                <div class="stat-label">Last Login (days ago)</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="dashboard-card dashboard-stat-card fade-in" style="animation-delay: 0.3s;">
+                <div class="stat-icon">
+                    <i class="bi bi-person-badge"></i>
+                </div>
+                <div class="stat-value" id="profile-completion">--</div>
+                <div class="stat-label">Profile Completion</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mb-4 order-md-1 order-2">
+            <div class="dashboard-card user-info-card mb-4 fade-in" style="animation-delay: 0.4s;">
+                <div class="card-header">
+                    <h5 class="mb-0">User Information</h5>
+                </div>
+                <div class="card-body">
+                    <div id="welcome-message" class="mb-4">
+                        <h5>Loading your information...</h5>
+                    </div>
+                    
+                    <div class="row" id="user-details" style="display: none;">
+                        <div class="col-md-6">
+                            <div class="info-group">
+                                <label>Full Name</label>
+                                <p id="user-fullname" class="info-value">Loading...</p>
+                            </div>
+                            
+                            <div class="info-group">
+                                <label>Email Address</label>
+                                <p id="user-email" class="info-value">Loading...</p>
+                            </div>
+                            
+                            <div class="info-group">
+                                <label>Contact Number</label>
+                                <p id="user-contact" class="info-value">Loading...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="info-group">
+                                <label>Account Created</label>
+                                <p id="account-created" class="info-value">Loading...</p>
+                            </div>
+                            
+                            <div class="info-group">
+                                <label>Last Login</label>
+                                <p id="last-login-date" class="info-value">Loading...</p>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="/Home/Profile" class="dashboard-btn-outline">
+                                    <i class="bi bi-pencil-square me-2"></i> Edit Profile
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-card fade-in" style="animation-delay: 0.6s;">
+                <div class="card-header">
+                    <h5 class="mb-0">Recent Activity</h5>
+                </div>
+                <div class="card-body">
+                    <div id="activity-list">
+                        <div class="d-flex justify-content-center align-items-center py-5">
+                            <div class="spinner-border text-success" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4 order-md-2 order-1">
+            <div class="dashboard-card fade-in" style="animation-delay: 0.5s;">
+                <div class="card-header">
+                    <h5 class="mb-0">Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                    <a href="/Home/Profile" class="quick-action text-decoration-none">
+                        <div class="quick-action-icon">
+                            <i class="bi bi-person"></i>
+                        </div>
+                        <div class="quick-action-content">
+                            <div class="quick-action-title">View My Profile</div>
+                            <div class="quick-action-description">View and update your personal information</div>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="quick-action text-decoration-none">
+                        <div class="quick-action-icon">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <div class="quick-action-content">
+                            <div class="quick-action-title">Submit Application</div>
+                            <div class="quick-action-description">Apply for PDAO services and support</div>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="quick-action text-decoration-none">
+                        <div class="quick-action-icon">
+                            <i class="bi bi-megaphone"></i>
+                        </div>
+                        <div class="quick-action-content">
+                            <div class="quick-action-title">View Announcements</div>
+                            <div class="quick-action-description">Stay updated with the latest news and events</div>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="quick-action text-decoration-none">
+                        <div class="quick-action-icon">
+                            <i class="bi bi-calendar-event"></i>
+                        </div>
+                        <div class="quick-action-content">
+                            <div class="quick-action-title">View Calendar</div>
+                            <div class="quick-action-description">Check upcoming events and appointments</div>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="quick-action text-decoration-none">
+                        <div class="quick-action-icon">
+                            <i class="bi bi-question-circle"></i>
+                        </div>
+                        <div class="quick-action-content">
+                            <div class="quick-action-title">Help & Support</div>
+                            <div class="quick-action-description">Get assistance with PDAO services</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if user is authenticated
+            auth.onAuthStateChanged(async (user) => {
+                if (user) {
+                    // Update welcome message
+                    const welcomeMessage = document.getElementById('welcome-message');
+                    welcomeMessage.innerHTML = `
+                        <div class="welcome-banner p-3 mb-4" style="background-color: rgba(76, 175, 80, 0.05); border-radius: 8px; border-left: 4px solid var(--green);">
+                            <h5 class="text-success mb-1">Welcome back, ${user.displayName || user.email}!</h5>
+                            <p class="mb-0">Here's an overview of your account and recent activities.</p>
+                        </div>
+                    `;
+                    
+                    // Show user details section
+                    document.getElementById('user-details').style.display = 'flex';
+                    
+                    // Update user info fields
+                    document.getElementById('user-fullname').textContent = user.displayName || 'Not set';
+                    document.getElementById('user-email').textContent = user.email;
+                    
+                    // Get user data from database
+                    try {
+                        const userSnapshot = await database.ref(`users/${user.uid}`).once('value');
+                        const userData = userSnapshot.val();
+                        
+                        if (userData) {
+                            // Update contact info
+                            document.getElementById('user-contact').textContent = userData.contactNumber || 'Not provided';
+                            
+                            // Format dates
+                            const createdAt = new Date(userData.createdAt);
+                            const lastLogin = new Date(userData.lastLogin);
+                            
+                            document.getElementById('account-created').textContent = createdAt.toLocaleDateString() + ' ' + createdAt.toLocaleTimeString();
+                            document.getElementById('last-login-date').textContent = lastLogin.toLocaleDateString() + ' ' + lastLogin.toLocaleTimeString();
+                            
+                            // Calculate days since registration
+                            const daysSinceRegistration = Math.floor((new Date() - createdAt) / (1000 * 60 * 60 * 24));
+                            document.getElementById('days-registered').textContent = daysSinceRegistration;
+                            
+                            // Calculate days since last login
+                            const daysSinceLastLogin = Math.floor((new Date() - lastLogin) / (1000 * 60 * 60 * 24));
+                            document.getElementById('last-login').textContent = daysSinceLastLogin;
+                            
+                            // Calculate profile completion percentage
+                            let completedFields = 0;
+                            const totalFields = 10; // Adjust based on your required fields
+                            
+                            if (userData.firstName) completedFields++;
+                            if (userData.lastName) completedFields++;
+                            if (userData.email) completedFields++;
+                            if (userData.contactNumber) completedFields++;
+                            if (userData.addressLine1) completedFields++;
+                            if (userData.addressLine2) completedFields++;
+                            if (userData.birthDate) completedFields++;
+                            if (userData.sex) completedFields++;
+                            if (userData.emergencyContactName) completedFields++;
+                            if (userData.emergencyContactNumber) completedFields++;
+                            
+                            const completionPercentage = Math.floor((completedFields / totalFields) * 100);
+                            document.getElementById('profile-completion').textContent = completionPercentage + '%';
+                            
+                            // Create activity items
+                            const activityList = document.getElementById('activity-list');
+                            
+                            // Get today's date for comparison
+                            const today = new Date();
+                            today.setHours(0, 0, 0, 0);
+                            
+                            // Format relative time
+                            const formatRelativeTime = (date) => {
+                                const diffMs = today - new Date(date.setHours(0, 0, 0, 0));
+                                const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                                
+                                if (diffDays === 0) return 'Today';
+                                if (diffDays === 1) return 'Yesterday';
+                                if (diffDays < 7) return `${diffDays} days ago`;
+                                return date.toLocaleDateString();
+                            };
+                            
+                            activityList.innerHTML = `
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="bi bi-person"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Account Created</div>
+                                        <div class="activity-time">${formatRelativeTime(createdAt)}</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="bi bi-box-arrow-in-right"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Last Login</div>
+                                        <div class="activity-time">${formatRelativeTime(lastLogin)}</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="bi bi-check-circle"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Profile Completion</div>
+                                        <div class="activity-time">
+                                            <div class="progress" style="height: 8px; width: 100px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: ${completionPercentage}%;" aria-valuenow="${completionPercentage}" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <small class="mt-1 d-block">${completionPercentage}% complete</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            
+                            // Add a profile completion warning if needed
+                            if (completionPercentage < 80) {
+                                activityList.innerHTML += `
+                                    <div class="activity-item">
+                                        <div class="activity-icon" style="background-color: rgba(255, 193, 7, 0.1); color: #ffc107;">
+                                            <i class="bi bi-exclamation-triangle"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <div class="activity-title">Action Required</div>
+                                            <div class="activity-time">
+                                                Please complete your profile information
+                                                <a href="/Home/Profile" class="d-block mt-1 small">Complete Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                        } else {
+                            activityList.innerHTML = `<div class="text-center p-4">No recent activity found</div>`;
+                        }
+                    } catch (error) {
+                        console.error('Error fetching user data:', error);
+                    }
+                } else {
+                    // Redirect to login if not authenticated
+                    window.location.href = '/Identity/Login';
+                }
+            });
+        });
+    </script>
+} 

@@ -1,0 +1,121 @@
+@page
+@model PDAO_WebApp.Pages.Identity.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_AuthLayout";
+}
+
+<div class="auth-container">
+    <div class="auth-header">
+        <div class="auth-logo">
+            <img src="~/img/PDAO_Logo.png" alt="PDAO Logo" width="80" height="80">
+        </div>
+        <h1 class="auth-title">Welcome Back</h1>
+        <p class="auth-subtitle">Sign in to your PDAO account</p>
+    </div>
+    
+    <div id="auth-error" class="auth-error"></div>
+    <div id="auth-success" class="auth-success"></div>
+    
+    <form id="loginForm" class="auth-form">
+        <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+        </div>
+        
+        <div class="d-flex justify-content-between mb-3">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+            <a href="#" class="auth-link">Forgot password?</a>
+        </div>
+        
+        <button type="submit" class="btn auth-btn mb-3">Sign In</button>
+        
+        <div class="text-center">
+            <p>Don't have an account? <a href="/Identity/Register" class="auth-link">Create account</a></p>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="~/js/firebase-init.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('loginForm');
+            const authError = document.getElementById('auth-error');
+            const authSuccess = document.getElementById('auth-success');
+            
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Hide any previous messages
+                authError.style.display = 'none';
+                authSuccess.style.display = 'none';
+                
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const rememberMe = document.getElementById('rememberMe').checked;
+                
+                try {
+                    // Set persistence based on remember me checkbox
+                    const persistence = rememberMe 
+                        ? firebase.auth.Auth.Persistence.LOCAL 
+                        : firebase.auth.Auth.Persistence.SESSION;
+                    
+                    await auth.setPersistence(persistence);
+                    
+                    // Sign in with email and password
+                    const userCredential = await auth.signInWithEmailAndPassword(email, password);
+                    const user = userCredential.user;
+                    
+                    // Display success message
+                    authSuccess.textContent = 'Login successful! Redirecting...';
+                    authSuccess.style.display = 'block';
+                    
+                    // Redirect to home page after successful login
+                    setTimeout(() => {
+                        window.location.href = '/Home/Index';
+                    }, 1500);
+                } catch (error) {
+                    // Handle errors
+                    let errorMessage = 'An error occurred during login. Please try again.';
+                    
+                    if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+                        errorMessage = 'Invalid email or password. Please try again.';
+                    } else if (error.code === 'auth/too-many-requests') {
+                        errorMessage = 'Too many unsuccessful login attempts. Please try again later.';
+                    }
+                    
+                    authError.textContent = errorMessage;
+                    authError.style.display = 'block';
+                    console.error('Login error:', error);
+                }
+            });
+            
+            // Check for existing authenticated user and redirect if found
+            // This is now wrapped in a flag check to prevent infinite redirects
+            let redirectInProgress = false;
+            auth.onAuthStateChanged((user) => {
+                if (user && !redirectInProgress) {
+                    redirectInProgress = true;
+                    
+                    // Show message before redirecting
+                    authSuccess.textContent = 'Already logged in! Redirecting...';
+                    authSuccess.style.display = 'block';
+                    
+                    // Add delay before redirect to prevent immediate loop
+                    setTimeout(() => {
+                        window.location.href = '/Home/Index';
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+} 

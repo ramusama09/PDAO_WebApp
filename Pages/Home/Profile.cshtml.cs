@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PDAO_WebApp.Pages.Home
 {
-    public class ID_GenerationModel : PageModel
+    public class ProfileModel : PageModel
     {
         public void OnGet()
         {
+            // Load the profile page
         }
     }
-}
+} 

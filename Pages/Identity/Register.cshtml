@@ -1,0 +1,296 @@
+@page
+@model PDAO_WebApp.Pages.Identity.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_AuthLayout";
+}
+
+<div class="auth-container" style="max-width: 550px;">
+    <div class="auth-header">
+        <div class="auth-logo">
+            <img src="~/img/PDAO_Logo.png" alt="PDAO Logo" width="80" height="80">
+        </div>
+        <h1 class="auth-title">Create Account</h1>
+        <p class="auth-subtitle">Sign up for a new PDAO account</p>
+    </div>
+    
+    <div id="auth-error" class="auth-error"></div>
+    <div id="auth-success" class="auth-success"></div>
+    
+    <!-- Progress indicator -->
+    <div class="progress mb-4" style="height: 10px;">
+        <div id="progress-bar" class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    
+    <!-- Page 1: Personal Information -->
+    <div id="page-1" class="auth-form-page active">
+        <form id="personalInfoForm" class="auth-form">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="contactNumber" class="form-label">Contact Number</label>
+                <input type="tel" class="form-control" id="contactNumber" placeholder="Enter your contact number" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="addressLine1" class="form-label">Address Line 1</label>
+                <input type="text" class="form-control" id="addressLine1" placeholder="Apt/House Number, Bldg Name, Street Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="addressLine2" class="form-label">Address Line 2</label>
+                <input type="text" class="form-control" id="addressLine2" placeholder="Brgy, City, Country, Zip Code" required>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="birthDate" class="form-label">Birth Date</label>
+                        <input type="date" class="form-control" id="birthDate" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="number" class="form-control" id="age" readonly>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="sex" class="form-label">Sex</label>
+                <select class="form-control" id="sex" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="emergencyContactName" class="form-label">Emergency Contact Name</label>
+                <input type="text" class="form-control" id="emergencyContactName" placeholder="Enter emergency contact name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="emergencyContactNumber" class="form-label">Emergency Contact Number</label>
+                <input type="tel" class="form-control" id="emergencyContactNumber" placeholder="Enter emergency contact number" required>
+            </div>
+            
+            <button type="submit" class="btn auth-btn mt-3">Next Page</button>
+            
+            <div class="text-center mt-3">
+                <p>Already have an account? <a href="/Identity/Login" class="auth-link">Sign in</a></p>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Page 2: Account Information -->
+    <div id="page-2" class="auth-form-page">
+        <form id="accountInfoForm" class="auth-form">
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+                <small class="form-text text-muted">Password must be at least 6 characters</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+            
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="terms" required>
+                <label class="form-check-label" for="terms">
+                    I agree to the <a href="#" class="auth-link">Terms of Service</a> and <a href="#" class="auth-link">Privacy Policy</a>
+                </label>
+            </div>
+            
+            <div class="d-flex gap-2">
+                <button type="button" id="back-button" class="btn btn-outline-secondary flex-fill">Back</button>
+                <button type="submit" class="btn auth-btn flex-fill">Create Account</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .auth-form-page {
+        display: none;
+    }
+    
+    .auth-form-page.active {
+        display: block;
+    }
+</style>
+
+@section Scripts {
+    <script src="~/js/firebase-init.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const personalInfoForm = document.getElementById('personalInfoForm');
+            const accountInfoForm = document.getElementById('accountInfoForm');
+            const authError = document.getElementById('auth-error');
+            const authSuccess = document.getElementById('auth-success');
+            const page1 = document.getElementById('page-1');
+            const page2 = document.getElementById('page-2');
+            const backButton = document.getElementById('back-button');
+            const progressBar = document.getElementById('progress-bar');
+            const birthDateInput = document.getElementById('birthDate');
+            const ageInput = document.getElementById('age');
+            
+            // Store user data between pages
+            const userData = {};
+            
+            // Calculate age from birth date
+            birthDateInput.addEventListener('change', () => {
+                const birthDate = new Date(birthDateInput.value);
+                const today = new Date();
+                let age = today.getFullYear() - birthDate.getFullYear();
+                const monthDifference = today.getMonth() - birthDate.getMonth();
+                
+                if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                
+                ageInput.value = age;
+            });
+            
+            // Handle first page submission
+            personalInfoForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Hide any previous messages
+                authError.style.display = 'none';
+                authSuccess.style.display = 'none';
+                
+                // Get form values
+                userData.firstName = document.getElementById('firstName').value;
+                userData.lastName = document.getElementById('lastName').value;
+                userData.contactNumber = document.getElementById('contactNumber').value;
+                userData.addressLine1 = document.getElementById('addressLine1').value;
+                userData.addressLine2 = document.getElementById('addressLine2').value;
+                userData.birthDate = document.getElementById('birthDate').value;
+                userData.age = document.getElementById('age').value;
+                userData.sex = document.getElementById('sex').value;
+                userData.emergencyContactName = document.getElementById('emergencyContactName').value;
+                userData.emergencyContactNumber = document.getElementById('emergencyContactNumber').value;
+                
+                // Move to next page
+                page1.classList.remove('active');
+                page2.classList.add('active');
+                progressBar.style.width = '100%';
+                progressBar.setAttribute('aria-valuenow', '100');
+            });
+            
+            // Handle back button
+            backButton.addEventListener('click', () => {
+                page2.classList.remove('active');
+                page1.classList.add('active');
+                progressBar.style.width = '50%';
+                progressBar.setAttribute('aria-valuenow', '50');
+            });
+            
+            // Handle final form submission
+            accountInfoForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Hide any previous messages
+                authError.style.display = 'none';
+                authSuccess.style.display = 'none';
+                
+                // Get form values
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                // Validate inputs
+                if (password !== confirmPassword) {
+                    authError.textContent = 'Passwords do not match.';
+                    authError.style.display = 'block';
+                    return;
+                }
+                
+                if (password.length < 6) {
+                    authError.textContent = 'Password must be at least 6 characters long.';
+                    authError.style.display = 'block';
+                    return;
+                }
+                
+                try {
+                    // Create user with email and password
+                    const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+                    const user = userCredential.user;
+                    
+                    // Combine first and last name for display name
+                    const fullName = `${userData.firstName} ${userData.lastName}`;
+                    
+                    // Save all user data to realtime database
+                    await database.ref('users/' + user.uid).set({
+                        firstName: userData.firstName,
+                        lastName: userData.lastName,
+                        fullName: fullName,
+                        email: email,
+                        contactNumber: userData.contactNumber,
+                        addressLine1: userData.addressLine1,
+                        addressLine2: userData.addressLine2,
+                        birthDate: userData.birthDate,
+                        age: userData.age,
+                        sex: userData.sex,
+                        emergencyContactName: userData.emergencyContactName,
+                        emergencyContactNumber: userData.emergencyContactNumber,
+                        createdAt: new Date().toISOString(),
+                        lastLogin: new Date().toISOString()
+                    });
+                    
+                    // Update user profile
+                    await user.updateProfile({
+                        displayName: fullName
+                    });
+                    
+                    // Display success message
+                    authSuccess.textContent = 'Account created successfully! Redirecting...';
+                    authSuccess.style.display = 'block';
+                    
+                    // Redirect to home page after successful registration
+                    setTimeout(() => {
+                        window.location.href = '/Home/Index';
+                    }, 2000);
+                } catch (error) {
+                    // Handle errors
+                    let errorMessage = 'An error occurred during registration. Please try again.';
+                    
+                    if (error.code === 'auth/email-already-in-use') {
+                        errorMessage = 'The email address is already in use by another account.';
+                    } else if (error.code === 'auth/invalid-email') {
+                        errorMessage = 'The email address is not valid.';
+                    } else if (error.code === 'auth/weak-password') {
+                        errorMessage = 'The password is too weak.';
+                    }
+                    
+                    authError.textContent = errorMessage;
+                    authError.style.display = 'block';
+                    console.error('Registration error:', error);
+                }
+            });
+        });
+    </script>
+} 

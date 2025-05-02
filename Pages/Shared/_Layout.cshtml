@@ -6,48 +6,141 @@
     <title>@ViewData["Title"] - PDAO_WebApp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PDAO_WebApp.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/id_card_styles.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true">
-
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <!-- Firebase initialization -->
+    <script src="~/js/firebase-init.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header class="main-header fade-in">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom main-nav">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">PDAO_WebApp</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Home/Index">
+                    <img src="~/img/PDAO_Logo.png" alt="PDAO Logo" height="45" class="d-inline-block align-text-top me-2">
+                    <span class="brand-text">PDAO Portal</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
+                    <ul class="navbar-nav ms-auto">
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container main-container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="main-footer">
         <div class="container">
-            &copy; 2025 - PDAO_WebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <div class="row py-4">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h5 class="footer-title">PDAO Web Portal</h5>
+                    <p class="footer-text">Providing accessible services and support for persons with disabilities.</p>
+                    <div class="footer-social mt-3">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 mb-3 mb-md-0">
+                    <h6 class="footer-subtitle">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="/Home/Index">Home</a></li>
+                        <li><a href="/Home/Profile">Profile</a></li>
+                        <li><a href="/Privacy">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6 mb-3 mb-md-0">
+                    <h6 class="footer-subtitle">Resources</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="footer-subtitle">Legal</h6>
+                    <ul class="footer-links">
+                        <li><a href="/Privacy">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom py-3 border-top">
+                <div class="d-md-flex justify-content-between align-items-center">
+                    <p class="mb-md-0">&copy; 2025 - PDAO Web Portal - All rights reserved</p>
+                    <div class="footer-bottom-links">
+                        <a href="/Privacy">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/script.js" asp-append-version="true"></script>
+    <script src="~/js/auth-service.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    
+    <script>
+        // Check authentication and redirect to login if not authenticated
+        document.addEventListener('DOMContentLoaded', () => {
+            // Don't redirect if already on login or register page
+            const currentPath = window.location.pathname.toLowerCase();
+            const authPaths = ['/identity/login', '/identity/register'];
+            
+            if (!authPaths.some(path => currentPath.includes(path))) {
+                // Check if user is authenticated
+                if (typeof auth !== 'undefined') {
+                    auth.onAuthStateChanged((user) => {
+                        if (!user) {
+                            // No user signed in, redirect to login
+                            window.location.href = '/Identity/Login';
+                        } else {
+                            // Update the navigation bar user name when authenticated
+                            const navUserName = document.getElementById('nav-user-name');
+                            if (navUserName) {
+                                navUserName.textContent = user.displayName || user.email || 'Account';
+                            }
+                            
+                            // Handle logout
+                            const logoutBtn = document.getElementById('logout-btn');
+                            if (logoutBtn) {
+                                logoutBtn.addEventListener('click', (e) => {
+                                    e.preventDefault();
+                                    auth.signOut().then(() => {
+                                        window.location.href = '/Identity/Login';
+                                    });
+                                });
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
