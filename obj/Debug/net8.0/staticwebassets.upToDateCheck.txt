@@ -1,4 +1,6 @@
 wwwroot\css\dashboard.css
+wwwroot\css\id_card_styles.css
+wwwroot\css\id_create.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\img\BP_Logo.jpg
@@ -8,6 +10,7 @@ wwwroot\img\PDAO_Logo.png
 wwwroot\img\PH_Flag.webp
 wwwroot\img\placeholder-logo.png
 wwwroot\img\PQ_Logo.jpg
+wwwroot\img\qr_sample.png
 wwwroot\js\auth-service.js
 wwwroot\js\firebase-init.js
 wwwroot\js\site.js

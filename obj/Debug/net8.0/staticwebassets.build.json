@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wjdDd/rsQ2GQ/fDHYkfKtm5rZFr0W+idH43tRw9e0GU=",
+  "Hash": "MphBRf0t+P+YF8Kptv0DHbx7aiLZwPsYloon7Vsy1YU=",
   "Source": "PDAO_WebApp",
   "BasePath": "_content/PDAO_WebApp",
   "Mode": "Default",
@@ -73,11 +73,53 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "uqnymjtp6h",
-      "Integrity": "tr75i92PMu9ddLiIG92NkV32x/JTBLoPUfKoh+mYrc0=",
+      "Fingerprint": "wf3txkfc14",
+      "Integrity": "rDdFE7oS82pY1peDPjtIOUPQNBzFJcmfVUSKaCem8qU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\dashboard.css"
+    },
+    {
+      "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_card_styles.css",
+      "SourceId": "PDAO_WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\",
+      "BasePath": "_content/PDAO_WebApp",
+      "RelativePath": "css/id_card_styles#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yqadeivj25",
+      "Integrity": "VoLIfIPJY1qLrAEaGonANDAVco4s2Bxbboh9UZ/2FTU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\id_card_styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_create.css",
+      "SourceId": "PDAO_WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\",
+      "BasePath": "_content/PDAO_WebApp",
+      "RelativePath": "css/id_create#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gfrxsz0nh7",
+      "Integrity": "HNEemWlXQMsl79vTWi5vKrK2T+4vpcQz0ph3mLj2C0Y=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\id_create.css"
     },
     {
       "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\site.css",
@@ -94,8 +136,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "tj1z0kqbu0",
-      "Integrity": "Z90/pyixHMS9P2aYfI8XNNIcfVImzz+D180ODXV3F2Y=",
+      "Fingerprint": "k2atkeq64d",
+      "Integrity": "xHuw1a2/4dCrcRtVxzIG3L71Nru6yE/n4LLe5iF6j0s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -269,6 +311,27 @@
       "OriginalItemSpec": "wwwroot\\img\\PQ_Logo.jpg"
     },
     {
+      "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\img\\qr_sample.png",
+      "SourceId": "PDAO_WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\",
+      "BasePath": "_content/PDAO_WebApp",
+      "RelativePath": "img/qr_sample#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "plhpu1vfxc",
+      "Integrity": "XVdH9ftOrgBA5wGYYtwBmMiLTEXtorIr74JLDjwcKpA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\qr_sample.png"
+    },
+    {
       "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\auth-service.js",
       "SourceId": "PDAO_WebApp",
       "SourceType": "Discovered",
@@ -283,8 +346,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c9wesrvnlg",
-      "Integrity": "0DIHCg6HcVMcN4Honoetpg6sV54JkYtXA40SJcena8E=",
+      "Fingerprint": "nzx72junk3",
+      "Integrity": "07U+/KH3YLQxD842plrS8oo36Y5ZCrcFxd3WeoabOUk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\auth-service.js"
@@ -1541,7 +1604,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5518"
+          "Value": "20796"
         },
         {
           "Name": "Content-Type",
@@ -1549,11 +1612,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tr75i92PMu9ddLiIG92NkV32x/JTBLoPUfKoh+mYrc0=\""
+          "Value": "\"rDdFE7oS82pY1peDPjtIOUPQNBzFJcmfVUSKaCem8qU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 05:50:23 GMT"
+          "Value": "Fri, 02 May 2025 06:24:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1563,12 +1626,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-tr75i92PMu9ddLiIG92NkV32x/JTBLoPUfKoh+mYrc0="
+          "Value": "sha256-rDdFE7oS82pY1peDPjtIOUPQNBzFJcmfVUSKaCem8qU="
         }
       ]
     },
     {
-      "Route": "css/dashboard.uqnymjtp6h.css",
+      "Route": "css/dashboard.wf3txkfc14.css",
       "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\dashboard.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1578,7 +1641,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5518"
+          "Value": "20796"
         },
         {
           "Name": "Content-Type",
@@ -1586,11 +1649,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tr75i92PMu9ddLiIG92NkV32x/JTBLoPUfKoh+mYrc0=\""
+          "Value": "\"rDdFE7oS82pY1peDPjtIOUPQNBzFJcmfVUSKaCem8qU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 05:50:23 GMT"
+          "Value": "Fri, 02 May 2025 06:24:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1600,7 +1663,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "uqnymjtp6h"
+          "Value": "wf3txkfc14"
         },
         {
           "Name": "label",
@@ -1608,7 +1671,171 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-tr75i92PMu9ddLiIG92NkV32x/JTBLoPUfKoh+mYrc0="
+          "Value": "sha256-rDdFE7oS82pY1peDPjtIOUPQNBzFJcmfVUSKaCem8qU="
+        }
+      ]
+    },
+    {
+      "Route": "css/id_card_styles.css",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_card_styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4075"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VoLIfIPJY1qLrAEaGonANDAVco4s2Bxbboh9UZ/2FTU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Apr 2025 01:05:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VoLIfIPJY1qLrAEaGonANDAVco4s2Bxbboh9UZ/2FTU="
+        }
+      ]
+    },
+    {
+      "Route": "css/id_card_styles.yqadeivj25.css",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_card_styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4075"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VoLIfIPJY1qLrAEaGonANDAVco4s2Bxbboh9UZ/2FTU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Apr 2025 01:05:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yqadeivj25"
+        },
+        {
+          "Name": "label",
+          "Value": "css/id_card_styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VoLIfIPJY1qLrAEaGonANDAVco4s2Bxbboh9UZ/2FTU="
+        }
+      ]
+    },
+    {
+      "Route": "css/id_create.css",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_create.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2996"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HNEemWlXQMsl79vTWi5vKrK2T+4vpcQz0ph3mLj2C0Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 08:41:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HNEemWlXQMsl79vTWi5vKrK2T+4vpcQz0ph3mLj2C0Y="
+        }
+      ]
+    },
+    {
+      "Route": "css/id_create.gfrxsz0nh7.css",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_create.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2996"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HNEemWlXQMsl79vTWi5vKrK2T+4vpcQz0ph3mLj2C0Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 08:41:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gfrxsz0nh7"
+        },
+        {
+          "Name": "label",
+          "Value": "css/id_create.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HNEemWlXQMsl79vTWi5vKrK2T+4vpcQz0ph3mLj2C0Y="
         }
       ]
     },
@@ -1623,7 +1850,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2416"
+          "Value": "2477"
         },
         {
           "Name": "Content-Type",
@@ -1631,11 +1858,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Z90/pyixHMS9P2aYfI8XNNIcfVImzz+D180ODXV3F2Y=\""
+          "Value": "\"xHuw1a2/4dCrcRtVxzIG3L71Nru6yE/n4LLe5iF6j0s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 05:44:12 GMT"
+          "Value": "Fri, 02 May 2025 06:24:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1645,12 +1872,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Z90/pyixHMS9P2aYfI8XNNIcfVImzz+D180ODXV3F2Y="
+          "Value": "sha256-xHuw1a2/4dCrcRtVxzIG3L71Nru6yE/n4LLe5iF6j0s="
         }
       ]
     },
     {
-      "Route": "css/site.tj1z0kqbu0.css",
+      "Route": "css/site.k2atkeq64d.css",
       "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1660,7 +1887,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2416"
+          "Value": "2477"
         },
         {
           "Name": "Content-Type",
@@ -1668,11 +1895,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Z90/pyixHMS9P2aYfI8XNNIcfVImzz+D180ODXV3F2Y=\""
+          "Value": "\"xHuw1a2/4dCrcRtVxzIG3L71Nru6yE/n4LLe5iF6j0s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 05:44:12 GMT"
+          "Value": "Fri, 02 May 2025 06:24:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1682,7 +1909,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tj1z0kqbu0"
+          "Value": "k2atkeq64d"
         },
         {
           "Name": "label",
@@ -1690,7 +1917,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Z90/pyixHMS9P2aYfI8XNNIcfVImzz+D180ODXV3F2Y="
+          "Value": "sha256-xHuw1a2/4dCrcRtVxzIG3L71Nru6yE/n4LLe5iF6j0s="
         }
       ]
     },
@@ -2351,8 +2578,8 @@
       ]
     },
     {
-      "Route": "js/auth-service.c9wesrvnlg.js",
-      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\auth-service.js",
+      "Route": "img/qr_sample.plhpu1vfxc.png",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\img\\qr_sample.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2361,19 +2588,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4475"
+          "Value": "1930"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/javascript"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"0DIHCg6HcVMcN4Honoetpg6sV54JkYtXA40SJcena8E=\""
+          "Value": "\"XVdH9ftOrgBA5wGYYtwBmMiLTEXtorIr74JLDjwcKpA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 05:26:52 GMT"
+          "Value": "Wed, 23 Apr 2025 03:15:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2383,15 +2610,52 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c9wesrvnlg"
+          "Value": "plhpu1vfxc"
         },
         {
           "Name": "label",
-          "Value": "js/auth-service.js"
+          "Value": "img/qr_sample.png"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-0DIHCg6HcVMcN4Honoetpg6sV54JkYtXA40SJcena8E="
+          "Value": "sha256-XVdH9ftOrgBA5wGYYtwBmMiLTEXtorIr74JLDjwcKpA="
+        }
+      ]
+    },
+    {
+      "Route": "img/qr_sample.png",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\img\\qr_sample.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1930"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XVdH9ftOrgBA5wGYYtwBmMiLTEXtorIr74JLDjwcKpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 03:15:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XVdH9ftOrgBA5wGYYtwBmMiLTEXtorIr74JLDjwcKpA="
         }
       ]
     },
@@ -2406,7 +2670,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4475"
+          "Value": "4888"
         },
         {
           "Name": "Content-Type",
@@ -2414,11 +2678,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0DIHCg6HcVMcN4Honoetpg6sV54JkYtXA40SJcena8E=\""
+          "Value": "\"07U+/KH3YLQxD842plrS8oo36Y5ZCrcFxd3WeoabOUk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 05:26:52 GMT"
+          "Value": "Fri, 02 May 2025 06:18:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2428,7 +2692,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-0DIHCg6HcVMcN4Honoetpg6sV54JkYtXA40SJcena8E="
+          "Value": "sha256-07U+/KH3YLQxD842plrS8oo36Y5ZCrcFxd3WeoabOUk="
+        }
+      ]
+    },
+    {
+      "Route": "js/auth-service.nzx72junk3.js",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\auth-service.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4888"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"07U+/KH3YLQxD842plrS8oo36Y5ZCrcFxd3WeoabOUk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 06:18:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nzx72junk3"
+        },
+        {
+          "Name": "label",
+          "Value": "js/auth-service.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-07U+/KH3YLQxD842plrS8oo36Y5ZCrcFxd3WeoabOUk="
         }
       ]
     },
