@@ -361,156 +361,26 @@
         </div>
     </div>
     
+    <!-- Print Container (hidden by default, only for printing) -->
+    <div id="printContainer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 9999;">
+        <div class="print-row">
+            <div class="print-card-container">
+                <div class="print-id-card">
+                    <img id="printFrontImg" alt="Front ID Card">
+                </div>
+            </div>
+            <div class="print-card-container">
+                <div class="print-id-card">
+                    <img id="printBackImg" alt="Back ID Card">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Hidden iframe for printing -->
     <iframe id="printFrame" name="printFrame" style="display: none;"></iframe>
 </div>
 
 @section Scripts {
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize dates
-            var today = new Date().toISOString().split('T')[0];
-            document.getElementById('dateIssued').value = today;
-            
-            // Default expiration date (3 years from today)
-            var expDate = new Date();
-            expDate.setFullYear(expDate.getFullYear() + 3);
-            document.getElementById('expirationDate').value = expDate.toISOString().split('T')[0];
-            
-            // Preview button click handler
-            document.getElementById('previewBtn').addEventListener('click', function() {
-                updatePreview();
-                var previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
-                previewModal.show();
-            });
-            
-            // Print button click handler
-            document.getElementById('printIdBtn').addEventListener('click', function() {
-                // Capture both sides of the ID
-                console.log("Print button clicked, capturing ID cards");
-                
-                // Make sure front tab is active
-                var frontTab = document.getElementById('front-tab');
-                frontTab.click();
-                
-                // Wait for tab to be visible
-                setTimeout(function() {
-                    // Capture front ID
-                    var frontElement = document.querySelector('#front-tab-pane .card');
-                    html2canvas(frontElement, {
-                        scale: 2,
-                        backgroundColor: null,
-                        useCORS: true
-                    }).then(function(frontCanvas) {
-                        var frontDataURL = frontCanvas.toDataURL('image/png');
-                        
-                        // Now capture back ID
-                        var backTab = document.getElementById('back-tab');
-                        backTab.click();
-                        
-                        // Wait for back tab to be visible
-                        setTimeout(function() {
-                            var backElement = document.querySelector('#back-tab-pane .card');
-                            html2canvas(backElement, {
-                                scale: 2,
-                                backgroundColor: null,
-                                useCORS: true
-                            }).then(function(backCanvas) {
-                                var backDataURL = backCanvas.toDataURL('image/png');
-                                
-                                // Create a new window for printing
-                                var printWindow = window.open('', '_blank');
-                                printWindow.document.write('<html><head><title>Print ID Card</title>');
-                                printWindow.document.write('<style>');
-                                printWindow.document.write('@@media print {');
-                                printWindow.document.write('  @@page { size: landscape; margin: 0; }');
-                                printWindow.document.write('  body { margin: 0; padding: 0; }');
-                                printWindow.document.write('  .container { display: flex; justify-content: space-around; align-items: center; height: 100vh; }');
-                                printWindow.document.write('  img { max-height: 95vh; width: auto; }');
-                                printWindow.document.write('}');
-                                printWindow.document.write('body { margin: 0; padding: 0; background-color: white; }');
-                                printWindow.document.write('.container { display: flex; justify-content: space-around; align-items: center; height: 100vh; }');
-                                printWindow.document.write('img { max-height: 95vh; width: auto; }');
-                                printWindow.document.write('</style>');
-                                printWindow.document.write('</head><body>');
-                                printWindow.document.write('<div class="container">');
-                                printWindow.document.write('<img src="' + frontDataURL + '">');
-                                printWindow.document.write('<img src="' + backDataURL + '">');
-                                printWindow.document.write('</div>');
-                                printWindow.document.write('</body></html>');
-                                printWindow.document.close();
-                                
-                                // Print after delay
-                                setTimeout(function() {
-                                    printWindow.print();
-                                    // Close window after printing
-                                    setTimeout(function() {
-                                        printWindow.close();
-                                    }, 500);
-                                }, 500);
-                            });
-                        }, 300);
-                    });
-                }, 300);
-            });
-            
-            // Download button click handler
-            document.getElementById('generateAndDownloadBtn').addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Basic validation
-                if (!document.getElementById('idCardForm').checkValidity()) {
-                    document.getElementById('idCardForm').reportValidity();
-                    return;
-                }
-                
-                // Update preview
-                updatePreview();
-                
-                // Show modal
-                var previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
-                previewModal.show();
-                
-                // Wait for modal to be visible
-                setTimeout(function() {
-                    // Capture front ID
-                    document.getElementById('front-tab').click();
-                    setTimeout(function() {
-                        var frontElement = document.querySelector('#front-tab-pane .card');
-                        html2canvas(frontElement).then(function(canvas) {
-                            var dataURL = canvas.toDataURL('image/png');
-                            var lastName = document.getElementById('lastName').value || 'Lastname';
-                            var firstName = document.getElementById('firstName').value || 'Firstname';
-                            downloadImage(dataURL, lastName + firstName + '_Front_ID.png');
-                            
-                            // Capture back ID
-                            document.getElementById('back-tab').click();
-                            setTimeout(function() {
-                                var backElement = document.querySelector('#back-tab-pane .card');
-                                html2canvas(backElement).then(function(canvas) {
-                                    var dataURL = canvas.toDataURL('image/png');
-                                    downloadImage(dataURL, lastName + firstName + '_Back_ID.png');
-                                    
-                                    // Submit form after downloads
-                                    document.getElementById('idCardForm').submit();
-                                });
-                            }, 300);
-                        });
-                    }, 300);
-                }, 500);
-            });
-            
-            function downloadImage(dataURL, fileName) {
-                var link = document.createElement('a');
-                link.download = fileName;
-                link.href = dataURL;
-                link.click();
-            }
-            
-            function updatePreview() {
-                // Update preview fields with form values
-                // Update all the preview fields here
-            }
-        });
-    </script>
+    <script src="~/js/id-card-generator.js"></script>
 } 

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\kyouko\\androidstudioprojects\\pdao_webapp\\wwwroot\\js\\id-card-generator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:wwwroot\\js\\id-card-generator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\kyouko\\androidstudioprojects\\pdao_webapp\\pages\\id_cards\\id_create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:pages\\id_cards\\id_create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -46,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +58,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "id-card-generator.js",
+              "DocumentMoniker": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\id-card-generator.js",
+              "ToolTip": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
+              "RelativeToolTip": "wwwroot\\js\\id-card-generator.js",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAvwKAAAACoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-06T00:27:06.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ID_Create.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\Pages\\ID_Cards\\ID_Create.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\ID_Cards\\ID_Create.cshtml.cs",
@@ -62,12 +79,11 @@
               "RelativeToolTip": "Pages\\ID_Cards\\ID_Create.cshtml.cs",
               "ViewState": "AgIAAGMAAAAAAAAAAAAnwGgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T07:52:18.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T07:52:18.433Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "id_create.css",
               "DocumentMoniker": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_create.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\id_create.css",
@@ -75,25 +91,24 @@
               "RelativeToolTip": "wwwroot\\css\\id_create.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-05T07:44:47.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T07:44:47.958Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ID_Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\Pages\\ID_Cards\\ID_Create.cshtml",
               "RelativeDocumentMoniker": "Pages\\ID_Cards\\ID_Create.cshtml",
               "ToolTip": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\Pages\\ID_Cards\\ID_Create.cshtml",
               "RelativeToolTip": "Pages\\ID_Cards\\ID_Create.cshtml",
-              "ViewState": "AgIAANcBAAAAAAAAAAAvwLcBAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-05T07:44:10.021Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ID_Front.html",
               "DocumentMoniker": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\Pages\\ID_Cards\\ID_Front.html",
               "RelativeDocumentMoniker": "Pages\\ID_Cards\\ID_Front.html",
@@ -101,12 +116,11 @@
               "RelativeToolTip": "Pages\\ID_Cards\\ID_Front.html",
               "ViewState": "AgIAAFQAAAAAAAAAAAAAAF0AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-05-05T07:36:15.286Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T07:36:15.286Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ID_Back.html",
               "DocumentMoniker": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\Pages\\ID_Cards\\ID_Back.html",
               "RelativeDocumentMoniker": "Pages\\ID_Cards\\ID_Back.html",
@@ -114,12 +128,11 @@
               "RelativeToolTip": "Pages\\ID_Cards\\ID_Back.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-05-05T07:35:38.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T07:35:38.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\Pages\\Identity\\Register.cshtml",
               "RelativeDocumentMoniker": "Pages\\Identity\\Register.cshtml",
@@ -127,12 +140,11 @@
               "RelativeToolTip": "Pages\\Identity\\Register.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T05:22:25.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T05:22:25.307Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\Pages\\Identity\\Login.cshtml",
               "RelativeDocumentMoniker": "Pages\\Identity\\Login.cshtml",
@@ -144,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
@@ -156,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",

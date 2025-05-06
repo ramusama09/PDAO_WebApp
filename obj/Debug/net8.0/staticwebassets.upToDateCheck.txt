@@ -13,6 +13,7 @@ wwwroot\img\PQ_Logo.jpg
 wwwroot\img\qr_sample.png
 wwwroot\js\auth-service.js
 wwwroot\js\firebase-init.js
+wwwroot\js\id-card-generator.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

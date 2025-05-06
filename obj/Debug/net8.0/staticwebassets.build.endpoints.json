@@ -1315,6 +1315,88 @@
       ]
     },
     {
+      "Route": "js/id-card-generator.js",
+      "AssetFile": "js/id-card-generator.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13655"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:27:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs="
+        }
+      ]
+    },
+    {
+      "Route": "js/id-card-generator.rtz3y3gq5z.js",
+      "AssetFile": "js/id-card-generator.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13655"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:27:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rtz3y3gq5z"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs="
+        },
+        {
+          "Name": "label",
+          "Value": "js/id-card-generator.js"
+        }
+      ]
+    },
+    {
       "Route": "js/site.js",
       "AssetFile": "js/site.js",
       "Selectors": [],

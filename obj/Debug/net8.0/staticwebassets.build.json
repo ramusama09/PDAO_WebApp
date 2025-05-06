@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MphBRf0t+P+YF8Kptv0DHbx7aiLZwPsYloon7Vsy1YU=",
+  "Hash": "s1BSGjObWB9+4FkGDPwF1hoTiAsyurBC3CPMEp2fpBw=",
   "Source": "PDAO_WebApp",
   "BasePath": "_content/PDAO_WebApp",
   "Mode": "Default",
@@ -372,6 +372,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\firebase-init.js"
+    },
+    {
+      "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
+      "SourceId": "PDAO_WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\",
+      "BasePath": "_content/PDAO_WebApp",
+      "RelativePath": "js/id-card-generator#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rtz3y3gq5z",
+      "Integrity": "4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\id-card-generator.js"
     },
     {
       "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\site.js",
@@ -2820,6 +2841,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-7Mno14NxHzgbPQf9mDOANAC3MQHozDk2jNWu1zY2iqk="
+        }
+      ]
+    },
+    {
+      "Route": "js/id-card-generator.js",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13655"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:27:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs="
+        }
+      ]
+    },
+    {
+      "Route": "js/id-card-generator.rtz3y3gq5z.js",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13655"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:27:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rtz3y3gq5z"
+        },
+        {
+          "Name": "label",
+          "Value": "js/id-card-generator.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs="
         }
       ]
     },

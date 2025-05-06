@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\js\\firebase-init.js"
     },
     {
+      "Id": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
+      "PackagePath": "staticwebassets\\js\\id-card-generator.js"
+    },
+    {
       "Id": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
