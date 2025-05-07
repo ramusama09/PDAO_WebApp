@@ -17,26 +17,19 @@ namespace PDAO_WebApp.Pages.ID_Cards
             _environment = environment;
         }
 
-        [BindProperty]
-        public PWDCardInfo CardInfo { get; set; }
-
-        [BindProperty]
-        public IFormFile PhotoFile { get; set; }
-
-        [BindProperty]
-        public IFormFile SignatureFile { get; set; }
-
         [TempData]
         public string StatusMessage { get; set; }
 
+        [BindProperty]
+        public CardInfoModel CardInfo { get; set; }
+
+        public IFormFile PhotoFile { get; set; }
+        public IFormFile SignatureFile { get; set; }
+
         public void OnGet()
         {
-            // Initialize with default values if needed
-            CardInfo = new PWDCardInfo
-            {
-                DateIssued = DateTime.Today,
-                ExpirationDate = DateTime.Today.AddYears(3) // Default 3-year validity
-            };
+            // The page is primarily handled by client-side JavaScript
+            // This method is kept for potential future server-side operations
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -96,87 +89,84 @@ namespace PDAO_WebApp.Pages.ID_Cards
                 return Page();
             }
         }
-    }
 
-    public class PWDCardInfo
-    {
-        // Front ID Information
-        [Required]
-        [Display(Name = "PWD ID No.")]
-        public string PwdIdNo { get; set; }
-
-        [Required]
-        [Display(Name = "First Name")]
-        public string FirstName { get; set; }
-
-        [Display(Name = "Middle Name")]
-        public string MiddleName { get; set; }
-
-        [Required]
-        [Display(Name = "Last Name")]
-        public string LastName { get; set; }
-
-        [Display(Name = "Suffix")]
-        public string Suffix { get; set; }
-
-        [Required]
-        [Display(Name = "Type of Disability")]
-        public string DisabilityType { get; set; }
-
-        [Display(Name = "Signature File")]
-        public string SignatureFile { get; set; }
-
-        [Required]
-        [Display(Name = "Expiration Date")]
-        [DataType(DataType.Date)]
-        public DateTime ExpirationDate { get; set; }
-
-        [Display(Name = "Photo File")]
-        public string PhotoFile { get; set; }
-
-        // Back ID Information
-        [Required]
-        [Display(Name = "Address Line 1")]
-        public string AddressLine1 { get; set; }
-
-        [Required]
-        [Display(Name = "Address Line 2")]
-        public string AddressLine2 { get; set; }
-
-        [Required]
-        [Display(Name = "Date of Birth")]
-        [DataType(DataType.Date)]
-        public DateTime DateOfBirth { get; set; }
-
-        [Required]
-        [Display(Name = "Date Issued")]
-        [DataType(DataType.Date)]
-        public DateTime DateIssued { get; set; }
-
-        [Required]
-        [Display(Name = "Sex")]
-        public string Sex { get; set; }
-
-        [Required]
-        [Display(Name = "Blood Type")]
-        public string BloodType { get; set; }
-
-        [Required]
-        [Display(Name = "Emergency Contact Name")]
-        public string EmergencyContactName { get; set; }
-
-        [Required]
-        [Display(Name = "Emergency Contact No.")]
-        public string EmergencyContactNo { get; set; }
-
-        // Computed Properties
-        public string FullName
+        public class CardInfoModel
         {
-            get
+            [Required]
+            [Display(Name = "PWD ID No.")]
+            public string PwdIdNo { get; set; }
+
+            [Required]
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
+
+            [Display(Name = "Middle Name")]
+            public string MiddleName { get; set; }
+
+            [Required]
+            [Display(Name = "Last Name")]
+            public string LastName { get; set; }
+
+            [Display(Name = "Suffix")]
+            public string Suffix { get; set; }
+
+            [Required]
+            [Display(Name = "Type of Disability")]
+            public string DisabilityType { get; set; }
+
+            [Required]
+            [Display(Name = "Expiration Date")]
+            [DataType(DataType.Date)]
+            public DateTime ExpirationDate { get; set; }
+
+            [Required]
+            [Display(Name = "Address Line 1")]
+            public string AddressLine1 { get; set; }
+
+            [Required]
+            [Display(Name = "Address Line 2")]
+            public string AddressLine2 { get; set; }
+
+            [Required]
+            [Display(Name = "Date of Birth")]
+            [DataType(DataType.Date)]
+            public DateTime DateOfBirth { get; set; }
+
+            [Required]
+            [Display(Name = "Date Issued")]
+            [DataType(DataType.Date)]
+            public DateTime DateIssued { get; set; }
+
+            [Required]
+            [Display(Name = "Sex")]
+            public string Sex { get; set; }
+
+            [Required]
+            [Display(Name = "Blood Type")]
+            public string BloodType { get; set; }
+
+            [Required]
+            [Display(Name = "Emergency Contact Name")]
+            public string EmergencyContactName { get; set; }
+
+            [Required]
+            [Display(Name = "Emergency Contact No.")]
+            public string EmergencyContactNo { get; set; }
+
+            [Display(Name = "Signature File")]
+            public string SignatureFile { get; set; }
+
+            [Display(Name = "Photo File")]
+            public string PhotoFile { get; set; }
+
+            public string FullName
             {
-                string middleInitial = !string.IsNullOrEmpty(MiddleName) ? $"{MiddleName[0]}. " : "";
-                string suffixText = !string.IsNullOrEmpty(Suffix) ? $", {Suffix}" : "";
-                return $"{FirstName} {middleInitial}{LastName}{suffixText}";
+                get
+                {
+                    string middleInitial = !string.IsNullOrEmpty(MiddleName) ? $"{MiddleName[0]}. " : "";
+                    string suffixText = !string.IsNullOrEmpty(Suffix) ? $", {Suffix}" : "";
+                    return $"{FirstName} {middleInitial}{LastName}{suffixText}";
+                }
             }
         }
     }

@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Print button click handler - using a completely new approach
+    // Print button click handler
     document.getElementById('printIdBtn').addEventListener('click', function() {
         // Capture both sides of the ID
         console.log("Print button clicked, capturing ID cards");

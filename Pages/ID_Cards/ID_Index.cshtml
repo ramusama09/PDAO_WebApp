@@ -1,0 +1,121 @@
+@page
+@model PDAO_WebApp.Pages.ID_Cards.ID_IndexModel
+@{
+    ViewData["Title"] = "PWD ID Card Management";
+}
+
+<link rel="stylesheet" href="~/css/id_index.css" asp-append-version="true" />
+
+<!-- Loading Modal -->
+<div class="modal fade" id="loadingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loadingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center p-4">
+                <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <h5 class="mb-0">Loading ID Card Information</h5>
+                <p class="text-muted mt-2">Please wait while we fetch your data...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <h2 class="mb-4">PWD ID Card Management</h2>
+    
+    @if (!string.IsNullOrEmpty(Model.StatusMessage))
+    {
+        var statusMessageClass = Model.StatusMessage.StartsWith("Error") ? "danger" : "success";
+        <div class="alert alert-@statusMessageClass alert-dismissible fade show" role="alert">
+            @Model.StatusMessage
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Your PWD ID Card</h5>
+                    <div id="idCardDisplay" class="d-none">
+                        <div class="row">
+                            <div class="col-md-10 offset-1">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs card-header-tabs" id="idCardTabs" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="status-tab" data-bs-toggle="tab" data-bs-target="#status-tab-pane" type="button" role="tab" aria-selected="true">ID Status</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="front-tab" data-bs-toggle="tab" data-bs-target="#front-tab-pane" type="button" role="tab" aria-selected="false">Front ID</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="back-tab" data-bs-toggle="tab" data-bs-target="#back-tab-pane" type="button" role="tab" aria-selected="false">Back ID</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="tab-content" id="idCardTabContent">
+                                            <div class="tab-pane fade show active" id="status-tab-pane" role="tabpanel" aria-labelledby="status-tab" tabindex="0">
+                                                <div id="idCardStatus" class="id-card-status">
+                                                    <div class="spinner-border text-primary" role="status">
+                                                        <span class="visually-hidden">Loading...</span>
+                                                    </div>
+                                                    <p class="mt-2">Checking ID card status...</p>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="front-tab-pane" role="tabpanel" aria-labelledby="front-tab" tabindex="0">
+                                                <div id="frontCardPreview" class="id-card-preview"></div>
+                                            </div>
+                                            <div class="tab-pane fade" id="back-tab-pane" role="tabpanel" aria-labelledby="back-tab" tabindex="0">
+                                                <div id="backCardPreview" class="id-card-preview"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">ID Card Information</h5>
+                    <div id="idCardInfo">
+                        <p class="text-muted">No ID card information available.</p>
+                    </div>
+                    <div id="idCardActions" class="d-none mt-3">
+                        <div class="d-flex gap-2">
+                            <a href="/ID_Cards/ID_Create" class="btn btn-primary" id="createIdBtn">Create New ID Card</a>
+                            <button class="btn btn-outline-primary" id="printIdBtn">Print ID Card</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Print Container (hidden by default, only for printing) -->
+<div id="printContainer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 9999;">
+    <div class="print-row">
+        <div class="print-card-container">
+            <div class="print-id-card">
+                <img id="printFrontImg" alt="Front ID Card">
+            </div>
+        </div>
+        <div class="print-card-container">
+            <div class="print-id-card">
+                <img id="printBackImg" alt="Back ID Card">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/id-index.js"></script>
+} 

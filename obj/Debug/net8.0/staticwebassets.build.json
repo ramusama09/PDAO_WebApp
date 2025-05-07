@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "s1BSGjObWB9+4FkGDPwF1hoTiAsyurBC3CPMEp2fpBw=",
+  "Hash": "dnDcvf6+CUJ0AVl/ybyC0iKNS3Rk7A2bDv0DTK4Vr/M=",
   "Source": "PDAO_WebApp",
   "BasePath": "_content/PDAO_WebApp",
   "Mode": "Default",
@@ -120,6 +120,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\id_create.css"
+    },
+    {
+      "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_index.css",
+      "SourceId": "PDAO_WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\",
+      "BasePath": "_content/PDAO_WebApp",
+      "RelativePath": "css/id_index#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "355sd07lql",
+      "Integrity": "B+YTU8nowWx5U2MdyhGq0oekCGVdwivJOTWxa64NEnk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\id_index.css"
     },
     {
       "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\site.css",
@@ -367,8 +388,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "cklze9u0dm",
-      "Integrity": "7Mno14NxHzgbPQf9mDOANAC3MQHozDk2jNWu1zY2iqk=",
+      "Fingerprint": "fusgrmjtuq",
+      "Integrity": "+YY0QxqD2ROuQPk1ZW8N27eyobnD2zT0lJ0Kb8CVxIg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\firebase-init.js"
@@ -388,11 +409,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "rtz3y3gq5z",
-      "Integrity": "4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs=",
+      "Fingerprint": "ejg4uxydkv",
+      "Integrity": "uo7M9tPEUH48F4oOVsNgsJ83R0nRxBG3ic+2ivZ3RvA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\id-card-generator.js"
+    },
+    {
+      "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-index.js",
+      "SourceId": "PDAO_WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\",
+      "BasePath": "_content/PDAO_WebApp",
+      "RelativePath": "js/id-index#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ykod5jrqcy",
+      "Integrity": "sj5hoYu0doQLcPwe6ld5qdlSqYRVnwiMjgJqoeZgcT4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\id-index.js"
     },
     {
       "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\site.js",
@@ -1861,6 +1903,88 @@
       ]
     },
     {
+      "Route": "css/id_index.355sd07lql.css",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_index.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B+YTU8nowWx5U2MdyhGq0oekCGVdwivJOTWxa64NEnk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 05:01:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "355sd07lql"
+        },
+        {
+          "Name": "label",
+          "Value": "css/id_index.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-B+YTU8nowWx5U2MdyhGq0oekCGVdwivJOTWxa64NEnk="
+        }
+      ]
+    },
+    {
+      "Route": "css/id_index.css",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_index.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B+YTU8nowWx5U2MdyhGq0oekCGVdwivJOTWxa64NEnk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 05:01:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-B+YTU8nowWx5U2MdyhGq0oekCGVdwivJOTWxa64NEnk="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1883,7 +2007,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 06:24:48 GMT"
+          "Value": "Wed, 07 May 2025 03:14:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1920,7 +2044,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 06:24:48 GMT"
+          "Value": "Wed, 07 May 2025 03:14:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2763,7 +2887,7 @@
       ]
     },
     {
-      "Route": "js/firebase-init.cklze9u0dm.js",
+      "Route": "js/firebase-init.fusgrmjtuq.js",
       "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\firebase-init.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2773,7 +2897,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "632"
+          "Value": "615"
         },
         {
           "Name": "Content-Type",
@@ -2781,11 +2905,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"7Mno14NxHzgbPQf9mDOANAC3MQHozDk2jNWu1zY2iqk=\""
+          "Value": "\"+YY0QxqD2ROuQPk1ZW8N27eyobnD2zT0lJ0Kb8CVxIg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 05:17:33 GMT"
+          "Value": "Wed, 07 May 2025 04:25:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2795,7 +2919,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "cklze9u0dm"
+          "Value": "fusgrmjtuq"
         },
         {
           "Name": "label",
@@ -2803,7 +2927,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-7Mno14NxHzgbPQf9mDOANAC3MQHozDk2jNWu1zY2iqk="
+          "Value": "sha256-+YY0QxqD2ROuQPk1ZW8N27eyobnD2zT0lJ0Kb8CVxIg="
         }
       ]
     },
@@ -2818,7 +2942,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "632"
+          "Value": "615"
         },
         {
           "Name": "Content-Type",
@@ -2826,11 +2950,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"7Mno14NxHzgbPQf9mDOANAC3MQHozDk2jNWu1zY2iqk=\""
+          "Value": "\"+YY0QxqD2ROuQPk1ZW8N27eyobnD2zT0lJ0Kb8CVxIg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 05:17:33 GMT"
+          "Value": "Wed, 07 May 2025 04:25:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2840,7 +2964,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-7Mno14NxHzgbPQf9mDOANAC3MQHozDk2jNWu1zY2iqk="
+          "Value": "sha256-+YY0QxqD2ROuQPk1ZW8N27eyobnD2zT0lJ0Kb8CVxIg="
+        }
+      ]
+    },
+    {
+      "Route": "js/id-card-generator.ejg4uxydkv.js",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13336"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uo7M9tPEUH48F4oOVsNgsJ83R0nRxBG3ic+2ivZ3RvA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 04:40:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ejg4uxydkv"
+        },
+        {
+          "Name": "label",
+          "Value": "js/id-card-generator.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uo7M9tPEUH48F4oOVsNgsJ83R0nRxBG3ic+2ivZ3RvA="
         }
       ]
     },
@@ -2855,7 +3024,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13655"
+          "Value": "13336"
         },
         {
           "Name": "Content-Type",
@@ -2863,11 +3032,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs=\""
+          "Value": "\"uo7M9tPEUH48F4oOVsNgsJ83R0nRxBG3ic+2ivZ3RvA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 00:27:27 GMT"
+          "Value": "Wed, 07 May 2025 04:40:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2877,13 +3046,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs="
+          "Value": "sha256-uo7M9tPEUH48F4oOVsNgsJ83R0nRxBG3ic+2ivZ3RvA="
         }
       ]
     },
     {
-      "Route": "js/id-card-generator.rtz3y3gq5z.js",
-      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
+      "Route": "js/id-index.js",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-index.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2892,7 +3061,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13655"
+          "Value": "5067"
         },
         {
           "Name": "Content-Type",
@@ -2900,11 +3069,48 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs=\""
+          "Value": "\"sj5hoYu0doQLcPwe6ld5qdlSqYRVnwiMjgJqoeZgcT4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 00:27:27 GMT"
+          "Value": "Wed, 07 May 2025 05:08:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sj5hoYu0doQLcPwe6ld5qdlSqYRVnwiMjgJqoeZgcT4="
+        }
+      ]
+    },
+    {
+      "Route": "js/id-index.ykod5jrqcy.js",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-index.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5067"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sj5hoYu0doQLcPwe6ld5qdlSqYRVnwiMjgJqoeZgcT4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 05:08:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2914,15 +3120,15 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rtz3y3gq5z"
+          "Value": "ykod5jrqcy"
         },
         {
           "Name": "label",
-          "Value": "js/id-card-generator.js"
+          "Value": "js/id-index.js"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4Vnx7Jic2EqU7ZkmXJhz832QF0lp0L/b31L+Rlwi2cs="
+          "Value": "sha256-sj5hoYu0doQLcPwe6ld5qdlSqYRVnwiMjgJqoeZgcT4="
         }
       ]
     },

@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\id_create.css"
     },
     {
+      "Id": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_index.css",
+      "PackagePath": "staticwebassets\\css\\id_index.css"
+    },
+    {
       "Id": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -67,6 +71,10 @@
     {
       "Id": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
       "PackagePath": "staticwebassets\\js\\id-card-generator.js"
+    },
+    {
+      "Id": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-index.js",
+      "PackagePath": "staticwebassets\\js\\id-index.js"
     },
     {
       "Id": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\site.js",
