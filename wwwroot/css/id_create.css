@@ -3,6 +3,33 @@
 /* Import existing card styles */
 @import url('id_card_styles.css');
 
+/* Camera container styles */
+.camera-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#cameraFeed, #signatureCameraFeed {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+#capturedPhoto, #capturedSignature {
+    max-width: 100%;
+    max-height: 350px;
+    margin: 10px auto;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.photo-preview {
+    margin-top: 10px;
+    text-align: center;
+}
+
 /* Print styles for the ID card */
 @media print {
     @page {

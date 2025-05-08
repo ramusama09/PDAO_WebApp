@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\js\\firebase-init.js"
     },
     {
+      "Id": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\github-config.js",
+      "PackagePath": "staticwebassets\\js\\github-config.js"
+    },
+    {
       "Id": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
       "PackagePath": "staticwebassets\\js\\id-card-generator.js"
     },
@@ -307,6 +311,10 @@
     {
       "Id": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\pdao-webapp-default-rtdb-users-export.json",
+      "PackagePath": "staticwebassets\\pdao-webapp-default-rtdb-users-export.json"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PDAO_WebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

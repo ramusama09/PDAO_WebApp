@@ -5,7 +5,9 @@
 }
 
 <link rel="stylesheet" href="~/css/id_create.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="~/js/github-config.js"></script>
 
 <!-- Loading Modal -->
 <div class="modal fade" id="loadingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loadingModalLabel" aria-hidden="true">
@@ -84,8 +86,34 @@
                         
                         <div class="mb-3">
                             <label for="signatureFile" class="form-label">Signature</label>
-                            <input type="file" class="form-control" id="signatureFile" name="SignatureFile" accept="image/*">
-                            <small class="text-muted">Upload an image of your signature</small>
+                            <div class="input-group">
+                                <input type="file" class="form-control" id="signatureFile" name="SignatureFile" accept="image/*">
+                                <button class="btn btn-outline-secondary" type="button" id="signaturePadBtn">
+                                    <i class="bi bi-pencil-fill"></i> Draw Signature
+                                </button>
+                            </div>
+                            <small class="text-muted">Upload an image of your signature or draw it below</small>
+                            
+                            <!-- Signature Pad modal -->
+                            <div class="modal fade" id="signaturePadModal" tabindex="-1" aria-labelledby="signaturePadModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="signaturePadModalLabel">Draw Your Signature</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="signature-pad-container">
+                                                <canvas id="signaturePad" class="signature-pad"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" id="clearSignatureBtn">Clear</button>
+                                            <button type="button" class="btn btn-primary" id="saveSignatureBtn">Save Signature</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="mb-3">
@@ -95,8 +123,71 @@
                         
                         <div class="mb-3">
                             <label for="photoFile" class="form-label">ID Photo</label>
-                            <input type="file" class="form-control" id="photoFile" name="PhotoFile" accept="image/*">
+                            <div class="input-group">
+                                <input type="file" class="form-control" id="photoFile" name="PhotoFile" accept="image/*" capture="environment">
+                                <button class="btn btn-outline-secondary" type="button" id="cameraBtn">
+                                    <i class="bi bi-camera-fill"></i> Use Camera
+                                </button>
+                            </div>
                             <small class="text-muted">2x2 ID picture with white background</small>
+                            
+                            <!-- Camera modal -->
+                            <div class="modal fade" id="cameraModal" tabindex="-1" aria-labelledby="cameraModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="cameraModalLabel">Take ID Photo</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="camera-container">
+                                                <!-- Camera selection -->
+                                                <div class="mb-3">
+                                                    <label for="cameraSelect" class="form-label">Select Camera</label>
+                                                    <select class="form-select" id="cameraSelect">
+                                                        <option value="">Loading cameras...</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <!-- Camera preview -->
+                                                <div class="camera-preview-container">
+                                                    <video id="cameraFeed" autoplay playsinline class="camera-preview"></video>
+                                                    <canvas id="photoCanvas" style="display: none;"></canvas>
+                                                    <div class="camera-overlay">
+                                                        <div class="camera-guide">
+                                                            <div class="guide-text">Align face within the frame</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Captured photo preview -->
+                                                <div class="captured-preview-container d-none">
+                                                    <img id="capturedPhoto" class="captured-preview" alt="Captured photo">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="camera-controls">
+                                                <button type="button" class="btn btn-secondary" id="cancelPhotoBtn" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-primary" id="switchCameraBtn">
+                                                    <i class="bi bi-arrow-repeat"></i> Switch Camera
+                                                </button>
+                                                <button type="button" class="btn btn-success" id="capturePhotoBtn">
+                                                    <i class="bi bi-camera-fill"></i> Take Photo
+                                                </button>
+                                            </div>
+                                            <div class="preview-controls d-none">
+                                                <button type="button" class="btn btn-warning" id="retakePhotoBtn">
+                                                    <i class="bi bi-arrow-counterclockwise"></i> Retake
+                                                </button>
+                                                <button type="button" class="btn btn-success" id="usePhotoBtn">
+                                                    <i class="bi bi-check-lg"></i> Use Photo
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -396,6 +487,90 @@
     <iframe id="printFrame" name="printFrame" style="display: none;"></iframe>
 </div>
 
+<style>
+.signature-pad-container {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.signature-pad {
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+
+.camera-preview-container {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 8px;
+}
+
+.camera-preview {
+    width: 100%;
+    height: auto;
+    transform: scaleX(-1); /* Mirror the preview */
+}
+
+.camera-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera-guide {
+    width: 320px;
+    height: 320px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    position: relative;
+}
+
+.guide-text {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.captured-preview-container {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.captured-preview {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+
+.camera-controls, .preview-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    width: 100%;
+}
+</style>
+
 @section Scripts {
     <script src="~/js/id-card-generator.js"></script>
     <script>
@@ -404,328 +579,309 @@
             const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
             const loadingMessage = document.getElementById('loadingMessage');
             const loadingDescription = document.getElementById('loadingDescription');
-
-            // Check authentication state
-            auth.onAuthStateChanged(async (user) => {
-                if (!user) {
-                    // Redirect to login if not authenticated
-                    window.location.href = '/Identity/Login';
-                    return;
-                }
-
-                try {
-                    // Show loading modal for form pre-filling
-                    loadingMessage.textContent = 'Loading User Data';
-                    loadingDescription.textContent = 'Please wait while we fetch your information...';
-                    loadingModal.show();
-
-                    // Get user data from Firebase
-                    const userSnapshot = await database.ref(`users/${user.uid}`).once('value');
-                    const userData = userSnapshot.val();
-
-                    if (userData) {
-                        // Helper function to safely set form values
-                        function setFormValue(elementId, value) {
-                            const element = document.getElementById(elementId);
-                            if (element && value) {
-                                element.value = value;
-                            }
-                        }
-
-                        // Pre-fill form with user data (only if values exist)
-                        setFormValue('firstName', userData.firstName);
-                        setFormValue('middleName', userData.middleName);
-                        setFormValue('lastName', userData.lastName);
-                        setFormValue('suffix', userData.suffix);
-                        setFormValue('addressLine1', userData.addressLine1);
-                        setFormValue('addressLine2', userData.addressLine2);
-                        setFormValue('dateOfBirth', userData.birthDate);
-                        setFormValue('sex', userData.sex);
-                        setFormValue('emergencyContactName', userData.emergencyContactName);
-                        setFormValue('emergencyContactNo', userData.emergencyContactNumber);
-
-                        // Check if user has an existing ID card
-                        const idCardSnapshot = await database.ref(`users/${user.uid}/idCards`).once('value');
-                        const idCardData = idCardSnapshot.val();
-
-                        if (idCardData) {
-                            // Pre-fill ID card specific data (only if values exist)
-                            setFormValue('pwdIdNo', idCardData.pwdIdNo);
-                            setFormValue('disabilityType', idCardData.disabilityType);
-                            setFormValue('expirationDate', idCardData.expirationDate);
-                            setFormValue('dateIssued', idCardData.dateIssued);
-                            setFormValue('bloodType', idCardData.bloodType);
-
-                            // Load existing images if available
-                            if (idCardData.photoID) {
-                                document.getElementById('preview-photo').src = idCardData.photoID;
-                            }
-                            if (idCardData.signature) {
-                                const signatureContainer = document.getElementById('preview-signature');
-                                signatureContainer.innerHTML = '';
-                                const img = document.createElement('img');
-                                img.src = idCardData.signature;
-                                img.style.maxHeight = '30px';
-                                signatureContainer.appendChild(img);
-                            }
-                        }
-                    }
-                } catch (error) {
-                    console.error('Error loading user data:', error);
-                    // Don't show error alert for missing data, just log it
-                    console.log('Some user data may be missing, continuing with form...');
-                } finally {
-                    // Hide loading modal after form is pre-filled
-                    loadingModal.hide();
-                }
-            });
-
-            // Save ID Card button click handler
-            document.getElementById('saveIdBtn').addEventListener('click', async function(e) {
+            
+            // Get GitHub configuration from external file
+            const { username, repo, branch, token } = window.githubConfig;
+            
+            // Camera variables
+            let photoStream = null;
+            let photoDataURL = null;
+            let signatureDataURL = null;
+            
+            // Initialize camera modal
+            const cameraModal = new bootstrap.Modal(document.getElementById('cameraModal'));
+            const signaturePadModal = new bootstrap.Modal(document.getElementById('signaturePadModal'));
+            
+            // Initialize signature pad
+            const signaturePad = document.getElementById('signaturePad');
+            const signaturePadCtx = signaturePad.getContext('2d');
+            let isDrawing = false;
+            let lastX = 0;
+            let lastY = 0;
+            
+            // Set canvas size
+            function resizeSignaturePad() {
+                const container = signaturePad.parentElement;
+                signaturePad.width = container.offsetWidth;
+                signaturePad.height = container.offsetHeight;
+                signaturePadCtx.lineWidth = 2;
+                signaturePadCtx.lineCap = 'round';
+                signaturePadCtx.lineJoin = 'round';
+                signaturePadCtx.strokeStyle = '#000';
+            }
+            
+            // Initialize signature pad
+            resizeSignaturePad();
+            window.addEventListener('resize', resizeSignaturePad);
+            
+            // Signature pad event listeners
+            signaturePad.addEventListener('mousedown', startDrawing);
+            signaturePad.addEventListener('mousemove', draw);
+            signaturePad.addEventListener('mouseup', stopDrawing);
+            signaturePad.addEventListener('mouseout', stopDrawing);
+            
+            // Touch events for mobile
+            signaturePad.addEventListener('touchstart', handleTouch);
+            signaturePad.addEventListener('touchmove', handleTouch);
+            signaturePad.addEventListener('touchend', stopDrawing);
+            
+            function handleTouch(e) {
                 e.preventDefault();
-
-                // Validate form
-                if (!document.getElementById('idCardForm').checkValidity()) {
-                    document.getElementById('idCardForm').reportValidity();
-                    return;
+                const touch = e.touches[0];
+                const mouseEvent = new MouseEvent(e.type === 'touchstart' ? 'mousedown' : 'mousemove', {
+                    clientX: touch.clientX,
+                    clientY: touch.clientY
+                });
+                signaturePad.dispatchEvent(mouseEvent);
+            }
+            
+            function startDrawing(e) {
+                isDrawing = true;
+                [lastX, lastY] = [e.offsetX, e.offsetY];
+            }
+            
+            function draw(e) {
+                if (!isDrawing) return;
+                signaturePadCtx.beginPath();
+                signaturePadCtx.moveTo(lastX, lastY);
+                signaturePadCtx.lineTo(e.offsetX, e.offsetY);
+                signaturePadCtx.stroke();
+                [lastX, lastY] = [e.offsetX, e.offsetY];
+            }
+            
+            function stopDrawing() {
+                isDrawing = false;
+            }
+            
+            // Clear signature button
+            document.getElementById('clearSignatureBtn').addEventListener('click', function() {
+                signaturePadCtx.clearRect(0, 0, signaturePad.width, signaturePad.height);
+            });
+            
+            // Save signature button
+            document.getElementById('saveSignatureBtn').addEventListener('click', function() {
+                signatureDataURL = signaturePad.toDataURL('image/png');
+                const signatureContainer = document.getElementById('preview-signature');
+                signatureContainer.innerHTML = '';
+                const img = document.createElement('img');
+                img.src = signatureDataURL;
+                img.style.maxHeight = '30px';
+                signatureContainer.appendChild(img);
+                signaturePadModal.hide();
+            });
+            
+            // Signature pad button click handler
+            document.getElementById('signaturePadBtn').addEventListener('click', function() {
+                signaturePadModal.show();
+            });
+            
+            // Photo camera button click handler
+            document.getElementById('cameraBtn').addEventListener('click', function() {
+                startCamera();
+                cameraModal.show();
+            });
+            
+            // Photo modal buttons
+            document.getElementById('capturePhotoBtn').addEventListener('click', function() {
+                captureImage();
+            });
+            
+            document.getElementById('usePhotoBtn').addEventListener('click', function() {
+                useImage();
+                cameraModal.hide();
+            });
+            
+            document.getElementById('retakePhotoBtn').addEventListener('click', function() {
+                retakeImage();
+            });
+            
+            document.getElementById('cancelPhotoBtn').addEventListener('click', function() {
+                stopCamera();
+                cameraModal.hide();
+            });
+            
+            // When a file is selected for photo, preview it
+            document.getElementById('photoFile').addEventListener('change', function(e) {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        photoDataURL = e.target.result;
+                        document.getElementById('preview-photo').src = photoDataURL;
+                    };
+                    reader.readAsDataURL(this.files[0]);
                 }
-
-                try {
-                    const user = auth.currentUser;
-                    if (!user) {
-                        throw new Error('User not authenticated');
+            });
+            
+            // When a file is selected for signature, preview it
+            document.getElementById('signatureFile').addEventListener('change', function(e) {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        signatureDataURL = e.target.result;
+                        const signatureContainer = document.getElementById('preview-signature');
+                        signatureContainer.innerHTML = '';
+                        const img = document.createElement('img');
+                        img.src = signatureDataURL;
+                        img.style.maxHeight = '30px';
+                        signatureContainer.appendChild(img);
+                    };
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+            
+            // Modal events to stop camera when hidden
+            document.getElementById('cameraModal').addEventListener('hidden.bs.modal', function() {
+                stopCamera();
+            });
+            
+            // Function to start the camera
+            function startCamera() {
+                const constraints = {
+                    video: {
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 },
+                        facingMode: 'user'
                     }
-
-                    // Show loading modal for saving
-                    loadingMessage.textContent = 'Saving ID Card';
-                    loadingDescription.textContent = 'Please wait while we process and save your ID card...';
-                    loadingModal.show();
-
-                    console.log('Starting ID card save process...');
-                    console.log('Current user:', user.uid);
-
-                    // Function to update preview with form values
-                    function updatePreview() {
-                        // Front ID
-                        document.getElementById('preview-pwdid').textContent = document.getElementById('pwdIdNo').value || '0000-0000-0000-0000';
-                        
-                        // Full name
-                        var firstName = document.getElementById('firstName').value || '';
-                        var middleName = document.getElementById('middleName').value || '';
-                        var lastName = document.getElementById('lastName').value || '';
-                        var suffix = document.getElementById('suffix').value || '';
-                        
-                        // Format name
-                        var middleInitial = middleName ? middleName.charAt(0) + '. ' : '';
-                        var fullName = firstName + ' ' + middleInitial + lastName + (suffix ? ', ' + suffix : '');
-                        document.getElementById('preview-fullname').textContent = fullName || 'Juan Dela Cruz';
-                        
-                        // Disability
-                        var disability = document.getElementById('disabilityType');
-                        document.getElementById('preview-disability').textContent = 
-                            disability.options[disability.selectedIndex].value || 'Insert Disability';
-                        
-                        // Expiry
-                        var expiryDate = document.getElementById('expirationDate').value;
-                        if (expiryDate) {
-                            var date = new Date(expiryDate);
-                            var options = { year: 'numeric', month: 'long', day: 'numeric' };
-                            document.getElementById('preview-expiry').textContent = date.toLocaleDateString('en-US', options);
-                        }
-                        
-                        // Back ID
-                        document.getElementById('preview-address1').textContent = 
-                            document.getElementById('addressLine1').value || 'Apt/House Number, Bldg Name, Str Name.';
-                        document.getElementById('preview-address2').textContent = 
-                            document.getElementById('addressLine2').value || 'Brgy, City, Country, Zip Code';
-                        
-                        // Date of birth
-                        var dobDate = document.getElementById('dateOfBirth').value;
-                        if (dobDate) {
-                            var date = new Date(dobDate);
-                            var options = { year: 'numeric', month: 'long', day: 'numeric' };
-                            document.getElementById('preview-dob').textContent = date.toLocaleDateString('en-US', options);
-                        }
-                        
-                        // Date issued
-                        var issuedDate = document.getElementById('dateIssued').value;
-                        if (issuedDate) {
-                            var date = new Date(issuedDate);
-                            var options = { year: 'numeric', month: 'long', day: 'numeric' };
-                            document.getElementById('preview-dateissued').textContent = date.toLocaleDateString('en-US', options);
-                        }
-                        
-                        // Sex
-                        var sex = document.getElementById('sex');
-                        document.getElementById('preview-sex').textContent = 
-                            sex.options[sex.selectedIndex].value || 'Male';
-                        
-                        // Blood type
-                        var bloodType = document.getElementById('bloodType');
-                        document.getElementById('preview-bloodtype').textContent = 
-                            bloodType.options[bloodType.selectedIndex].value || 'X+-';
-                        
-                        // Emergency contact
-                        document.getElementById('preview-emergency-name').textContent = 
-                            document.getElementById('emergencyContactName').value || 'Juan Dela Cruz Sr.';
-                        document.getElementById('preview-emergency-contact').textContent = 
-                            document.getElementById('emergencyContactNo').value || '0912-345-6789';
-                    }
-
-                    // Update preview with form values
-                    console.log('Updating preview with form values...');
-                    updatePreview();
-                    console.log('Preview updated successfully');
-
-                    // Show the modal first (we need the elements to be visible for html2canvas)
-                    const previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
-                    previewModal.show();
-
-                    // Wait for modal to be fully visible
-                    setTimeout(async function() {
-                        try {
-                            console.log('Modal shown, preparing to capture front ID...');
-                            const frontTab = document.getElementById('front-tab');
-                            const backTab = document.getElementById('back-tab');
-
-                            // Make sure front tab is active
-                            frontTab.click();
-
-                            // Wait for tab to be visible
-                            setTimeout(async function() {
-                                try {
-                                    console.log('Capturing front ID...');
-                                    // Capture front ID card
-                                    const frontElement = document.querySelector('#front-tab-pane .card');
-                                    if (!frontElement) {
-                                        throw new Error('Front ID card element not found');
-                                    }
-                                    console.log('Front element found, generating canvas...');
-                                    
-                                    const frontCanvas = await html2canvas(frontElement, {
-                                        scale: 3,
-                                        backgroundColor: null,
-                                        useCORS: true,
-                                        width: 800,
-                                        height: 800 * (2.125/3.375)
-                                    });
-                                    console.log('Front canvas generated');
-                                    const frontDataURL = frontCanvas.toDataURL('image/png');
-                                    console.log('Front data URL generated');
-
-                                    // Now switch to back tab
-                                    backTab.click();
-
-                                    // Wait for back tab to be visible
-                                    setTimeout(async function() {
-                                        try {
-                                            console.log('Capturing back ID...');
-                                            const backElement = document.querySelector('#back-tab-pane .card');
-                                            if (!backElement) {
-                                                throw new Error('Back ID card element not found');
-                                            }
-                                            console.log('Back element found, generating canvas...');
-                                            
-                                            const backCanvas = await html2canvas(backElement, {
-                                                scale: 3,
-                                                backgroundColor: null,
-                                                useCORS: true,
-                                                width: 800,
-                                                height: 800 * (2.125/3.375)
-                                            });
-                                            console.log('Back canvas generated');
-                                            const backDataURL = backCanvas.toDataURL('image/png');
-                                            console.log('Back data URL generated');
-
-                                            // Get photo and signature data
-                                            console.log('Processing photo and signature...');
-                                            const photoFile = document.getElementById('photoFile').files[0];
-                                            const signatureFile = document.getElementById('signatureFile').files[0];
-                                            let photoDataURL = null;
-                                            let signatureDataURL = null;
-
-                                            if (photoFile) {
-                                                console.log('Reading photo file...');
-                                                photoDataURL = await readFileAsDataURL(photoFile);
-                                                console.log('Photo data URL generated');
-                                            }
-                                            if (signatureFile) {
-                                                console.log('Reading signature file...');
-                                                signatureDataURL = await readFileAsDataURL(signatureFile);
-                                                console.log('Signature data URL generated');
-                                            }
-
-                                            // Prepare ID card data
-                                            console.log('Preparing ID card data for Firebase...');
-                                            const idCardData = {
-                                                pwdIdNo: document.getElementById('pwdIdNo').value,
-                                                disabilityType: document.getElementById('disabilityType').value,
-                                                expirationDate: document.getElementById('expirationDate').value,
-                                                dateIssued: document.getElementById('dateIssued').value,
-                                                bloodType: document.getElementById('bloodType').value,
-                                                frontID: frontDataURL,
-                                                backID: backDataURL
-                                            };
-
-                                            if (photoDataURL) {
-                                                idCardData.photoID = photoDataURL;
-                                            }
-                                            if (signatureDataURL) {
-                                                idCardData.signature = signatureDataURL;
-                                            }
-
-                                            console.log('Saving to Firebase...');
-                                            console.log('Data size:', JSON.stringify(idCardData).length, 'bytes');
-                                            
-                                            // Save to Firebase
-                                            await database.ref(`users/${user.uid}/idCards`).set(idCardData);
-                                            console.log('Successfully saved to Firebase');
-
-                                            // Show success message and redirect
-                                            loadingDescription.textContent = 'Generating ID card images...';
-                                            setTimeout(function() {
-                                                loadingDescription.textContent = 'Processing images and saving data...';
-                                            }, 1000);
-                                            setTimeout(function() {
-                                                loadingModal.hide();
-                                                alert('ID Card saved successfully!');
-                                                window.location.href = '/ID_Cards/ID_Index';
-                                            }, 2000);
-                                        } catch (error) {
-                                            console.error('Error in back ID capture:', error);
-                                            throw error;
-                                        }
-                                    }, 300);
-                                } catch (error) {
-                                    console.error('Error in front ID capture:', error);
-                                    throw error;
-                                }
-                            }, 300);
-                        } catch (error) {
-                            console.error('Error in modal handling:', error);
-                            throw error;
-                        }
-                    }, 500);
-                } catch (error) {
-                    console.error('Error saving ID card:', error);
-                    console.error('Error details:', {
-                        message: error.message,
-                        stack: error.stack,
-                        name: error.name
+                };
+                
+                const videoElement = document.getElementById('cameraFeed');
+                const captureBtn = document.getElementById('capturePhotoBtn');
+                const useBtn = document.getElementById('usePhotoBtn');
+                const retakeBtn = document.getElementById('retakePhotoBtn');
+                
+                // Reset UI
+                videoElement.style.display = 'block';
+                captureBtn.classList.remove('d-none');
+                useBtn.classList.add('d-none');
+                retakeBtn.classList.add('d-none');
+                document.getElementById('capturedPhoto').classList.add('d-none');
+                
+                navigator.mediaDevices.getUserMedia(constraints)
+                    .then(function(stream) {
+                        photoStream = stream;
+                        videoElement.srcObject = stream;
+                    })
+                    .catch(function(err) {
+                        console.error("Error accessing camera: ", err);
+                        alert("Could not access the camera. Please make sure camera access is enabled.");
                     });
-                    loadingModal.hide();
-                    alert('Error saving ID card: ' + error.message);
+            }
+            
+            // Function to stop the camera
+            function stopCamera() {
+                if (photoStream) {
+                    photoStream.getTracks().forEach(track => {
+                        track.stop();
+                    });
+                    photoStream = null;
                 }
-            });
-        });
+            }
+            
+            // Function to capture image from camera
+            function captureImage() {
+                const videoElement = document.getElementById('cameraFeed');
+                const canvasElement = document.getElementById('photoCanvas');
+                const capturedImgElement = document.getElementById('capturedPhoto');
+                const captureBtn = document.getElementById('capturePhotoBtn');
+                const useBtn = document.getElementById('usePhotoBtn');
+                const retakeBtn = document.getElementById('retakePhotoBtn');
+                
+                // Set canvas dimensions to match video
+                canvasElement.width = videoElement.videoWidth;
+                canvasElement.height = videoElement.videoHeight;
+                
+                // Draw the video frame to the canvas
+                canvasElement.getContext('2d').drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+                
+                // Convert canvas to data URL
+                const dataURL = canvasElement.toDataURL('image/png');
+                
+                // Set the captured image and data URL
+                capturedImgElement.src = dataURL;
+                photoDataURL = dataURL;
+                
+                // Update UI
+                videoElement.style.display = 'none';
+                capturedImgElement.classList.remove('d-none');
+                captureBtn.classList.add('d-none');
+                useBtn.classList.remove('d-none');
+                retakeBtn.classList.remove('d-none');
+            }
+            
+            // Function to use captured image
+            function useImage() {
+                document.getElementById('preview-photo').src = photoDataURL;
+                stopCamera();
+            }
+            
+            // Function to retake image
+            function retakeImage() {
+                const videoElement = document.getElementById('cameraFeed');
+                const capturedImgElement = document.getElementById('capturedPhoto');
+                const captureBtn = document.getElementById('capturePhotoBtn');
+                const useBtn = document.getElementById('usePhotoBtn');
+                const retakeBtn = document.getElementById('retakePhotoBtn');
+                
+                // Reset UI
+                videoElement.style.display = 'block';
+                capturedImgElement.classList.add('d-none');
+                captureBtn.classList.remove('d-none');
+                useBtn.classList.add('d-none');
+                retakeBtn.classList.add('d-none');
+            }
 
-        function readFileAsDataURL(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = (e) => resolve(e.target.result);
-                reader.onerror = (e) => reject(e);
-                reader.readAsDataURL(file);
-            });
-        }
+            if (userData) {
+                // Helper function to safely set form values
+                function setFormValue(elementId, value) {
+                    const element = document.getElementById(elementId);
+                    if (element && value) {
+                        element.value = value;
+                    }
+                }
+
+                // Pre-fill form with user data (only if values exist)
+                setFormValue('firstName', userData.firstName);
+                setFormValue('middleName', userData.middleName);
+                setFormValue('lastName', userData.lastName);
+                setFormValue('suffix', userData.suffix);
+                setFormValue('addressLine1', userData.addressLine1);
+                setFormValue('addressLine2', userData.addressLine2);
+                setFormValue('dateOfBirth', userData.birthDate || userData.dateOfBirth); // Try both fields
+                setFormValue('sex', userData.sex);
+                setFormValue('emergencyContactName', userData.emergencyContactName);
+                setFormValue('emergencyContactNo', userData.emergencyContactNumber);
+                setFormValue('bloodType', userData.bloodType);
+                setFormValue('disabilityType', userData.disabilityType);
+
+                // Check if user has an existing ID card
+                const idCardSnapshot = await database.ref(`users/${user.uid}/idCards`).once('value');
+                const idCardData = idCardSnapshot.val();
+
+                if (idCardData) {
+                    // Pre-fill ID card specific data (only if values exist)
+                    setFormValue('pwdIdNo', idCardData.pwdIdNo || userData.pwdIdNo); // Try both locations
+                    setFormValue('expirationDate', idCardData.expirationDate);
+                    setFormValue('dateIssued', idCardData.dateIssued);
+
+                    // Load existing images if available
+                    if (idCardData.idPhoto) {
+                        document.getElementById('preview-photo').src = idCardData.idPhoto;
+                        photoDataURL = idCardData.idPhoto;
+                    }
+                    if (idCardData.signaturePhoto) {
+                        const signatureContainer = document.getElementById('preview-signature');
+                        signatureContainer.innerHTML = '';
+                        const img = document.createElement('img');
+                        img.src = idCardData.signaturePhoto;
+                        img.style.maxHeight = '30px';
+                        signatureContainer.appendChild(img);
+                        signatureDataURL = idCardData.signaturePhoto;
+                    }
+                } else {
+                    // If no ID card data exists, try to get pwdIdNo from user data
+                    setFormValue('pwdIdNo', userData.pwdIdNo);
+                }
+            }
+        });
     </script>
-} 
+}

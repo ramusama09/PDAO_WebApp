@@ -239,14 +239,10 @@
                     const userCredential = await auth.createUserWithEmailAndPassword(email, password);
                     const user = userCredential.user;
                     
-                    // Combine first and last name for display name
-                    const fullName = `${userData.firstName} ${userData.lastName}`;
-                    
                     // Save all user data to realtime database
                     await database.ref('users/' + user.uid).set({
                         firstName: userData.firstName,
                         lastName: userData.lastName,
-                        fullName: fullName,
                         email: email,
                         contactNumber: userData.contactNumber,
                         addressLine1: userData.addressLine1,
@@ -262,7 +258,7 @@
                     
                     // Update user profile
                     await user.updateProfile({
-                        displayName: fullName
+                        displayName: firstName + " " + lastName
                     });
                     
                     // Display success message

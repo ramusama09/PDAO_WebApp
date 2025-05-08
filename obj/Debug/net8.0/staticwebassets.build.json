@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dnDcvf6+CUJ0AVl/ybyC0iKNS3Rk7A2bDv0DTK4Vr/M=",
+  "Hash": "9VZFnXbf8MH4jvRmb4+bfC7gS2tG8QagWU+0lTRW30w=",
   "Source": "PDAO_WebApp",
   "BasePath": "_content/PDAO_WebApp",
   "Mode": "Default",
@@ -115,8 +115,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gfrxsz0nh7",
-      "Integrity": "HNEemWlXQMsl79vTWi5vKrK2T+4vpcQz0ph3mLj2C0Y=",
+      "Fingerprint": "dogon8onj5",
+      "Integrity": "bUHsTeQDXoFWAdgc1JTR9abnDzUOmqsff8hAoaLjQxU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\id_create.css"
@@ -136,8 +136,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "355sd07lql",
-      "Integrity": "B+YTU8nowWx5U2MdyhGq0oekCGVdwivJOTWxa64NEnk=",
+      "Fingerprint": "bv1osj29rr",
+      "Integrity": "d0cu673m99tWr5X+hlgR4VX51h4nbH7y2wKhHOy2LOE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\id_index.css"
@@ -393,6 +393,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\firebase-init.js"
+    },
+    {
+      "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\github-config.js",
+      "SourceId": "PDAO_WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\",
+      "BasePath": "_content/PDAO_WebApp",
+      "RelativePath": "js/github-config#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8zybwvhle6",
+      "Integrity": "1NHHVgbH/MZyL6a+N1VH+itVZ7nKFxEutLVYIsF9QqY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\github-config.js"
     },
     {
       "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
@@ -1653,6 +1674,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\pdao-webapp-default-rtdb-users-export.json",
+      "SourceId": "PDAO_WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\",
+      "BasePath": "_content/PDAO_WebApp",
+      "RelativePath": "pdao-webapp-default-rtdb-users-export#[.{fingerprint}]?.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "r5vbg57m4w",
+      "Integrity": "f6YOio+OcSgmkwDwSWTJZFidxDmqxO+1zx78OYj1rQw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdao-webapp-default-rtdb-users-export.json"
     }
   ],
   "Endpoints": [
@@ -1831,7 +1873,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2996"
+          "Value": "3498"
         },
         {
           "Name": "Content-Type",
@@ -1839,11 +1881,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HNEemWlXQMsl79vTWi5vKrK2T+4vpcQz0ph3mLj2C0Y=\""
+          "Value": "\"bUHsTeQDXoFWAdgc1JTR9abnDzUOmqsff8hAoaLjQxU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 May 2025 08:41:23 GMT"
+          "Value": "Thu, 08 May 2025 06:03:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1853,12 +1895,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HNEemWlXQMsl79vTWi5vKrK2T+4vpcQz0ph3mLj2C0Y="
+          "Value": "sha256-bUHsTeQDXoFWAdgc1JTR9abnDzUOmqsff8hAoaLjQxU="
         }
       ]
     },
     {
-      "Route": "css/id_create.gfrxsz0nh7.css",
+      "Route": "css/id_create.dogon8onj5.css",
       "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_create.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1868,7 +1910,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2996"
+          "Value": "3498"
         },
         {
           "Name": "Content-Type",
@@ -1876,11 +1918,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HNEemWlXQMsl79vTWi5vKrK2T+4vpcQz0ph3mLj2C0Y=\""
+          "Value": "\"bUHsTeQDXoFWAdgc1JTR9abnDzUOmqsff8hAoaLjQxU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 May 2025 08:41:23 GMT"
+          "Value": "Thu, 08 May 2025 06:03:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1890,7 +1932,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gfrxsz0nh7"
+          "Value": "dogon8onj5"
         },
         {
           "Name": "label",
@@ -1898,12 +1940,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-HNEemWlXQMsl79vTWi5vKrK2T+4vpcQz0ph3mLj2C0Y="
+          "Value": "sha256-bUHsTeQDXoFWAdgc1JTR9abnDzUOmqsff8hAoaLjQxU="
         }
       ]
     },
     {
-      "Route": "css/id_index.355sd07lql.css",
+      "Route": "css/id_index.bv1osj29rr.css",
       "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\css\\id_index.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1913,7 +1955,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4111"
+          "Value": "4852"
         },
         {
           "Name": "Content-Type",
@@ -1921,11 +1963,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B+YTU8nowWx5U2MdyhGq0oekCGVdwivJOTWxa64NEnk=\""
+          "Value": "\"d0cu673m99tWr5X+hlgR4VX51h4nbH7y2wKhHOy2LOE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 05:01:05 GMT"
+          "Value": "Thu, 08 May 2025 06:39:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1935,7 +1977,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "355sd07lql"
+          "Value": "bv1osj29rr"
         },
         {
           "Name": "label",
@@ -1943,7 +1985,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-B+YTU8nowWx5U2MdyhGq0oekCGVdwivJOTWxa64NEnk="
+          "Value": "sha256-d0cu673m99tWr5X+hlgR4VX51h4nbH7y2wKhHOy2LOE="
         }
       ]
     },
@@ -1958,7 +2000,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4111"
+          "Value": "4852"
         },
         {
           "Name": "Content-Type",
@@ -1966,11 +2008,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B+YTU8nowWx5U2MdyhGq0oekCGVdwivJOTWxa64NEnk=\""
+          "Value": "\"d0cu673m99tWr5X+hlgR4VX51h4nbH7y2wKhHOy2LOE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 05:01:05 GMT"
+          "Value": "Thu, 08 May 2025 06:39:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1980,7 +2022,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-B+YTU8nowWx5U2MdyhGq0oekCGVdwivJOTWxa64NEnk="
+          "Value": "sha256-d0cu673m99tWr5X+hlgR4VX51h4nbH7y2wKhHOy2LOE="
         }
       ]
     },
@@ -2969,6 +3011,88 @@
       ]
     },
     {
+      "Route": "js/github-config.8zybwvhle6.js",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\github-config.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "399"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1NHHVgbH/MZyL6a+N1VH+itVZ7nKFxEutLVYIsF9QqY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 06:19:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8zybwvhle6"
+        },
+        {
+          "Name": "label",
+          "Value": "js/github-config.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1NHHVgbH/MZyL6a+N1VH+itVZ7nKFxEutLVYIsF9QqY="
+        }
+      ]
+    },
+    {
+      "Route": "js/github-config.js",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\github-config.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "399"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1NHHVgbH/MZyL6a+N1VH+itVZ7nKFxEutLVYIsF9QqY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 06:19:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1NHHVgbH/MZyL6a+N1VH+itVZ7nKFxEutLVYIsF9QqY="
+        }
+      ]
+    },
+    {
       "Route": "js/id-card-generator.ejg4uxydkv.js",
       "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\js\\id-card-generator.js",
       "Selectors": [],
@@ -2991,7 +3115,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 04:40:31 GMT"
+          "Value": "Thu, 08 May 2025 04:22:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3036,7 +3160,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 04:40:31 GMT"
+          "Value": "Thu, 08 May 2025 04:22:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8049,6 +8173,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ftagU9z9Sf0eEqRwnlO1J4HffUhxioWb05irOnvz1hs="
+        }
+      ]
+    },
+    {
+      "Route": "pdao-webapp-default-rtdb-users-export.json",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\pdao-webapp-default-rtdb-users-export.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2445449"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"f6YOio+OcSgmkwDwSWTJZFidxDmqxO+1zx78OYj1rQw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 06:14:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-f6YOio+OcSgmkwDwSWTJZFidxDmqxO+1zx78OYj1rQw="
+        }
+      ]
+    },
+    {
+      "Route": "pdao-webapp-default-rtdb-users-export.r5vbg57m4w.json",
+      "AssetFile": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\wwwroot\\pdao-webapp-default-rtdb-users-export.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2445449"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"f6YOio+OcSgmkwDwSWTJZFidxDmqxO+1zx78OYj1rQw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 06:14:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "r5vbg57m4w"
+        },
+        {
+          "Name": "label",
+          "Value": "pdao-webapp-default-rtdb-users-export.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-f6YOio+OcSgmkwDwSWTJZFidxDmqxO+1zx78OYj1rQw="
         }
       ]
     }
