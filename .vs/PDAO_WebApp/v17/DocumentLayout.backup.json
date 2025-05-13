@@ -1,9 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\",
+  "WorkspaceRootPath": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\kyouko\\androidstudioprojects\\pdao_webapp\\pages\\id_cards\\id_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\itdd-p14\\onedrive\\documents\\github\\pdao_webapp1\\wwwroot\\css\\id_index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:wwwroot\\css\\id_index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\itdd-p14\\onedrive\\documents\\github\\pdao_webapp1\\pages\\id_cards\\id_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:pages\\id_cards\\id_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -23,12 +27,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "id_index.css",
+              "DocumentMoniker": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_index.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\id_index.css",
+              "ToolTip": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_index.css",
+              "RelativeToolTip": "wwwroot\\css\\id_index.css",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-13T02:45:17.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ID_Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\Pages\\ID_Cards\\ID_Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\ID_Cards\\ID_Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\ID_Cards\\ID_Index.cshtml",
-              "ToolTip": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\Pages\\ID_Cards\\ID_Index.cshtml",
+              "ToolTip": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\ID_Cards\\ID_Index.cshtml",
               "RelativeToolTip": "Pages\\ID_Cards\\ID_Index.cshtml",
-              "ViewState": "AgIAABQAAAAAAAAAAAAcwCUAAABUAAAAAAAAAA==",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAcwCsBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-08T06:32:46.185Z",
               "EditorCaption": ""

@@ -250,34 +250,54 @@
                         }
 
                         // Print button handler
-                        document.getElementById('printIdBtn').onclick = async function() {
-                            try {
-                                if (userData.idCards.frontID && userData.idCards.backID) {
-                                    const [frontBlobUrl, backBlobUrl] = await Promise.all([
-                                        getGitHubImage(userData.idCards.frontID),
-                                        getGitHubImage(userData.idCards.backID)
-                                    ]);
+                                document.getElementById('printIdBtn').onclick = async function() {
+            try {
+                if (userData.idCards.frontID && userData.idCards.backID) {
+                    const [frontBlobUrl, backBlobUrl] = await Promise.all([
+                        getGitHubImage(userData.idCards.frontID),
+                        getGitHubImage(userData.idCards.backID)
+                    ]);
 
-                                    document.getElementById('printFrontImg').src = frontBlobUrl;
-                                    document.getElementById('printBackImg').src = backBlobUrl;
-                                    document.getElementById('printContainer').style.display = 'block';
+                    // Update image sources
+                    const frontImg = document.getElementById('printFrontImg');
+                    const backImg = document.getElementById('printBackImg');
 
-                                    setTimeout(() => {
-                                        window.print();
-                                        setTimeout(() => {
-                                            document.getElementById('printContainer').style.display = 'none';
-                                            URL.revokeObjectURL(frontBlobUrl);
-                                            URL.revokeObjectURL(backBlobUrl);
-                                        }, 500);
-                                    }, 500);
-                                } else {
-                                    alert('ID card images are not available for printing.');
-                                }
-                            } catch (error) {
-                                console.error('Error preparing print:', error);
-                                alert('Error preparing images for print. Please try again.');
-                            }
-                        };
+                    frontImg.src = frontBlobUrl;
+                    backImg.src = backBlobUrl;
+
+                    // Set up the print container with front and back IDs side by side
+                    const printContainer = document.getElementById('printContainer');
+                    printContainer.style.display = 'block';
+
+                    const printContent = document.createElement('div');
+                    printContent.classList.add('print-content');
+                    printContent.innerHTML = `
+                        <div class="print-card">
+                            <img src="${frontBlobUrl}" class="print-card-img" />
+                            <img src="${backBlobUrl}" class="print-card-img" />
+                        </div>
+                    `;
+                    printContainer.innerHTML = ''; // Clear previous content
+                    printContainer.appendChild(printContent);
+
+                    // Delay print to ensure images are loaded
+                    setTimeout(() => {
+                        window.print();
+                        setTimeout(() => {
+                            printContainer.style.display = 'none';
+                            URL.revokeObjectURL(frontBlobUrl);
+                            URL.revokeObjectURL(backBlobUrl);
+                        }, 500);
+                    }, 500);
+                } else {
+                    alert('ID card images are not available for printing.');
+                }
+            } catch (error) {
+                console.error('Error preparing print:', error);
+                alert('Error preparing images for print. Please try again.');
+            }
+        };
+
                     } else {
                         // No existing ID card
                         createUpdateText.textContent = 'Create New ID Card';

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\PDAO_WebApp.csproj": {}
+    "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\PDAO_WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\PDAO_WebApp.csproj": {
+    "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\PDAO_WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\PDAO_WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\PDAO_WebApp.csproj",
         "projectName": "PDAO_WebApp",
-        "projectPath": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\PDAO_WebApp.csproj",
-        "packagesPath": "C:\\Users\\Kyouko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kyouko\\AndroidStudioProjects\\PDAO_WebApp\\obj\\",
+        "projectPath": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\PDAO_WebApp.csproj",
+        "packagesPath": "C:\\Users\\ITDD-P14\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Kyouko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ITDD-P14\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -69,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

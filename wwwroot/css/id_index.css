@@ -1,42 +1,49 @@
 ﻿@media print {
-    .card-header {
-        display: none;
+    .no-print {
+        display: none !important;
     }
 
-    .id-card {
-        border: 2px solid #000;
-        padding: 20px;
-        margin: 20px;
-        page-break-inside: avoid;
-    }
-
-    .id-card-header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .id-card-body {
+    .print-container {
         display: flex;
-        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Align items at the top */
+        padding-top: 1cm;
     }
 
-    .id-card-photo {
-        width: 200px;
+    .print-content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        page-break-before: always;
     }
 
-        .id-card-photo img {
-            width: 100%;
-            height: auto;
-        }
-
-    .id-card-info {
-        flex: 1;
+    .print-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0; /* No gap between front and back ID */
+        margin: 0;
     }
 
-        .id-card-info p {
-            margin: 5px 0;
-        }
+    .print-card-img {
+        width: 3.375in; /* Width of each image */
+        height: 2.125in; /* Height of each image */
+    }
+
+    /* Adjust the page size for portrait mode */
+    @page {
+        size: 8.5in 11in; /* Standard US letter size */
+        margin: 0;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
 }
+
 
 .id-card {
     border: 2px solid #000;
