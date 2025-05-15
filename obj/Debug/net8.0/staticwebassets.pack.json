@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\dashboard.css"
     },
     {
+      "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\dashboardAdmin.css",
+      "PackagePath": "staticwebassets\\css\\dashboardAdmin.css"
+    },
+    {
       "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_card_styles.css",
       "PackagePath": "staticwebassets\\css\\id_card_styles.css"
     },
@@ -63,6 +67,10 @@
     {
       "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\img\\qr_sample.png",
       "PackagePath": "staticwebassets\\img\\qr_sample.png"
+    },
+    {
+      "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\admin-dashboard.js",
+      "PackagePath": "staticwebassets\\js\\admin-dashboard.js"
     },
     {
       "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\auth-service.js",

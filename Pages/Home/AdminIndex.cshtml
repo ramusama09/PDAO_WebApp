@@ -1,0 +1,517 @@
+﻿@page
+@model PDAO_WebApp.Pages.Home.AdminIndexModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="~/css/dashboardAdmin.css" asp-append-version="true">
+
+<div class="dashboard-container">
+    <div class="dashboard-header fade-in">
+        <h2 class="dashboard-title">Welcome to Admin Dashboard</h2>
+        <p class="dashboard-subtitle">Here you can manage/view each user's ID and Data.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card p-3 rounded rounded-3">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="usersTable" class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Contact Details</th>
+                                    <th class="text-center">Disability</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Users data will be populated here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="viewModalLabel">User Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="viewForm">
+                    <div class="modal-body">
+                        <h5 class="text-success mb-3">Personal Information</h5>
+                        <div class="row mb-3">
+                            <h6 class="text-secondary">Name</h6>
+                            <div class="col-6">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" name="firstName" readonly>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Middle Name</label>
+                                <input type="text" class="form-control" name="middleName" readonly>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" name="lastName" readonly>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Suffix</label>
+                                <input type="text" class="form-control" name="suffix" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <h6 class="text-secondary">Sex and Age</h6>
+                            <div class="col-4">
+                                <label class="form-label">Sex</label>
+                                <input type="text" class="form-control" name="sex" readonly>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" name="birthDate" readonly>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label">Age</label>
+                                <input type="number" class="form-control" name="age" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <h6 class="text-secondary">Contact Information</h6>
+                            <div class="col-6">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" name="email" readonly>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Contact Number</label>
+                                <input type="tel" class="form-control" name="contactNumber" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <h6 class="text-secondary">Address</h6>
+                            <div class="col-6">
+                                <label class="form-label">Address Line 1</label>
+                                <input type="text" class="form-control" name="addressLine1" readonly>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Address Line 2</label>
+                                <input type="text" class="form-control" name="addressLine2" readonly>
+                            </div>
+                        </div>
+
+                        <h5 class="text-success mb-3">Health Information</h5>
+
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label class="form-label">Blood Type</label>
+                                <input type="text" class="form-control" name="bloodType" readonly>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Type of Disability</label>
+                                <input type="text" class="form-control" name="disabilityType" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <h6 class="text-secondary">Emergency Contact</h6>
+                            <div class="col-6">
+                                <label class="form-label">Emergency Contact Name</label>
+                                <input type="text" class="form-control" name="emergencyContactName" readonly>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Emergency Contact Number</label>
+                                <input type="text" class="form-control" name="emergencyContactNumber" readonly>
+                            </div>
+                        </div>
+
+                        <h5 class="text-success">Account Information</h5>
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <label class="form-label">PWD ID No.</label>
+                                <input type="text" class="form-control" name="pwdIdNo" readonly>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label">Date Issued</label>
+                                <input type="text" class="form-control" name="dateIssued" readonly>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label">Expiration Date</label>
+                                <input type="text" class="form-control" name="expirationDate" readonly>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label class="form-label">Front ID</label>
+                                <input type="text" class="form-control" name="frontID" readonly>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Back ID</label>
+                                <input type="text" class="form-control" name="backID" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title" id="editModalLabel">Edit User Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="editForm">
+                <div class="modal-body">
+                    <h5 class="text-success mb-3">Personal Information</h5>
+                    <div class="row mb-3">
+                        <h6 class="text-secondary">Name</h6>
+                        <div class="col-6">
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-control" name="firstName" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Middle Name</label>
+                            <input type="text" class="form-control" name="middleName">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-control" name="lastName" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Suffix</label>
+                            <input type="text" class="form-control" name="suffix">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <h6 class="text-secondary">Sex and Age</h6>
+                        <div class="col-4">
+                            <label class="form-label">Sex</label>
+                            <input type="text" class="form-control" name="sex" required>
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" name="birthDate" required>
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label">Age</label>
+                            <input type="number" class="form-control" name="age" required readonly>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <h6 class="text-secondary">Contact Information</h6>
+                        <div class="col-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" name="contactNumber" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <h6 class="text-secondary">Address</h6>
+                        <div class="col-6">
+                            <label class="form-label">Address Line 1</label>
+                            <input type="text" class="form-control" name="addressLine1" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Address Line 2</label>
+                            <input type="text" class="form-control" name="addressLine2" required>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mb-3">Health Information</h5>
+
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label class="form-label">Blood Type</label>
+                            <input type="text" class="form-control" name="bloodType" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Type of Disability</label>
+                            <input type="text" class="form-control" name="disabilityType" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <h6 class="text-secondary">Emergency Contact</h6>
+                        <div class="col-6">
+                            <label class="form-label">Emergency Contact Name</label>
+                            <input type="text" class="form-control" name="emergencyContactName" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Emergency Contact Number</label>
+                            <input type="text" class="form-control" name="emergencyContactNumber" required>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success">Account Information</h5>
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label class="form-label">PWD ID No.</label>
+                            <input type="text" class="form-control" name="pwdIdNo" required>
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label">Date Issued</label>
+                            <input type="text" class="form-control" name="dateIssued" required>
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label">Expiration Date</label>
+                            <input type="text" class="form-control" name="expirationDate" required readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label class="form-label">Front ID</label>
+                            <input type="text" class="form-control" name="frontID" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Back ID</label>
+                            <input type="text" class="form-control" name="backID" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const database = firebase.database();
+            const usersRef = database.ref('users');
+
+            usersRef.on('value', (snapshot) => {
+                const usersData = snapshot.val();
+                const tableBody = document.querySelector('#usersTable tbody');
+                tableBody.innerHTML = '';
+
+                for (const userId in usersData) {
+                    if (usersData.hasOwnProperty(userId)) {
+                        const user = usersData[userId];
+                        const middleInitial = user.middleName ? user.middleName.charAt(0) + '.' : '';
+                        const fullName = `${user.firstName} ${middleInitial} ${user.lastName} ${user.suffix}`;
+
+                        const row = document.createElement('tr');
+
+                        // Name column
+                        const nameCell = document.createElement('td');
+                        nameCell.innerHTML = `
+                            <div class="d-flex align-items-center">
+                                <div class="status-indicator status-active"></div>
+                                <strong>${fullName}</strong>
+                            </div>
+                            <div class="text-muted small">Age: ${user.age || 'N/A'}</div>
+                        `;
+                        row.appendChild(nameCell);
+
+                        // Contact Details column
+                        const contactCell = document.createElement('td');
+                        contactCell.innerHTML = `
+                            <div><i class="fas fa-phone me-2 text-muted"></i> ${user.contactNumber || 'N/A'}</div>
+                            <div><i class="fas fa-envelope me-2 text-muted"></i> ${user.email || 'N/A'}</div>
+                        `;
+                        row.appendChild(contactCell);
+
+                        // Disability column
+                        const disabilityCell = document.createElement('td');
+                        disabilityCell.classList.add('text-center');
+                        disabilityCell.innerHTML = `
+                            <span class="badge bg-success bg-opacity-10 text-success">${user.disabilityType || 'N/A'}</span>
+                        `;
+                        row.appendChild(disabilityCell);
+
+                        // Action column
+                        const actionCell = document.createElement('td');
+                        actionCell.classList.add('text-center');
+                            actionCell.innerHTML = `
+                            <div class="action-buttons">
+                                <button class="btn-action btn-edit" onclick="editUser('${userId}')">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="btn-action btn-view" onclick="viewUser('${userId}')">
+                                    <i class="fas fa-eye"></i> View
+                                </button>
+                                <button class="btn-action btn-print" onclick="printUser('${userId}')">
+                                    <i class="fas fa-print"></i> Print
+                                </button>
+                            </div>
+                        `;
+
+                        row.appendChild(actionCell);
+
+                        tableBody.appendChild(row);
+                    }
+                }
+            }, (error) => {
+                console.error("Error fetching users:", error);
+            });
+        });
+
+        function editUser(userId) {
+            // Implement edit functionality
+            console.log("Edit user:", userId);
+        }
+
+        function viewUser(userId) {
+            // Implement view functionality
+            console.log("View user:", userId);
+        }
+
+        function printUser(userId) {
+            // Implement print functionality
+            console.log("Print user:", userId);
+        }
+    </script>
+    <script>
+        // Update your viewUser and editUser functions
+        function viewUser(userId) {
+            const userRef = firebase.database().ref('users/' + userId);
+            userRef.once('value').then((snapshot) => {
+                const user = snapshot.val();
+                const modal = new bootstrap.Modal(document.getElementById('viewModal'));
+
+                // Populate view modal
+                // Populate edit form
+                document.querySelector('#viewForm [name="firstName"]')
+                    .value = user.firstName || '';
+                document.querySelector('#viewForm [name="lastName"]')
+                    .value = user.lastName || '';
+                document.querySelector('#viewForm [name="middleName"]')
+                    .value = user.middleName || '';
+                document.querySelector('#viewForm [name="suffix"]')
+                    .value = user.suffix || '';
+                document.querySelector('#viewForm [name="sex"]')
+                    .value = user.sex || '';
+                document.querySelector('#viewForm [name="birthDate"]')
+                    .value = user.birthDate || '';
+                document.querySelector('#viewForm [name="age"]')
+                    .value = user.age || '';
+                document.querySelector('#viewForm [name="email"]')
+                    .value = user.email || '';
+                document.querySelector('#viewForm [name="contactNumber"]')
+                    .value = user.contactNumber || '';
+                document.querySelector('#viewForm [name="addressLine1"]')
+                    .value = user.addressLine1 || '';
+                document.querySelector('#viewForm [name="addressLine2"]')
+                    .value = user.addressLine2 || '';
+                document.querySelector('#viewForm [name="bloodType"]')
+                    .value = user.bloodType || '';
+                document.querySelector('#viewForm [name="disabilityType"]')
+                    .value = user.disabilityType || '';
+                document.querySelector('#viewForm [name="emergencyContactName"]')
+                    .value = user.emergencyContactName || '';
+                document.querySelector('#viewForm [name="emergencyContactNumber"]')
+                    .value = user.emergencyContactNumber || '';
+                document.querySelector('#viewForm [name="pwdIdNo"]')
+                    .value = user.idCards.pwdIdNo || '';
+                document.querySelector('#viewForm [name="dateIssued"]')
+                    .value = user.idCards.dateIssued || '';
+                document.querySelector('#viewForm [name="expirationDate"]')
+                    .value = user.idCards.expirationDate || '';
+                document.querySelector('#viewForm [name="frontID"]')
+                    .value = user.idCards.frontID || '';
+                document.querySelector('#viewForm [name="backID"]')
+                    .value = user.idCards.backID || '';
+                modal.show();
+            });
+        }
+
+        function editUser(userId) {
+            const userRef = firebase.database().ref('users/' + userId);
+            userRef.once('value').then((snapshot) => {
+                const user = snapshot.val();
+                const modal = new bootstrap.Modal(document.getElementById('editModal'));
+
+                // Populate edit form
+                document.querySelector('#editForm [name="firstName"]')
+                    .value = user.firstName || '';
+                document.querySelector('#editForm [name="lastName"]')
+                    .value = user.lastName || '';
+                document.querySelector('#editForm [name="middleName"]')
+                    .value = user.middleName || '';
+                document.querySelector('#editForm [name="suffix"]')
+                    .value = user.suffix || '';
+                document.querySelector('#editForm [name="sex"]')
+                    .value = user.sex || '';
+                document.querySelector('#editForm [name="birthDate"]')
+                    .value = user.birthDate || '';
+                document.querySelector('#editForm [name="age"]')
+                    .value = user.age || '';
+                document.querySelector('#editForm [name="email"]')
+                    .value = user.email || '';
+                document.querySelector('#editForm [name="contactNumber"]')
+                    .value = user.contactNumber || '';
+                document.querySelector('#editForm [name="addressLine1"]')
+                    .value = user.addressLine1 || '';
+                document.querySelector('#editForm [name="addressLine2"]')
+                    .value = user.addressLine2 || '';
+                document.querySelector('#editForm [name="bloodType"]')
+                    .value = user.bloodType || '';
+                document.querySelector('#editForm [name="disabilityType"]')
+                    .value = user.disabilityType || '';
+                document.querySelector('#editForm [name="emergencyContactName"]')
+                    .value = user.emergencyContactName || '';
+                document.querySelector('#editForm [name="emergencyContactNumber"]')
+                    .value = user.emergencyContactNumber || '';
+                document.querySelector('#editForm [name="pwdIdNo"]')
+                    .value = user.idCards.pwdIdNo || '';
+                document.querySelector('#editForm [name="dateIssued"]')
+                    .value = user.idCards.dateIssued || '';
+                document.querySelector('#editForm [name="expirationDate"]')
+                    .value = user.idCards.expirationDate || '';
+                document.querySelector('#editForm [name="frontID"]')
+                    .value = user.idCards.frontID || '';
+                document.querySelector('#editForm [name="backID"]')
+                    .value = user.idCards.backID || '';
+                modal.show();
+            });
+        }
+
+        // Handle edit form submission
+        document.getElementById('editForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const updatedData = Object.fromEntries(formData.entries());
+
+            // Update Firebase data
+            const userId = ''; // Get the user ID from somewhere
+            firebase.database().ref('users/' + userId).update(updatedData)
+                .then(() => {
+                    bootstrap.Modal.getInstance(document.getElementById('editModal')).hide();
+                    alert('Successfully updated!');
+                })
+                .catch((error) => {
+                    console.error('Error updating:', error);
+                    alert('Update failed!');
+                });
+        });
+    </script>
+}

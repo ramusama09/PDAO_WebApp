@@ -102,3 +102,6 @@ C:\Users\ITDD-P14\OneDrive\Documents\GitHub\PDAO_WebApp1\obj\Debug\net8.0\refint
 C:\Users\ITDD-P14\OneDrive\Documents\GitHub\PDAO_WebApp1\obj\Debug\net8.0\PDAO_WebApp.pdb
 C:\Users\ITDD-P14\OneDrive\Documents\GitHub\PDAO_WebApp1\obj\Debug\net8.0\PDAO_WebApp.genruntimeconfig.cache
 C:\Users\ITDD-P14\OneDrive\Documents\GitHub\PDAO_WebApp1\obj\Debug\net8.0\ref\PDAO_WebApp.dll
+C:\Users\ITDD-P14\OneDrive\Documents\GitHub\PDAO_WebApp1\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\ITDD-P14\OneDrive\Documents\GitHub\PDAO_WebApp1\obj\Debug\net8.0\PDAO_WebApp.csproj.AssemblyReference.cache
+C:\Users\ITDD-P14\OneDrive\Documents\GitHub\PDAO_WebApp1\obj\Debug\net8.0\PDAO_Web.265160B1.Up2Date

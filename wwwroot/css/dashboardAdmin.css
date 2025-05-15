@@ -1,0 +1,199 @@
+﻿.table-responsive {
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+#usersTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+    #usersTable th {
+        font-weight: 600;
+        color: #2c3e50;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid #27ae60;
+    }
+
+    #usersTable td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ecf0f1;
+        vertical-align: middle;
+    }
+
+    #usersTable tr:last-child td {
+        border-bottom: none;
+    }
+
+    #usersTable tr:hover td {
+        background-color: #f8f9fa;
+    }
+
+.table-header {
+    background-color: #27ae60;
+    color: white !important;
+}
+
+    .table-header th {
+        border-bottom: none !important;
+        color: white !important;
+    }
+
+.action-buttons {
+    display: flex;
+    justify-content:center;
+    gap: 8px;
+}
+
+.btn-action {
+    position: relative;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid transparent;
+}
+
+    .btn-action i {
+        margin-right: 6px;
+        transition: all 0.2s ease;
+    }
+
+/* Consistent Color Variables */
+:root {
+    --yellow: #FFC107; /* Vibrant yellow */
+    --green: #4CAF50; /* Consistent green */
+    --blue: #2196F3; /* Bright blue */
+}
+
+/* Edit Button - Yellow to Green */
+.btn-edit {
+    background-color: var(--yellow);
+    color: #333;
+}
+
+    .btn-edit:hover {
+        color: white;
+    }
+
+    .btn-edit::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--green);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.3s ease-out;
+        z-index: -1;
+    }
+
+    .btn-edit:hover::after {
+        transform: scaleY(1);
+    }
+
+/* View Button - Green to Yellow */
+.btn-view {
+    background-color: var(--green);
+    color: white;
+}
+
+    .btn-view:hover {
+        color: #333;
+    }
+
+    .btn-view::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--yellow);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.3s ease-out;
+        z-index: -1;
+    }
+
+    .btn-view:hover::after {
+        transform: scaleY(1);
+    }
+
+/* Print Button - White to Blue */
+.btn-print {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+    .btn-print:hover {
+        color: white;
+    }
+
+    .btn-print::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--blue);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.3s ease-out;
+        z-index: -1;
+    }
+
+    .btn-print:hover::after {
+        transform: scaleY(1);
+    }
+
+/* Shared Hover Effects */
+.btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+    .btn-action:hover i {
+        transform: scale(1.15);
+    }
+
+.btn-action:active {
+    transform: translateY(0);
+}
+
+/* Zebra striping for rows */
+#usersTable tbody tr:nth-child(even) {
+    background-color: #f8fcf9;
+}
+
+/* Status indicator (optional) */
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-active {
+    background-color: #2ecc71;
+}
+
+.status-inactive {
+    background-color: #e74c3c;
+}

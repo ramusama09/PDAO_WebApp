@@ -1,4 +1,5 @@
 wwwroot\css\dashboard.css
+wwwroot\css\dashboardAdmin.css
 wwwroot\css\id_card_styles.css
 wwwroot\css\id_create.css
 wwwroot\css\id_index.css
@@ -13,6 +14,7 @@ wwwroot\img\PH_Flag.webp
 wwwroot\img\placeholder-logo.png
 wwwroot\img\PQ_Logo.jpg
 wwwroot\img\qr_sample.png
+wwwroot\js\admin-dashboard.js
 wwwroot\js\auth-service.js
 wwwroot\js\firebase-init.js
 wwwroot\js\github-config.js
