@@ -238,78 +238,72 @@
                         }
 
                         // Print button handler
-                        document.getElementById('printIdBtn').onclick = async function() {
-                            try {
-                                if (userData.idCards.frontID && userData.idCards.backID) {
-                                    const [frontBlobUrl, backBlobUrl] = await Promise.all([
-                                        getGitHubImage(userData.idCards.frontID),
-                                        getGitHubImage(userData.idCards.backID)
-                                    ]);
+                                document.getElementById('printIdBtn').onclick = async function () {
+            try {
+                if (userData.idCards.frontID && userData.idCards.backID) {
+                    const [frontBlobUrl, backBlobUrl] = await Promise.all([
+                        getGitHubImage(userData.idCards.frontID),
+                        getGitHubImage(userData.idCards.backID)
+                    ]);
 
-                                    // Create Image Elements for Better Control
-                                    const frontImg = new Image();
-                                    const backImg = new Image();
+                    const frontImg = new Image();
+                    const backImg = new Image();
 
-                                    frontImg.src = frontBlobUrl;
-                                    backImg.src = backBlobUrl;
+                    frontImg.src = frontBlobUrl;
+                    backImg.src = backBlobUrl;
 
-                                    // Wait until both images are fully loaded
-                                    await Promise.all([
-                                        new Promise((resolve) => frontImg.onload = resolve),
-                                        new Promise((resolve) => backImg.onload = resolve)
-                                    ]);
+                    await Promise.all([
+                        new Promise((resolve) => frontImg.onload = resolve),
+                        new Promise((resolve) => backImg.onload = resolve)
+                    ]);
 
-                                    // Set up the print container with front and back IDs side by side
-                                    const printContainer = document.getElementById('printContainer');
-                                    printContainer.style.display = 'block';
+                    const printContainer = document.getElementById('printContainer');
+                    printContainer.style.display = 'block';
+                    printContainer.innerHTML = '';
 
-                                    // Clear the print container to avoid any previous content
-                                    printContainer.innerHTML = '';
+                    const printContent = document.createElement('div');
+                    printContent.classList.add('print-content');
+                    printContent.innerHTML = `
+                        <div class="print-content">
+                            <img src="${frontBlobUrl}" class="print-image" style="width:3.375in;height:2.125in">
+                            <img src="${backBlobUrl}" class="print-image" style="width:3.375in;height:2.125in">
+                        </div>
+                    `;
+                    printContainer.appendChild(printContent);
 
-                                    // Create the print content and append images
-                                    const printContent = document.createElement('div');
-                                    printContent.classList.add('print-content');
-                                        // Replace existing print container setup with:
-                                        printContent.innerHTML = `
-                                        <div class="print-content">
-                                            <img src="${frontBlobUrl}"
-                                                 class="print-image"
-                                                 style="width:3.375in;height:2.125in">
-                                            <img src="${backBlobUrl}"
-                                                 class="print-image"
-                                                 style="width:3.375in;height:2.125in">
-                                        </div>
-                                        `;
-                                    printContainer.appendChild(printContent);
+                    setTimeout(() => {
+                        const printWindow = window.open('', '_blank');
+                        printWindow.document.write(`
+                            <html>
+                                <head>
+                                    <title>Print ID Card</title>
+                                    <link rel="stylesheet" href="/css/print.css" />
+                                </head>
+                                <body>
+                                    ${printContainer.innerHTML}
+                                </body>
+                            </html>
+                        `);
+                        printWindow.document.close();
+                        printWindow.focus();
+                        printWindow.print();
 
-                                    // Delay print to ensure images are loaded and print content is set up
-                                    setTimeout(() => {
-                                        const printWindow = window.open('', '_blank');
-                                        printWindow.document.write(`
-                                            <html>
-                                                <head>
-                                                    <title>Print ID Card</title>
-                                                    <link rel="stylesheet" href="/css/print.css" />
-                                                </head>
-                                                <body>
-                                                    ${printContainer.innerHTML}
-                                                </body>
-                                            </html>
-                                        `);
-                                        printWindow.document.close();
-                                        printWindow.focus();
-                                        printWindow.print();
-                                        printWindow.close();
-                                    }, 1000);
-                                } else {
-                                    alert('ID card images are not available for printing.');
-                                }
-                            } catch (error) {
-                                console.error('Error preparing print:', error);
-                                alert('Error preparing images for print. Please try again.');
-                            }
-                        };
+                        // After printing starts, wait 500ms, then clear the container
+                        setTimeout(() => {
+                            printContainer.innerHTML = '';
+                            printContainer.style.display = 'none';
+                        }, 10);
 
+                        printWindow.close();
+                    }, 10);
+                } else {
+                    alert('ID card images are not available for printing.');
+                }
+            } catch (error) {
+                console.error('Error preparing print:', error);
+                alert('Error preparing images for print. Please try again.');
+            }
+        };
 
                     } else {
                         // No existing ID card
