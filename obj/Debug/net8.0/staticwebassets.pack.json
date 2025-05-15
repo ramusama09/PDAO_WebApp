@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\id_index.css"
     },
     {
+      "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\print.css",
+      "PackagePath": "staticwebassets\\css\\print.css"
+    },
+    {
       "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -5,6 +5,7 @@
 }
 
 <link rel="stylesheet" href="~/css/id_index.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/print.css" asp-append-version="true" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <script src="~/js/github-config.js"></script>
 
@@ -108,20 +109,7 @@
 </div>
 
 <!-- Print Container (hidden by default, only for printing) -->
-<div id="printContainer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 9999;">
-    <div class="print-row">
-        <div class="print-card-container">
-            <div class="print-id-card">
-                <img id="printFrontImg" alt="Front ID Card">
-            </div>
-        </div>
-        <div class="print-card-container">
-            <div class="print-id-card">
-                <img id="printBackImg" alt="Back ID Card">
-            </div>
-        </div>
-    </div>
-</div>
+<div id="printContainer" style="display: none;"></div>
 
 @section Scripts {
     <script src="~/js/id-index.js"></script>
@@ -250,53 +238,78 @@
                         }
 
                         // Print button handler
-                                document.getElementById('printIdBtn').onclick = async function() {
-            try {
-                if (userData.idCards.frontID && userData.idCards.backID) {
-                    const [frontBlobUrl, backBlobUrl] = await Promise.all([
-                        getGitHubImage(userData.idCards.frontID),
-                        getGitHubImage(userData.idCards.backID)
-                    ]);
+                        document.getElementById('printIdBtn').onclick = async function() {
+                            try {
+                                if (userData.idCards.frontID && userData.idCards.backID) {
+                                    const [frontBlobUrl, backBlobUrl] = await Promise.all([
+                                        getGitHubImage(userData.idCards.frontID),
+                                        getGitHubImage(userData.idCards.backID)
+                                    ]);
 
-                    // Update image sources
-                    const frontImg = document.getElementById('printFrontImg');
-                    const backImg = document.getElementById('printBackImg');
+                                    // Create Image Elements for Better Control
+                                    const frontImg = new Image();
+                                    const backImg = new Image();
 
-                    frontImg.src = frontBlobUrl;
-                    backImg.src = backBlobUrl;
+                                    frontImg.src = frontBlobUrl;
+                                    backImg.src = backBlobUrl;
 
-                    // Set up the print container with front and back IDs side by side
-                    const printContainer = document.getElementById('printContainer');
-                    printContainer.style.display = 'block';
+                                    // Wait until both images are fully loaded
+                                    await Promise.all([
+                                        new Promise((resolve) => frontImg.onload = resolve),
+                                        new Promise((resolve) => backImg.onload = resolve)
+                                    ]);
 
-                    const printContent = document.createElement('div');
-                    printContent.classList.add('print-content');
-                    printContent.innerHTML = `
-                        <div class="print-card">
-                            <img src="${frontBlobUrl}" class="print-card-img" />
-                            <img src="${backBlobUrl}" class="print-card-img" />
-                        </div>
-                    `;
-                    printContainer.innerHTML = ''; // Clear previous content
-                    printContainer.appendChild(printContent);
+                                    // Set up the print container with front and back IDs side by side
+                                    const printContainer = document.getElementById('printContainer');
+                                    printContainer.style.display = 'block';
 
-                    // Delay print to ensure images are loaded
-                    setTimeout(() => {
-                        window.print();
-                        setTimeout(() => {
-                            printContainer.style.display = 'none';
-                            URL.revokeObjectURL(frontBlobUrl);
-                            URL.revokeObjectURL(backBlobUrl);
-                        }, 500);
-                    }, 500);
-                } else {
-                    alert('ID card images are not available for printing.');
-                }
-            } catch (error) {
-                console.error('Error preparing print:', error);
-                alert('Error preparing images for print. Please try again.');
-            }
-        };
+                                    // Clear the print container to avoid any previous content
+                                    printContainer.innerHTML = '';
+
+                                    // Create the print content and append images
+                                    const printContent = document.createElement('div');
+                                    printContent.classList.add('print-content');
+                                        // Replace existing print container setup with:
+                                        printContent.innerHTML = `
+                                        <div class="print-content">
+                                            <img src="${frontBlobUrl}"
+                                                 class="print-image"
+                                                 style="width:3.375in;height:2.125in">
+                                            <img src="${backBlobUrl}"
+                                                 class="print-image"
+                                                 style="width:3.375in;height:2.125in">
+                                        </div>
+                                        `;
+                                    printContainer.appendChild(printContent);
+
+                                    // Delay print to ensure images are loaded and print content is set up
+                                    setTimeout(() => {
+                                        const printWindow = window.open('', '_blank');
+                                        printWindow.document.write(`
+                                            <html>
+                                                <head>
+                                                    <title>Print ID Card</title>
+                                                    <link rel="stylesheet" href="/css/print.css" />
+                                                </head>
+                                                <body>
+                                                    ${printContainer.innerHTML}
+                                                </body>
+                                            </html>
+                                        `);
+                                        printWindow.document.close();
+                                        printWindow.focus();
+                                        printWindow.print();
+                                        printWindow.close();
+                                    }, 1000);
+                                } else {
+                                    alert('ID card images are not available for printing.');
+                                }
+                            } catch (error) {
+                                console.error('Error preparing print:', error);
+                                alert('Error preparing images for print. Please try again.');
+                            }
+                        };
+
 
                     } else {
                         // No existing ID card

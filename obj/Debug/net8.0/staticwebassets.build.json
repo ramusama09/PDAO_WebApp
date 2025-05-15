@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VZ6gqbA6yU4xU52IElUdf7SWSSltcwVk+PVM+kb2OKA=",
+  "Hash": "PmEHHHI78dTNI1oMVqPniW+/fsIvLV7KvWMrFp/Bj3Y=",
   "Source": "PDAO_WebApp",
   "BasePath": "_content/PDAO_WebApp",
   "Mode": "Default",
@@ -136,11 +136,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "srhstg0vlw",
-      "Integrity": "+IUkdyad3dwXpVfJs44GLPAAg6Jw9vw2lJX2hJw0gVk=",
+      "Fingerprint": "zhne9zz4n1",
+      "Integrity": "iUz3k6/2jPSxmbEk8Bw5vfTEhG3UM4qAFEIPTTT42p8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\id_index.css"
+    },
+    {
+      "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\print.css",
+      "SourceId": "PDAO_WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\",
+      "BasePath": "_content/PDAO_WebApp",
+      "RelativePath": "css/print#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ax7ujxd5x6",
+      "Integrity": "nqpfyoFLPnwtqMmlznj0PVSV0T27oFyykc9vwE6HkEE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\print.css"
     },
     {
       "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\site.css",
@@ -1955,7 +1976,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5526"
+          "Value": "4335"
         },
         {
           "Name": "Content-Type",
@@ -1963,11 +1984,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+IUkdyad3dwXpVfJs44GLPAAg6Jw9vw2lJX2hJw0gVk=\""
+          "Value": "\"iUz3k6/2jPSxmbEk8Bw5vfTEhG3UM4qAFEIPTTT42p8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 03:09:32 GMT"
+          "Value": "Thu, 15 May 2025 00:42:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1977,12 +1998,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+IUkdyad3dwXpVfJs44GLPAAg6Jw9vw2lJX2hJw0gVk="
+          "Value": "sha256-iUz3k6/2jPSxmbEk8Bw5vfTEhG3UM4qAFEIPTTT42p8="
         }
       ]
     },
     {
-      "Route": "css/id_index.srhstg0vlw.css",
+      "Route": "css/id_index.zhne9zz4n1.css",
       "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_index.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1992,7 +2013,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5526"
+          "Value": "4335"
         },
         {
           "Name": "Content-Type",
@@ -2000,11 +2021,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+IUkdyad3dwXpVfJs44GLPAAg6Jw9vw2lJX2hJw0gVk=\""
+          "Value": "\"iUz3k6/2jPSxmbEk8Bw5vfTEhG3UM4qAFEIPTTT42p8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 03:09:32 GMT"
+          "Value": "Thu, 15 May 2025 00:42:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2014,7 +2035,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "srhstg0vlw"
+          "Value": "zhne9zz4n1"
         },
         {
           "Name": "label",
@@ -2022,7 +2043,89 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+IUkdyad3dwXpVfJs44GLPAAg6Jw9vw2lJX2hJw0gVk="
+          "Value": "sha256-iUz3k6/2jPSxmbEk8Bw5vfTEhG3UM4qAFEIPTTT42p8="
+        }
+      ]
+    },
+    {
+      "Route": "css/print.ax7ujxd5x6.css",
+      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\print.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1291"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nqpfyoFLPnwtqMmlznj0PVSV0T27oFyykc9vwE6HkEE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 00:47:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ax7ujxd5x6"
+        },
+        {
+          "Name": "label",
+          "Value": "css/print.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nqpfyoFLPnwtqMmlznj0PVSV0T27oFyykc9vwE6HkEE="
+        }
+      ]
+    },
+    {
+      "Route": "css/print.css",
+      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\print.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1291"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nqpfyoFLPnwtqMmlznj0PVSV0T27oFyykc9vwE6HkEE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 00:47:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nqpfyoFLPnwtqMmlznj0PVSV0T27oFyykc9vwE6HkEE="
         }
       ]
     },
@@ -3197,7 +3300,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
+          "Value": "Tue, 13 May 2025 05:14:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3242,7 +3345,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
+          "Value": "Tue, 13 May 2025 05:14:54 GMT"
         },
         {
           "Name": "Cache-Control",

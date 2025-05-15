@@ -2,6 +2,7 @@ wwwroot\css\dashboard.css
 wwwroot\css\id_card_styles.css
 wwwroot\css\id_create.css
 wwwroot\css\id_index.css
+wwwroot\css\print.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\img\BP_Logo.jpg
