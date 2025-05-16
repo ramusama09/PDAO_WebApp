@@ -210,8 +210,8 @@
                         </div>
                         
                         <div class="mb-3">
-                            <label for="dateOfBirth" class="form-label required">Date of Birth</label>
-                            <input type="date" class="form-control" id="dateOfBirth" name="CardInfo.DateOfBirth" required>
+                            <label for="birthDate" class="form-label required">Date of Birth</label>
+                            <input type="date" class="form-control" id="birthDate" name="CardInfo.BirthDate" required>
                         </div>
                         
                         <div class="mb-3">
@@ -846,7 +846,7 @@
                 setFormValue('suffix', userData.suffix);
                 setFormValue('addressLine1', userData.addressLine1);
                 setFormValue('addressLine2', userData.addressLine2);
-                setFormValue('dateOfBirth', userData.birthDate || userData.dateOfBirth); // Try both fields
+                setFormValue('birthDate', userData.birthDate || userData.dateOfBirth); // Try both fields
                 setFormValue('sex', userData.sex);
                 setFormValue('emergencyContactName', userData.emergencyContactName);
                 setFormValue('emergencyContactNo', userData.emergencyContactNumber);

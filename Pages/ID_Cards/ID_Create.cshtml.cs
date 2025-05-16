@@ -130,7 +130,7 @@ namespace PDAO_WebApp.Pages.ID_Cards
             [Required]
             [Display(Name = "Date of Birth")]
             [DataType(DataType.Date)]
-            public DateTime DateOfBirth { get; set; }
+            public DateTime BirthDate { get; set; }
 
             [Required]
             [Display(Name = "Date Issued")]

@@ -226,16 +226,28 @@
                             
                             // Calculate profile completion percentage
                             let completedFields = 0;
-                            const totalFields = 10; // Adjust based on your required fields
+                            const totalFields = 15; // Updated total fields based on current structure
                             
+                            // Basic Information
                             if (userData.firstName) completedFields++;
                             if (userData.lastName) completedFields++;
+                            if (userData.middleName) completedFields++;
+                            if (userData.suffix) completedFields++;
                             if (userData.email) completedFields++;
                             if (userData.contactNumber) completedFields++;
+                            if (userData.sex) completedFields++;
+                            
+                            // Address Information
                             if (userData.addressLine1) completedFields++;
                             if (userData.addressLine2) completedFields++;
+                            
+                            // Personal Information
                             if (userData.birthDate) completedFields++;
-                            if (userData.sex) completedFields++;
+                            if (userData.age) completedFields++;
+                            if (userData.bloodType) completedFields++;
+                            if (userData.disabilityType) completedFields++;
+                            
+                            // Emergency Contact
                             if (userData.emergencyContactName) completedFields++;
                             if (userData.emergencyContactNumber) completedFields++;
                             

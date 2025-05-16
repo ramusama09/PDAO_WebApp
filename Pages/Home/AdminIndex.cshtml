@@ -246,11 +246,31 @@
                     <div class="row mb-3">
                         <div class="col-6">
                             <label class="form-label">Blood Type</label>
-                            <input type="text" class="form-control" name="bloodType" required>
+                            <select class="form-select" name="bloodType" required>
+                                <option value="">Select Blood Type</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
                         </div>
                         <div class="col-6">
                             <label class="form-label">Type of Disability</label>
-                            <input type="text" class="form-control" name="disabilityType" required>
+                            <select class="form-select" name="disabilityType" required>
+                                <option value="" disabled>Select Disability Type</option>
+                                <option value="Visual Impairment">Visual Impairment</option>
+                                <option value="Hearing Impairment">Hearing Impairment</option>
+                                <option value="Orthopedic Disability">Orthopedic Disability</option>
+                                <option value="Learning Disability">Learning Disability</option>
+                                <option value="Intellectual Disability">Intellectual Disability</option>
+                                <option value="Psychosocial Disability">Psychosocial Disability</option>
+                                <option value="Multiple Disabilities">Multiple Disabilities</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
                     </div>
 
@@ -391,107 +411,121 @@
         }
     </script>
     <script>
+        // Helper function to calculate age from birthDate
+        function calculateAge(birthDate) {
+            if (!birthDate) return '';
+            const today = new Date();
+            const birthDateObj = new Date(birthDate);
+            let age = today.getFullYear() - birthDateObj.getFullYear();
+            const monthDiff = today.getMonth() - birthDateObj.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDateObj.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
         // Update your viewUser and editUser functions
         function viewUser(userId) {
             const userRef = firebase.database().ref('users/' + userId);
             userRef.once('value').then((snapshot) => {
-                const user = snapshot.val();
+                const user = snapshot.val() || {};
+                const idCards = user.idCards || {};
                 const modal = new bootstrap.Modal(document.getElementById('viewModal'));
 
-                // Populate view modal
-                // Populate edit form
-                document.querySelector('#viewForm [name="firstName"]')
-                    .value = user.firstName || '';
-                document.querySelector('#viewForm [name="lastName"]')
-                    .value = user.lastName || '';
-                document.querySelector('#viewForm [name="middleName"]')
-                    .value = user.middleName || '';
-                document.querySelector('#viewForm [name="suffix"]')
-                    .value = user.suffix || '';
-                document.querySelector('#viewForm [name="sex"]')
-                    .value = user.sex || '';
-                document.querySelector('#viewForm [name="birthDate"]')
-                    .value = user.birthDate || '';
-                document.querySelector('#viewForm [name="age"]')
-                    .value = user.age || '';
-                document.querySelector('#viewForm [name="email"]')
-                    .value = user.email || '';
-                document.querySelector('#viewForm [name="contactNumber"]')
-                    .value = user.contactNumber || '';
-                document.querySelector('#viewForm [name="addressLine1"]')
-                    .value = user.addressLine1 || '';
-                document.querySelector('#viewForm [name="addressLine2"]')
-                    .value = user.addressLine2 || '';
-                document.querySelector('#viewForm [name="bloodType"]')
-                    .value = user.bloodType || '';
-                document.querySelector('#viewForm [name="disabilityType"]')
-                    .value = user.disabilityType || '';
-                document.querySelector('#viewForm [name="emergencyContactName"]')
-                    .value = user.emergencyContactName || '';
-                document.querySelector('#viewForm [name="emergencyContactNumber"]')
-                    .value = user.emergencyContactNumber || '';
-                document.querySelector('#viewForm [name="pwdIdNo"]')
-                    .value = user.idCards.pwdIdNo || '';
-                document.querySelector('#viewForm [name="dateIssued"]')
-                    .value = user.idCards.dateIssued || '';
-                document.querySelector('#viewForm [name="expirationDate"]')
-                    .value = user.idCards.expirationDate || '';
-                document.querySelector('#viewForm [name="frontID"]')
-                    .value = user.idCards.frontID || '';
-                document.querySelector('#viewForm [name="backID"]')
-                    .value = user.idCards.backID || '';
+                // Helper function to safely set form values
+                const setFormValue = (name, value) => {
+                    const element = document.querySelector(`#viewForm [name="${name}"]`);
+                    if (element) {
+                        element.value = value || '';
+                    }
+                };
+
+                // Populate view modal with basic user info
+                setFormValue('firstName', user.firstName);
+                setFormValue('lastName', user.lastName);
+                setFormValue('middleName', user.middleName);
+                setFormValue('suffix', user.suffix);
+                setFormValue('sex', user.sex);
+                setFormValue('birthDate', user.birthDate);
+                setFormValue('age', calculateAge(user.birthDate));
+                setFormValue('email', user.email);
+                setFormValue('contactNumber', user.contactNumber);
+                setFormValue('addressLine1', user.addressLine1);
+                setFormValue('addressLine2', user.addressLine2);
+                setFormValue('bloodType', user.bloodType);
+                setFormValue('disabilityType', user.disabilityType);
+                setFormValue('emergencyContactName', user.emergencyContactName);
+                setFormValue('emergencyContactNumber', user.emergencyContactNumber);
+
+                // Populate ID card information
+                setFormValue('pwdIdNo', idCards.pwdIdNo);
+                setFormValue('dateIssued', idCards.dateIssued);
+                setFormValue('expirationDate', idCards.expirationDate);
+                setFormValue('frontID', idCards.frontID);
+                setFormValue('backID', idCards.backID);
+
                 modal.show();
+            }).catch(error => {
+                console.error('Error fetching user data:', error);
+                alert('Failed to load user data. Please try again.');
             });
         }
 
         function editUser(userId) {
             const userRef = firebase.database().ref('users/' + userId);
             userRef.once('value').then((snapshot) => {
-                const user = snapshot.val();
+                const user = snapshot.val() || {};
+                const idCards = user.idCards || {};
                 const modal = new bootstrap.Modal(document.getElementById('editModal'));
 
-                // Populate edit form
-                document.querySelector('#editForm [name="firstName"]')
-                    .value = user.firstName || '';
-                document.querySelector('#editForm [name="lastName"]')
-                    .value = user.lastName || '';
-                document.querySelector('#editForm [name="middleName"]')
-                    .value = user.middleName || '';
-                document.querySelector('#editForm [name="suffix"]')
-                    .value = user.suffix || '';
-                document.querySelector('#editForm [name="sex"]')
-                    .value = user.sex || '';
-                document.querySelector('#editForm [name="birthDate"]')
-                    .value = user.birthDate || '';
-                document.querySelector('#editForm [name="age"]')
-                    .value = user.age || '';
-                document.querySelector('#editForm [name="email"]')
-                    .value = user.email || '';
-                document.querySelector('#editForm [name="contactNumber"]')
-                    .value = user.contactNumber || '';
-                document.querySelector('#editForm [name="addressLine1"]')
-                    .value = user.addressLine1 || '';
-                document.querySelector('#editForm [name="addressLine2"]')
-                    .value = user.addressLine2 || '';
-                document.querySelector('#editForm [name="bloodType"]')
-                    .value = user.bloodType || '';
-                document.querySelector('#editForm [name="disabilityType"]')
-                    .value = user.disabilityType || '';
-                document.querySelector('#editForm [name="emergencyContactName"]')
-                    .value = user.emergencyContactName || '';
-                document.querySelector('#editForm [name="emergencyContactNumber"]')
-                    .value = user.emergencyContactNumber || '';
-                document.querySelector('#editForm [name="pwdIdNo"]')
-                    .value = user.idCards.pwdIdNo || '';
-                document.querySelector('#editForm [name="dateIssued"]')
-                    .value = user.idCards.dateIssued || '';
-                document.querySelector('#editForm [name="expirationDate"]')
-                    .value = user.idCards.expirationDate || '';
-                document.querySelector('#editForm [name="frontID"]')
-                    .value = user.idCards.frontID || '';
-                document.querySelector('#editForm [name="backID"]')
-                    .value = user.idCards.backID || '';
+                // Helper function to safely set form values
+                const setFormValue = (name, value) => {
+                    const element = document.querySelector(`#editForm [name="${name}"]`);
+                    if (element) {
+                        element.value = value || '';
+                    }
+                };
+
+                // Populate edit form with basic user info
+                setFormValue('firstName', user.firstName);
+                setFormValue('lastName', user.lastName);
+                setFormValue('middleName', user.middleName);
+                setFormValue('suffix', user.suffix);
+                setFormValue('sex', user.sex);
+                setFormValue('birthDate', user.birthDate);
+                setFormValue('age', calculateAge(user.birthDate));
+                setFormValue('email', user.email);
+                setFormValue('contactNumber', user.contactNumber);
+                setFormValue('addressLine1', user.addressLine1);
+                setFormValue('addressLine2', user.addressLine2);
+                setFormValue('bloodType', user.bloodType);
+                setFormValue('disabilityType', user.disabilityType);
+                setFormValue('emergencyContactName', user.emergencyContactName);
+                setFormValue('emergencyContactNumber', user.emergencyContactNumber);
+
+                // Populate ID card information
+                setFormValue('pwdIdNo', idCards.pwdIdNo);
+                setFormValue('dateIssued', idCards.dateIssued);
+                setFormValue('expirationDate', idCards.expirationDate);
+                setFormValue('frontID', idCards.frontID);
+                setFormValue('backID', idCards.backID);
+
+                // Store the userId for use in form submission
+                document.getElementById('editForm').dataset.userId = userId;
+
+                // Add event listener for birthDate changes
+                const birthDateInput = document.querySelector('#editForm [name="birthDate"]');
+                const ageInput = document.querySelector('#editForm [name="age"]');
+                
+                birthDateInput.addEventListener('change', function() {
+                    ageInput.value = calculateAge(this.value);
+                });
+
                 modal.show();
+            }).catch(error => {
+                console.error('Error fetching user data:', error);
+                alert('Failed to load user data. Please try again.');
             });
         }
 
@@ -500,17 +534,44 @@
             e.preventDefault();
             const formData = new FormData(e.target);
             const updatedData = Object.fromEntries(formData.entries());
+            const userId = e.target.dataset.userId;
+
+            if (!userId) {
+                alert('Error: User ID not found!');
+                return;
+            }
+
+            // Calculate age before updating
+            updatedData.age = calculateAge(updatedData.birthDate);
+
+            // Restructure the data to match the database schema
+            const dataToUpdate = {
+                ...updatedData,
+                idCards: {
+                    pwdIdNo: updatedData.pwdIdNo,
+                    dateIssued: updatedData.dateIssued,
+                    expirationDate: updatedData.expirationDate,
+                    frontID: updatedData.frontID,
+                    backID: updatedData.backID
+                }
+            };
+
+            // Remove the ID card fields from the root level
+            delete dataToUpdate.pwdIdNo;
+            delete dataToUpdate.dateIssued;
+            delete dataToUpdate.expirationDate;
+            delete dataToUpdate.frontID;
+            delete dataToUpdate.backID;
 
             // Update Firebase data
-            const userId = ''; // Get the user ID from somewhere
-            firebase.database().ref('users/' + userId).update(updatedData)
+            firebase.database().ref('users/' + userId).update(dataToUpdate)
                 .then(() => {
                     bootstrap.Modal.getInstance(document.getElementById('editModal')).hide();
                     alert('Successfully updated!');
                 })
                 .catch((error) => {
                     console.error('Error updating:', error);
-                    alert('Update failed!');
+                    alert('Update failed: ' + error.message);
                 });
         });
     </script>

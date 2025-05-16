@@ -12,17 +12,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wf3txkfc14"},{"Name":"integrity","Value":"sha256-rDdFE7oS82pY1peDPjtIOUPQNBzFJcmfVUSKaCem8qU="},{"Name":"label","Value":"_content/PDAO_WebApp/css/dashboard.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"20796"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022rDdFE7oS82pY1peDPjtIOUPQNBzFJcmfVUSKaCem8qU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 13 May 2025 01:41:22 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PDAO_WebApp/css/dashboardAdmin.8vfqcd2on0.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\dashboardAdmin.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"8vfqcd2on0"},{"Name":"integrity","Value":"sha256-1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo="},{"Name":"label","Value":"_content/PDAO_WebApp/css/dashboardAdmin.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4023"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00221NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 05:02:52 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/PDAO_WebApp/css/dashboardAdmin.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\dashboardAdmin.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-zP6qSJre3LjfdAMN0TzoZJKfKjIVQKRoJAzOPf3s7ls="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4249"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022zP6qSJre3LjfdAMN0TzoZJKfKjIVQKRoJAzOPf3s7ls=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 04:52:18 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/PDAO_WebApp/css/dashboardAdmin.w5yldxlbch.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\dashboardAdmin.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"w5yldxlbch"},{"Name":"integrity","Value":"sha256-zP6qSJre3LjfdAMN0TzoZJKfKjIVQKRoJAzOPf3s7ls="},{"Name":"label","Value":"_content/PDAO_WebApp/css/dashboardAdmin.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4249"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022zP6qSJre3LjfdAMN0TzoZJKfKjIVQKRoJAzOPf3s7ls=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 04:52:18 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4023"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00221NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 05:02:52 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/PDAO_WebApp/css/id_card_styles.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\id_card_styles.css'))</AssetFile>

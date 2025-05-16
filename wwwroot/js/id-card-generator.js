@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('addressLine2').value || 'Brgy, City, Country, Zip Code';
         
         // Date of birth
-        var dobDate = document.getElementById('dateOfBirth').value;
+        var dobDate = document.getElementById('birthDate').value;
         if (dobDate) {
             var date = new Date(dobDate);
             var options = { year: 'numeric', month: 'long', day: 'numeric' };

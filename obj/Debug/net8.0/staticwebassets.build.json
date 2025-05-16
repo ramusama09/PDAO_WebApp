@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WvCZmorGR/U/7rrNkE9+ISauOQU1mn9YdC/W2rKXj8w=",
+  "Hash": "wgq7wDTapbAmVA+QZuj/pZMOyrOV4RJtJlWYkyjWWCE=",
   "Source": "PDAO_WebApp",
   "BasePath": "_content/PDAO_WebApp",
   "Mode": "Default",
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "w5yldxlbch",
-      "Integrity": "zP6qSJre3LjfdAMN0TzoZJKfKjIVQKRoJAzOPf3s7ls=",
+      "Fingerprint": "8vfqcd2on0",
+      "Integrity": "1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\dashboardAdmin.css"
@@ -1844,6 +1844,51 @@
       ]
     },
     {
+      "Route": "css/dashboardAdmin.8vfqcd2on0.css",
+      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\dashboardAdmin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4023"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 05:02:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8vfqcd2on0"
+        },
+        {
+          "Name": "label",
+          "Value": "css/dashboardAdmin.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo="
+        }
+      ]
+    },
+    {
       "Route": "css/dashboardAdmin.css",
       "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\dashboardAdmin.css",
       "Selectors": [],
@@ -1854,7 +1899,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4249"
+          "Value": "4023"
         },
         {
           "Name": "Content-Type",
@@ -1862,11 +1907,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zP6qSJre3LjfdAMN0TzoZJKfKjIVQKRoJAzOPf3s7ls=\""
+          "Value": "\"1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 04:52:18 GMT"
+          "Value": "Thu, 15 May 2025 05:02:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1876,52 +1921,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-zP6qSJre3LjfdAMN0TzoZJKfKjIVQKRoJAzOPf3s7ls="
-        }
-      ]
-    },
-    {
-      "Route": "css/dashboardAdmin.w5yldxlbch.css",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\dashboardAdmin.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4249"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zP6qSJre3LjfdAMN0TzoZJKfKjIVQKRoJAzOPf3s7ls=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 04:52:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "w5yldxlbch"
-        },
-        {
-          "Name": "label",
-          "Value": "css/dashboardAdmin.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-zP6qSJre3LjfdAMN0TzoZJKfKjIVQKRoJAzOPf3s7ls="
+          "Value": "sha256-1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo="
         }
       ]
     },

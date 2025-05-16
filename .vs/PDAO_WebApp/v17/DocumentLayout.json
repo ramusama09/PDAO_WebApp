@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\itdd-p14\\onedrive\\documents\\github\\pdao_webapp1\\wwwroot\\css\\dashboardadmin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:wwwroot\\css\\dashboardadmin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\itdd-p14\\onedrive\\documents\\github\\pdao_webapp1\\pages\\home\\adminindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:pages\\home\\adminindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\itdd-p14\\onedrive\\documents\\github\\pdao_webapp1\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +22,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-15T04:45:31.893Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AdminIndex.cshtml",
               "DocumentMoniker": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\Home\\AdminIndex.cshtml",
               "RelativeDocumentMoniker": "Pages\\Home\\AdminIndex.cshtml",
               "ToolTip": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\Home\\AdminIndex.cshtml",
               "RelativeToolTip": "Pages\\Home\\AdminIndex.cshtml",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAqwF0AAABDAAAAAAAAAA==",
+              "ViewState": "AgIAALwAAAAAAAAAAAAqwF0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-15T04:16:18.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dashboardAdmin.css",
-              "DocumentMoniker": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\dashboardAdmin.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\dashboardAdmin.css",
-              "ToolTip": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\dashboardAdmin.css",
-              "RelativeToolTip": "wwwroot\\css\\dashboardAdmin.css",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAQwJQAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-15T04:16:22.46Z",
               "EditorCaption": ""
             }
           ]
