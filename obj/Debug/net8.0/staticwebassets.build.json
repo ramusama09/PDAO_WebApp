@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wgq7wDTapbAmVA+QZuj/pZMOyrOV4RJtJlWYkyjWWCE=",
+  "Hash": "lgqD7RrEpyKn0b6BtHgCdWNDhFaRFJfJX7Y5eCLvalo=",
   "Source": "PDAO_WebApp",
   "BasePath": "_content/PDAO_WebApp",
   "Mode": "Default",
@@ -493,8 +493,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "u10je9ozzt",
-      "Integrity": "/qYITZZLY4aOfIc6IvyOOKE5TtPMpXt+56Xlt8C0JZ0=",
+      "Fingerprint": "e8t91idsya",
+      "Integrity": "wgpDWlmpUVaY5BGKSIBBXETZo5tTdDcuUCpONpjsteE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\id-card-generator.js"
@@ -1866,7 +1866,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 05:02:52 GMT"
+          "Value": "Fri, 16 May 2025 08:02:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1911,7 +1911,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 05:02:52 GMT"
+          "Value": "Fri, 16 May 2025 08:02:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3402,6 +3402,51 @@
       ]
     },
     {
+      "Route": "js/id-card-generator.e8t91idsya.js",
+      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\id-card-generator.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13619"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wgpDWlmpUVaY5BGKSIBBXETZo5tTdDcuUCpONpjsteE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 07:37:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e8t91idsya"
+        },
+        {
+          "Name": "label",
+          "Value": "js/id-card-generator.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wgpDWlmpUVaY5BGKSIBBXETZo5tTdDcuUCpONpjsteE="
+        }
+      ]
+    },
+    {
       "Route": "js/id-card-generator.js",
       "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\id-card-generator.js",
       "Selectors": [],
@@ -3412,7 +3457,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13621"
+          "Value": "13619"
         },
         {
           "Name": "Content-Type",
@@ -3420,11 +3465,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/qYITZZLY4aOfIc6IvyOOKE5TtPMpXt+56Xlt8C0JZ0=\""
+          "Value": "\"wgpDWlmpUVaY5BGKSIBBXETZo5tTdDcuUCpONpjsteE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
+          "Value": "Fri, 16 May 2025 07:37:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3434,52 +3479,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/qYITZZLY4aOfIc6IvyOOKE5TtPMpXt+56Xlt8C0JZ0="
-        }
-      ]
-    },
-    {
-      "Route": "js/id-card-generator.u10je9ozzt.js",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\id-card-generator.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13621"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/qYITZZLY4aOfIc6IvyOOKE5TtPMpXt+56Xlt8C0JZ0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "u10je9ozzt"
-        },
-        {
-          "Name": "label",
-          "Value": "js/id-card-generator.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-/qYITZZLY4aOfIc6IvyOOKE5TtPMpXt+56Xlt8C0JZ0="
+          "Value": "sha256-wgpDWlmpUVaY5BGKSIBBXETZo5tTdDcuUCpONpjsteE="
         }
       ]
     },

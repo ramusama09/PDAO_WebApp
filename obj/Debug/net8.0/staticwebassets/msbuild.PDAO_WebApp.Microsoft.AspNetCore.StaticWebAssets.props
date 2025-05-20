@@ -372,8 +372,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>u10je9ozzt</Fingerprint>
-      <Integrity>/qYITZZLY4aOfIc6IvyOOKE5TtPMpXt+56Xlt8C0JZ0=</Integrity>
+      <Fingerprint>e8t91idsya</Fingerprint>
+      <Integrity>wgpDWlmpUVaY5BGKSIBBXETZo5tTdDcuUCpONpjsteE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\id-card-generator.js'))</OriginalItemSpec>
