@@ -79,12 +79,12 @@
 
 /* Edit Button - Yellow to Green */
 .btn-edit {
-    background-color: var(--yellow);
-    color: #333;
+    background-color: var(--blue);
+    color: white;
 }
 
     .btn-edit:hover {
-        color: white;
+        color: #333;
     }
 
     .btn-edit::after {
@@ -94,9 +94,9 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: var(--green);
-        transform: scaleY(0);
-        transform-origin: bottom;
+        background: var(--yellow);
+        transform: scaleX(0);
+        transform-origin: left;
         transition: transform 0.3s ease-out;
         z-index: -1;
     }
@@ -112,7 +112,7 @@
 }
 
     .btn-view:hover {
-        color: #333;
+        color: white;
     }
 
     .btn-view::after {
@@ -122,9 +122,9 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: var(--yellow);
-        transform: scaleY(0);
-        transform-origin: bottom;
+        background: var(--blue);
+        transform: scaleX(0);
+        transform-origin: left;
         transition: transform 0.3s ease-out;
         z-index: -1;
     }
@@ -151,9 +151,9 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: var(--blue);
-        transform: scaleY(0);
-        transform-origin: bottom;
+        background: var(--green);
+        transform: scaleX(0);
+        transform-origin: left;
         transition: transform 0.3s ease-out;
         z-index: -1;
     }

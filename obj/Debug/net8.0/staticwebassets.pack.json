@@ -13,20 +13,12 @@
       "PackagePath": "staticwebassets\\css\\dashboardAdmin.css"
     },
     {
+      "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\generate-id-info.css",
+      "PackagePath": "staticwebassets\\css\\generate-id-info.css"
+    },
+    {
       "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_card_styles.css",
       "PackagePath": "staticwebassets\\css\\id_card_styles.css"
-    },
-    {
-      "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_create.css",
-      "PackagePath": "staticwebassets\\css\\id_create.css"
-    },
-    {
-      "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_index.css",
-      "PackagePath": "staticwebassets\\css\\id_index.css"
-    },
-    {
-      "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\print.css",
-      "PackagePath": "staticwebassets\\css\\print.css"
     },
     {
       "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\site.css",
@@ -81,16 +73,8 @@
       "PackagePath": "staticwebassets\\js\\firebase-init.js"
     },
     {
-      "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\github-config.js",
-      "PackagePath": "staticwebassets\\js\\github-config.js"
-    },
-    {
-      "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\id-card-generator.js",
-      "PackagePath": "staticwebassets\\js\\id-card-generator.js"
-    },
-    {
-      "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\id-index.js",
-      "PackagePath": "staticwebassets\\js\\id-index.js"
+      "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\generate-id-info.js",
+      "PackagePath": "staticwebassets\\js\\generate-id-info.js"
     },
     {
       "Id": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\site.js",

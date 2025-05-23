@@ -113,7 +113,23 @@
                             // Update the navigation bar user name when authenticated
                             const navUserName = document.getElementById('nav-user-name');
                             if (navUserName) {
-                                navUserName.textContent = user.displayName || user.email || 'Account';
+                                // Get user data from database to format name
+                                database.ref(`users/${user.uid}`).once('value').then((snapshot) => {
+                                    const userData = snapshot.val();
+                                    if (userData) {
+                                        const firstName = userData.firstName || '';
+                                        const middleInitial = userData.middleName ? userData.middleName.charAt(0) + '.' : '';
+                                        const lastName = userData.lastName || '';
+                                        const suffix = userData.suffix ? ' ' + userData.suffix : '';
+                                        const formattedName = `${firstName} ${middleInitial} ${lastName}${suffix}`.trim();
+                                        navUserName.textContent = formattedName || user.email || 'Account';
+                                    } else {
+                                        navUserName.textContent = user.email || 'Account';
+                                    }
+                                }).catch((error) => {
+                                    console.error('Error fetching user data:', error);
+                                    navUserName.textContent = user.email || 'Account';
+                                });
                             }
                             
                             // Handle logout

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wgq7wDTapbAmVA+QZuj/pZMOyrOV4RJtJlWYkyjWWCE=",
+  "Hash": "jJSF9v4lf8hhl/AcxvrZDWd9cjZM5UAucH5c9LDePzA=",
   "Source": "PDAO_WebApp",
   "BasePath": "_content/PDAO_WebApp",
   "Mode": "Default",
@@ -94,11 +94,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "8vfqcd2on0",
-      "Integrity": "1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo=",
+      "Fingerprint": "c6ztvc0lz1",
+      "Integrity": "VMZB/htnbD4CexeydBAjgiuMarXNxfU6LAi16zLwCN0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\dashboardAdmin.css"
+    },
+    {
+      "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\generate-id-info.css",
+      "SourceId": "PDAO_WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\",
+      "BasePath": "_content/PDAO_WebApp",
+      "RelativePath": "css/generate-id-info#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1l44nnodni",
+      "Integrity": "NeMW3PRsN64XQWSk3X+m6BTfzRMXoph9nVHrntTptnE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\generate-id-info.css"
     },
     {
       "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_card_styles.css",
@@ -120,69 +141,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\id_card_styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_create.css",
-      "SourceId": "PDAO_WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\",
-      "BasePath": "_content/PDAO_WebApp",
-      "RelativePath": "css/id_create#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "dogon8onj5",
-      "Integrity": "bUHsTeQDXoFWAdgc1JTR9abnDzUOmqsff8hAoaLjQxU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\id_create.css"
-    },
-    {
-      "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_index.css",
-      "SourceId": "PDAO_WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\",
-      "BasePath": "_content/PDAO_WebApp",
-      "RelativePath": "css/id_index#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "zhne9zz4n1",
-      "Integrity": "iUz3k6/2jPSxmbEk8Bw5vfTEhG3UM4qAFEIPTTT42p8=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\id_index.css"
-    },
-    {
-      "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\print.css",
-      "SourceId": "PDAO_WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\",
-      "BasePath": "_content/PDAO_WebApp",
-      "RelativePath": "css/print#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ax7ujxd5x6",
-      "Integrity": "nqpfyoFLPnwtqMmlznj0PVSV0T27oFyykc9vwE6HkEE=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\print.css"
     },
     {
       "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\site.css",
@@ -409,8 +367,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "3r8b2a0bt1",
-      "Integrity": "8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
+      "Fingerprint": "4wqryq2ec9",
+      "Integrity": "5GolRIO+4ihbmDCO2AYBd3kVraZ595CxWEJoa0YopEo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\admin-dashboard.js"
@@ -458,12 +416,12 @@
       "OriginalItemSpec": "wwwroot\\js\\firebase-init.js"
     },
     {
-      "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\github-config.js",
+      "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\generate-id-info.js",
       "SourceId": "PDAO_WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\",
       "BasePath": "_content/PDAO_WebApp",
-      "RelativePath": "js/github-config#[.{fingerprint}]?.js",
+      "RelativePath": "js/generate-id-info#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -472,53 +430,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "8zybwvhle6",
-      "Integrity": "1NHHVgbH/MZyL6a+N1VH+itVZ7nKFxEutLVYIsF9QqY=",
+      "Fingerprint": "cf15x0vqj9",
+      "Integrity": "eMf9CtxcNQpa6nBsUBSpS5egN07v2qkceDZpZHuz08E=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\github-config.js"
-    },
-    {
-      "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\id-card-generator.js",
-      "SourceId": "PDAO_WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\",
-      "BasePath": "_content/PDAO_WebApp",
-      "RelativePath": "js/id-card-generator#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "u10je9ozzt",
-      "Integrity": "/qYITZZLY4aOfIc6IvyOOKE5TtPMpXt+56Xlt8C0JZ0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\id-card-generator.js"
-    },
-    {
-      "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\id-index.js",
-      "SourceId": "PDAO_WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\",
-      "BasePath": "_content/PDAO_WebApp",
-      "RelativePath": "js/id-index#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "f62llxv67g",
-      "Integrity": "uTjorUOLkDKzG0mS+3kD5US3akMFFmyf+IQwV2ssdVI=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\id-index.js"
+      "OriginalItemSpec": "wwwroot\\js\\generate-id-info.js"
     },
     {
       "Identity": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\site.js",
@@ -1753,8 +1669,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jqroabn6fb",
-      "Integrity": "a+hBye37DNIbxH0v0bLtWltc3NDbmZK/px0di04RN5Y=",
+      "Fingerprint": "3qfdg08ez8",
+      "Integrity": "JV9ZeenIFP7Ia7fzb69C8NYRo8n9JSwsrwo2gQOAoNM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\pdao-webapp-default-rtdb-users-export.json"
@@ -1844,7 +1760,7 @@
       ]
     },
     {
-      "Route": "css/dashboardAdmin.8vfqcd2on0.css",
+      "Route": "css/dashboardAdmin.c6ztvc0lz1.css",
       "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\dashboardAdmin.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1854,7 +1770,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4023"
+          "Value": "4016"
         },
         {
           "Name": "Content-Type",
@@ -1862,11 +1778,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo=\""
+          "Value": "\"VMZB/htnbD4CexeydBAjgiuMarXNxfU6LAi16zLwCN0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 05:02:52 GMT"
+          "Value": "Fri, 23 May 2025 01:33:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1876,7 +1792,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "8vfqcd2on0"
+          "Value": "c6ztvc0lz1"
         },
         {
           "Name": "label",
@@ -1884,7 +1800,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo="
+          "Value": "sha256-VMZB/htnbD4CexeydBAjgiuMarXNxfU6LAi16zLwCN0="
         }
       ]
     },
@@ -1899,7 +1815,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4023"
+          "Value": "4016"
         },
         {
           "Name": "Content-Type",
@@ -1907,11 +1823,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo=\""
+          "Value": "\"VMZB/htnbD4CexeydBAjgiuMarXNxfU6LAi16zLwCN0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 05:02:52 GMT"
+          "Value": "Fri, 23 May 2025 01:33:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1921,7 +1837,89 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-1NKrDOFg0ZZM9uEe2ZGUuiHtaawDx15s9a2UVhnZJIo="
+          "Value": "sha256-VMZB/htnbD4CexeydBAjgiuMarXNxfU6LAi16zLwCN0="
+        }
+      ]
+    },
+    {
+      "Route": "css/generate-id-info.1l44nnodni.css",
+      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\generate-id-info.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5890"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NeMW3PRsN64XQWSk3X+m6BTfzRMXoph9nVHrntTptnE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 23 May 2025 01:36:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1l44nnodni"
+        },
+        {
+          "Name": "label",
+          "Value": "css/generate-id-info.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NeMW3PRsN64XQWSk3X+m6BTfzRMXoph9nVHrntTptnE="
+        }
+      ]
+    },
+    {
+      "Route": "css/generate-id-info.css",
+      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\generate-id-info.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5890"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NeMW3PRsN64XQWSk3X+m6BTfzRMXoph9nVHrntTptnE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 23 May 2025 01:36:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NeMW3PRsN64XQWSk3X+m6BTfzRMXoph9nVHrntTptnE="
         }
       ]
     },
@@ -2004,252 +2002,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-VoLIfIPJY1qLrAEaGonANDAVco4s2Bxbboh9UZ/2FTU="
-        }
-      ]
-    },
-    {
-      "Route": "css/id_create.css",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_create.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3498"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"bUHsTeQDXoFWAdgc1JTR9abnDzUOmqsff8hAoaLjQxU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-bUHsTeQDXoFWAdgc1JTR9abnDzUOmqsff8hAoaLjQxU="
-        }
-      ]
-    },
-    {
-      "Route": "css/id_create.dogon8onj5.css",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_create.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3498"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"bUHsTeQDXoFWAdgc1JTR9abnDzUOmqsff8hAoaLjQxU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dogon8onj5"
-        },
-        {
-          "Name": "label",
-          "Value": "css/id_create.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-bUHsTeQDXoFWAdgc1JTR9abnDzUOmqsff8hAoaLjQxU="
-        }
-      ]
-    },
-    {
-      "Route": "css/id_index.css",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_index.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4335"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"iUz3k6/2jPSxmbEk8Bw5vfTEhG3UM4qAFEIPTTT42p8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 00:42:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-iUz3k6/2jPSxmbEk8Bw5vfTEhG3UM4qAFEIPTTT42p8="
-        }
-      ]
-    },
-    {
-      "Route": "css/id_index.zhne9zz4n1.css",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\id_index.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4335"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"iUz3k6/2jPSxmbEk8Bw5vfTEhG3UM4qAFEIPTTT42p8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 00:42:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zhne9zz4n1"
-        },
-        {
-          "Name": "label",
-          "Value": "css/id_index.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-iUz3k6/2jPSxmbEk8Bw5vfTEhG3UM4qAFEIPTTT42p8="
-        }
-      ]
-    },
-    {
-      "Route": "css/print.ax7ujxd5x6.css",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\print.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1291"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"nqpfyoFLPnwtqMmlznj0PVSV0T27oFyykc9vwE6HkEE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 00:47:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ax7ujxd5x6"
-        },
-        {
-          "Name": "label",
-          "Value": "css/print.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-nqpfyoFLPnwtqMmlznj0PVSV0T27oFyykc9vwE6HkEE="
-        }
-      ]
-    },
-    {
-      "Route": "css/print.css",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\print.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1291"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"nqpfyoFLPnwtqMmlznj0PVSV0T27oFyykc9vwE6HkEE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 00:47:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-nqpfyoFLPnwtqMmlznj0PVSV0T27oFyykc9vwE6HkEE="
         }
       ]
     },
@@ -3074,7 +2826,7 @@
       ]
     },
     {
-      "Route": "js/admin-dashboard.3r8b2a0bt1.js",
+      "Route": "js/admin-dashboard.4wqryq2ec9.js",
       "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\admin-dashboard.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3084,7 +2836,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3"
+          "Value": "6562"
         },
         {
           "Name": "Content-Type",
@@ -3092,11 +2844,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=\""
+          "Value": "\"5GolRIO+4ihbmDCO2AYBd3kVraZ595CxWEJoa0YopEo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 04:36:22 GMT"
+          "Value": "Fri, 23 May 2025 01:33:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3106,7 +2858,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3r8b2a0bt1"
+          "Value": "4wqryq2ec9"
         },
         {
           "Name": "label",
@@ -3114,7 +2866,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U="
+          "Value": "sha256-5GolRIO+4ihbmDCO2AYBd3kVraZ595CxWEJoa0YopEo="
         }
       ]
     },
@@ -3129,7 +2881,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3"
+          "Value": "6562"
         },
         {
           "Name": "Content-Type",
@@ -3137,11 +2889,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=\""
+          "Value": "\"5GolRIO+4ihbmDCO2AYBd3kVraZ595CxWEJoa0YopEo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 04:36:22 GMT"
+          "Value": "Fri, 23 May 2025 01:33:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3151,7 +2903,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U="
+          "Value": "sha256-5GolRIO+4ihbmDCO2AYBd3kVraZ595CxWEJoa0YopEo="
         }
       ]
     },
@@ -3320,8 +3072,8 @@
       ]
     },
     {
-      "Route": "js/github-config.8zybwvhle6.js",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\github-config.js",
+      "Route": "js/generate-id-info.cf15x0vqj9.js",
+      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\generate-id-info.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3330,7 +3082,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "399"
+          "Value": "13584"
         },
         {
           "Name": "Content-Type",
@@ -3338,11 +3090,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"1NHHVgbH/MZyL6a+N1VH+itVZ7nKFxEutLVYIsF9QqY=\""
+          "Value": "\"eMf9CtxcNQpa6nBsUBSpS5egN07v2qkceDZpZHuz08E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
+          "Value": "Fri, 23 May 2025 02:08:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3352,21 +3104,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "8zybwvhle6"
+          "Value": "cf15x0vqj9"
         },
         {
           "Name": "label",
-          "Value": "js/github-config.js"
+          "Value": "js/generate-id-info.js"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-1NHHVgbH/MZyL6a+N1VH+itVZ7nKFxEutLVYIsF9QqY="
+          "Value": "sha256-eMf9CtxcNQpa6nBsUBSpS5egN07v2qkceDZpZHuz08E="
         }
       ]
     },
     {
-      "Route": "js/github-config.js",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\github-config.js",
+      "Route": "js/generate-id-info.js",
+      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\generate-id-info.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3375,7 +3127,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "399"
+          "Value": "13584"
         },
         {
           "Name": "Content-Type",
@@ -3383,11 +3135,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"1NHHVgbH/MZyL6a+N1VH+itVZ7nKFxEutLVYIsF9QqY=\""
+          "Value": "\"eMf9CtxcNQpa6nBsUBSpS5egN07v2qkceDZpZHuz08E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
+          "Value": "Fri, 23 May 2025 02:08:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3397,171 +3149,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-1NHHVgbH/MZyL6a+N1VH+itVZ7nKFxEutLVYIsF9QqY="
-        }
-      ]
-    },
-    {
-      "Route": "js/id-card-generator.js",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\id-card-generator.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13621"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/qYITZZLY4aOfIc6IvyOOKE5TtPMpXt+56Xlt8C0JZ0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-/qYITZZLY4aOfIc6IvyOOKE5TtPMpXt+56Xlt8C0JZ0="
-        }
-      ]
-    },
-    {
-      "Route": "js/id-card-generator.u10je9ozzt.js",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\id-card-generator.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13621"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/qYITZZLY4aOfIc6IvyOOKE5TtPMpXt+56Xlt8C0JZ0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "u10je9ozzt"
-        },
-        {
-          "Name": "label",
-          "Value": "js/id-card-generator.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-/qYITZZLY4aOfIc6IvyOOKE5TtPMpXt+56Xlt8C0JZ0="
-        }
-      ]
-    },
-    {
-      "Route": "js/id-index.f62llxv67g.js",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\id-index.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5185"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uTjorUOLkDKzG0mS+3kD5US3akMFFmyf+IQwV2ssdVI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 05:14:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "f62llxv67g"
-        },
-        {
-          "Name": "label",
-          "Value": "js/id-index.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-uTjorUOLkDKzG0mS+3kD5US3akMFFmyf+IQwV2ssdVI="
-        }
-      ]
-    },
-    {
-      "Route": "js/id-index.js",
-      "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\id-index.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5185"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uTjorUOLkDKzG0mS+3kD5US3akMFFmyf+IQwV2ssdVI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 05:14:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-uTjorUOLkDKzG0mS+3kD5US3akMFFmyf+IQwV2ssdVI="
+          "Value": "sha256-eMf9CtxcNQpa6nBsUBSpS5egN07v2qkceDZpZHuz08E="
         }
       ]
     },
@@ -8486,7 +8074,7 @@
       ]
     },
     {
-      "Route": "pdao-webapp-default-rtdb-users-export.jqroabn6fb.json",
+      "Route": "pdao-webapp-default-rtdb-users-export.3qfdg08ez8.json",
       "AssetFile": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\pdao-webapp-default-rtdb-users-export.json",
       "Selectors": [],
       "ResponseHeaders": [
@@ -8496,7 +8084,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2445509"
+          "Value": "931"
         },
         {
           "Name": "Content-Type",
@@ -8504,11 +8092,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"a+hBye37DNIbxH0v0bLtWltc3NDbmZK/px0di04RN5Y=\""
+          "Value": "\"JV9ZeenIFP7Ia7fzb69C8NYRo8n9JSwsrwo2gQOAoNM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
+          "Value": "Fri, 23 May 2025 00:57:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8518,7 +8106,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jqroabn6fb"
+          "Value": "3qfdg08ez8"
         },
         {
           "Name": "label",
@@ -8526,7 +8114,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-a+hBye37DNIbxH0v0bLtWltc3NDbmZK/px0di04RN5Y="
+          "Value": "sha256-JV9ZeenIFP7Ia7fzb69C8NYRo8n9JSwsrwo2gQOAoNM="
         }
       ]
     },
@@ -8541,7 +8129,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2445509"
+          "Value": "931"
         },
         {
           "Name": "Content-Type",
@@ -8549,11 +8137,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"a+hBye37DNIbxH0v0bLtWltc3NDbmZK/px0di04RN5Y=\""
+          "Value": "\"JV9ZeenIFP7Ia7fzb69C8NYRo8n9JSwsrwo2gQOAoNM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 01:41:22 GMT"
+          "Value": "Fri, 23 May 2025 00:57:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8563,7 +8151,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-a+hBye37DNIbxH0v0bLtWltc3NDbmZK/px0di04RN5Y="
+          "Value": "sha256-JV9ZeenIFP7Ia7fzb69C8NYRo8n9JSwsrwo2gQOAoNM="
         }
       ]
     }

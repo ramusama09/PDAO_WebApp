@@ -219,7 +219,6 @@
             auth.onAuthStateChanged(async (user) => {
                 if (user) {
                     // Update UI with basic user data
-                    userDisplayName.textContent = user.displayName || 'User';
                     userEmail.textContent = user.email;
                     emailInput.value = user.email;
                     
@@ -229,6 +228,14 @@
                         const userData = userSnapshot.val();
                         
                         if (userData) {
+                            // Format and set user display name
+                            const firstName = userData.firstName || '';
+                            const middleInitial = userData.middleName ? userData.middleName.charAt(0) + '.' : '';
+                            const lastName = userData.lastName || '';
+                            const suffix = userData.suffix ? ' ' + userData.suffix : '';
+                            const formattedName = `${firstName} ${middleInitial} ${lastName}${suffix}`.trim();
+                            userDisplayName.textContent = formattedName || 'User';
+
                             // Update display elements
                             firstNameInput.value = userData.firstName || '';
                             lastNameInput.value = userData.lastName || '';
@@ -313,13 +320,6 @@
                     updates['sex'] = sex;
                     updates['emergencyContactName'] = emergencyContactName;
                     updates['emergencyContactNumber'] = emergencyContactNumber;
-                    
-                    // Update display name if changed
-                    if (fullName !== user.displayName) {
-                        await user.updateProfile({
-                            displayName: fullName
-                        });
-                    }
                     
                     // Update user data in database
                     await database.ref(`users/${user.uid}`).update(updates);

@@ -1,9 +1,7 @@
 wwwroot\css\dashboard.css
 wwwroot\css\dashboardAdmin.css
+wwwroot\css\generate-id-info.css
 wwwroot\css\id_card_styles.css
-wwwroot\css\id_create.css
-wwwroot\css\id_index.css
-wwwroot\css\print.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\img\BP_Logo.jpg
@@ -17,9 +15,7 @@ wwwroot\img\qr_sample.png
 wwwroot\js\admin-dashboard.js
 wwwroot\js\auth-service.js
 wwwroot\js\firebase-init.js
-wwwroot\js\github-config.js
-wwwroot\js\id-card-generator.js
-wwwroot\js\id-index.js
+wwwroot\js\generate-id-info.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

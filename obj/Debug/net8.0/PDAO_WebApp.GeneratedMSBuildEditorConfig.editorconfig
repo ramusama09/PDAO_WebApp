@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxBZG1pbkluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ITDD-P14/OneDrive/Documents/GitHub/PDAO_WebApp1/Pages/Home/GenerateID.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxHZW5lcmF0ZUlELmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ITDD-P14/OneDrive/Documents/GitHub/PDAO_WebApp1/Pages/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,14 +46,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ITDD-P14/OneDrive/Documents/GitHub/PDAO_WebApp1/Pages/Identity/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSWRlbnRpdHlcUmVnaXN0ZXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ITDD-P14/OneDrive/Documents/GitHub/PDAO_WebApp1/Pages/ID_Cards/ID_Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSURfQ2FyZHNcSURfQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ITDD-P14/OneDrive/Documents/GitHub/PDAO_WebApp1/Pages/ID_Cards/ID_Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSURfQ2FyZHNcSURfSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ITDD-P14/OneDrive/Documents/GitHub/PDAO_WebApp1/Pages/Index.cshtml]

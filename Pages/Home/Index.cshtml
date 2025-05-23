@@ -133,13 +133,13 @@
                         </div>
                     </a>
                     
-                    <a href="/ID_Cards/ID_Index" class="quick-action text-decoration-none">
+                    <a href="#" class="quick-action text-decoration-none">
                         <div class="quick-action-icon">
                             <i class="bi bi-card-heading"></i>
                         </div>
                         <div class="quick-action-content">
-                            <div class="quick-action-title">Create PWD ID Card</div>
-                            <div class="quick-action-description">Generate your PWD ID card</div>
+                            <div class="quick-action-title">View PWD ID Card</div>
+                            <div class="quick-action-description">View your PWD ID card</div>
                         </div>
                     </a>
                     
@@ -206,6 +206,29 @@
                         const userData = userSnapshot.val();
                         
                         if (userData) {
+                            // Format user name
+                            const firstName = userData.firstName || '';
+                            const middleInitial = userData.middleName ? userData.middleName.charAt(0) + '.' : '';
+                            const middleName = userData.middleName;
+                            const lastName = userData.lastName || '';
+                            const suffix = userData.suffix ? ' ' + userData.suffix : '';
+                            const formattedName = `${firstName} ${middleInitial} ${lastName}${suffix}`.trim();
+                            const formattedFullName = `${firstName} ${middleName} ${lastName}${suffix}`.trim();
+                            // Update welcome message
+                            welcomeMessage.innerHTML = `
+                                <div class="welcome-banner p-3 mb-4" style="background-color: rgba(76, 175, 80, 0.05); border-radius: 8px; border-left: 4px solid var(--green);">
+                                    <h5 class="text-success mb-1">Welcome back, ${formattedName || user.email}!</h5>
+                                    <p class="mb-0">Here's an overview of your account and recent activities.</p>
+                                </div>
+                            `;
+                            
+                            // Show user details section
+                            document.getElementById('user-details').style.display = 'flex';
+                            
+                            // Update user info fields
+                            document.getElementById('user-fullname').textContent = formattedFullName || 'Not set';
+                            document.getElementById('user-email').textContent = user.email;
+                            
                             // Update contact info
                             document.getElementById('user-contact').textContent = userData.contactNumber || 'Not provided';
                             

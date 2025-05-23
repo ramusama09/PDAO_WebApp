@@ -1,0 +1,250 @@
+﻿@page
+@model PDAO_WebApp.Pages.Home.GenerateIDModel
+@{
+    ViewData["Title"] = "Generate ID Information";
+}
+
+<link rel="stylesheet" href="~/css/generate-id-info.css">
+
+<div class="container-fluid generate-id-container">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white border-0">
+                    <h2 class="page-title mb-0">
+                        <i class="fas fa-id-card me-2"></i>
+                        Generate ID Information
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form id="generateIdForm" class="generate-id-form">
+                        <div class="row">
+                            <!-- Left Column -->
+                            <div class="col-md-8">
+                                <!-- Personal Information Section -->
+                                <div class="form-section">
+                                    <h3><i class="fas fa-user me-2"></i>Personal Information</h3>
+                                    <div class="row">
+                                        <div class="col-md-6 form-group">
+                                            <label for="firstName">First Name</label>
+                                            <input type="text" id="firstName" name="firstName" class="form-control">
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <label for="lastName">Last Name</label>
+                                            <input type="text" id="lastName" name="lastName" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-6 form-group">
+                                            <label for="middleName">Middle Name</label>
+                                            <input type="text" id="middleName" name="middleName" class="form-control">
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <label for="suffix">Suffix</label>
+                                            <input type="text" id="suffix" name="suffix" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <!-- Sex and Age Subsection -->
+                                    <div class="form-subsection mt-4">
+                                        <h4><i class="fas fa-venus-mars me-2"></i>Sex and Age</h4>
+                                        <div class="row">
+                                            <div class="col-md-4 form-group">
+                                                <label for="sex">Sex</label>
+                                                <select id="sex" name="sex" class="form-control">
+                                                    <option value="">Select Sex</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4 form-group">
+                                                <label for="birthDate">Birth Date</label>
+                                                <input type="date" id="birthDate" name="birthDate" class="form-control">
+                                            </div>
+                                            <div class="col-md-4 form-group">
+                                                <label for="age">Age</label>
+                                                <input type="text" id="age" name="age" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Contact Information Subsection -->
+                                    <div class="form-subsection mt-4">
+                                        <h4><i class="fas fa-address-book me-2"></i>Contact Information</h4>
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" id="email" name="email" class="form-control">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <label for="contactNumber">Contact Number</label>
+                                                <input type="tel" id="contactNumber" name="contactNumber" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Address Subsection -->
+                                    <div class="form-subsection mt-4">
+                                        <h4><i class="fas fa-home me-2"></i>Address</h4>
+                                        <div class="form-group">
+                                            <label for="addressLine1">Address Line 1</label>
+                                            <input type="text" id="addressLine1" name="addressLine1" class="form-control">
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="addressLine2">Address Line 2</label>
+                                            <input type="text" id="addressLine2" name="addressLine2" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Health Information Section -->
+                                <div class="form-section mt-4">
+                                    <h3><i class="fas fa-heartbeat me-2"></i>Health Information</h3>
+                                    <div class="row">
+                                        <div class="col-md-6 form-group">
+                                            <label for="bloodType">Blood Type</label>
+                                            <select id="bloodType" name="bloodType" class="form-control">
+                                                <option value="">Select Blood Type</option>
+                                                <option value="A+">A+</option>
+                                                <option value="A-">A-</option>
+                                                <option value="B+">B+</option>
+                                                <option value="B-">B-</option>
+                                                <option value="AB+">AB+</option>
+                                                <option value="AB-">AB-</option>
+                                                <option value="O+">O+</option>
+                                                <option value="O-">O-</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <label for="disabilityType">Disability Type</label>
+                                            <input type="text" id="disabilityType" name="disabilityType" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <!-- Emergency Contact Subsection -->
+                                    <div class="form-subsection mt-4">
+                                        <h4><i class="fas fa-ambulance me-2"></i>Emergency Contact</h4>
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <label for="emergencyContactName">Emergency Contact Name</label>
+                                                <input type="text" id="emergencyContactName" name="emergencyContactName" class="form-control">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <label for="emergencyContactNumber">Emergency Contact Number</label>
+                                                <input type="tel" id="emergencyContactNumber" name="emergencyContactNumber" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column -->
+                            <div class="col-md-4">
+                                <!-- Account Information Section -->
+                                <div class="form-section">
+                                    <h3><i class="fas fa-info-circle me-2"></i>Account Information</h3>
+                                    <div class="form-group">
+                                        <label for="pwdIdNo">PWD ID Number</label>
+                                        <input type="text" id="pwdIdNo" name="pwdIdNo" class="form-control">
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <label for="dateIssued">Date Issued</label>
+                                        <input type="date" id="dateIssued" name="dateIssued" class="form-control">
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <label for="expirationDate">Expiration Date</label>
+                                        <input type="date" id="expirationDate" name="expirationDate" class="form-control">
+                                    </div>
+                                </div>
+
+                                <!-- ID Photo Section -->
+                                <div class="form-section mt-4">
+                                    <h3><i class="fas fa-camera me-2"></i>ID Photo</h3>
+                                    <div class="photo-upload-container">
+                                        <div class="preview-container">
+                                            <img id="photoPreview" src="#" alt="Preview" style="display: none;">
+                                            <div class="preview-placeholder">
+                                                <i class="fas fa-user-circle"></i>
+                                                <span>No photo selected</span>
+                                            </div>
+                                        </div>
+                                        <div class="upload-options">
+                                            <button type="button" id="capturePhoto" class="btn btn-secondary w-100 mb-2">
+                                                <i class="fas fa-camera me-2"></i>Capture Photo
+                                            </button>
+                                            <input type="file" id="uploadPhoto" name="idPhoto" accept="image/*" class="form-control">
+                                            <label for="uploadPhoto" class="btn btn-secondary w-100">
+                                                <i class="fas fa-upload me-2"></i>Upload Photo
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="form-actions">
+                            <button type="button" id="saveIdCard" class="btn btn-primary">
+                                <i class="bi bi-floppy me-2"></i>Save ID Card
+                            </button>
+                          
+                            <button type="button" id="cancelButton" class="btn btn-danger">
+                                <i class="bi bi-x-lg me-2"></i>Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Save Confirmation Modal -->
+<div class="modal fade" id="saveConfirmModal" tabindex="-1" aria-labelledby="saveConfirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="saveConfirmModalLabel">Confirm Save</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to save your changes? Previous data will be lost.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    <i class="bi bi-x-lg me-2"></i>No, Cancel
+                </button>
+                <button type="button" class="btn btn-primary" id="confirmSave">
+                    <i class="bi bi-check-lg me-2"></i>Yes, Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cancel Confirmation Modal -->
+<div class="modal fade" id="cancelConfirmModal" tabindex="-1" aria-labelledby="cancelConfirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cancelConfirmModalLabel">Confirm Cancel</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to cancel? All unsaved changes will be lost.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="bi bi-x-lg me-2"></i>No, Continue Editing
+                </button>
+                <button type="button" class="btn btn-danger" id="confirmCancel">
+                    <i class="bi bi-check-lg me-2"></i>Yes, Cancel Changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/generate-id-info.js"></script>
+}
