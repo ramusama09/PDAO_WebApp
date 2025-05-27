@@ -43,9 +43,10 @@
                 row.appendChild(disabilityCell);
 
                 // Action column
+                // Update the action cell creation to include the userId in the print button
                 const actionCell = document.createElement('td');
                 actionCell.classList.add('text-center');
-                    actionCell.innerHTML = `
+                actionCell.innerHTML = `
                     <div class="action-buttons">
                         <button class="btn-action btn-view" onclick="viewUser('${userId}')">
                             <i class="bi bi-search"></i> View
@@ -53,7 +54,8 @@
                         <button class="btn-action btn-edit" onclick="updateID('${userId}')">
                             <i class="bi bi-info-lg"></i> Update Information
                         </button>
-                        <button class="btn-action btn-print">
+
+                         <button class="btn-action btn-print" onclick="printUserID('${userId}')">
                             <i class="bi bi-printer"></i> Print ID Card
                         </button>
                     </div>
@@ -156,5 +158,106 @@ function updateID(userId) {
     }).catch(error => {
         console.error('Error fetching user data:', error);
         alert('Failed to load user data. Please try again.');
+    });
+}
+
+
+function createPrintWindow(frontID, backID) {
+    const printWindow = window.open('', '', 'width=800,height=600');
+    const inchToPx = 96; // Standard DPI
+    const cardWidth = 3.375 * inchToPx;
+    const cardHeight = 2.125 * inchToPx;
+
+    // Flag to track if onafterprint has fired
+    let printFinished = false;
+
+    printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Print ID Card</title>
+            <style>
+                @media print {
+                    @page {
+                        size: auto;
+                        margin: 0;
+                    }
+                    body {
+                        margin: 0.5in;
+                    }
+                }
+                .card-container {
+                    display: flex;
+                    gap: 20px;
+                    justify-content: center;
+                }
+                .card {
+                    width: ${cardWidth}px;
+                    height: ${cardHeight}px;
+                }
+                .card img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="card-container">
+                <div class="card">
+                    <img src="${frontID}" alt="Front ID">
+                </div>
+                <div class="card">
+                    <img src="${backID}" alt="Back ID">
+                </div>
+            </div>
+            <script>
+                window.onload = function() {
+                    // Set a timeout to check if print dialog was closed/cancelled
+                    const printTimeout = setTimeout(() => {
+                        if (!window.printFinished) { // Check the flag from the parent window
+                            console.log('Print dialog likely cancelled or closed.');
+                            window.close();
+                        }
+                    }, 1000); // Give it 1 second
+
+                    window.print();
+
+                    window.onafterprint = function() {
+                        clearTimeout(printTimeout); // Clear the timeout if print happens
+                        window.printFinished = true; // Set the flag
+                        window.close();
+                    };
+                };
+            </script>
+        </body>
+        </html>
+    `);
+    printWindow.document.close();
+
+    // Attach the printFinished flag to the printWindow object so the script inside can access it
+    printWindow.printFinished = printFinished;
+}
+
+// Add the printUserID function
+function printUserID(userId) {
+    const userRef = firebase.database().ref('users/' + userId);
+    userRef.once('value').then((snapshot) => {
+        const user = snapshot.val();
+        if (!user || !user.idCards) {
+            alert('ID card information not found for this user.');
+            return;
+        }
+
+        const { frontID, backID } = user.idCards;
+        if (!frontID || !backID) {
+            alert('ID card images are not available.');
+            return;
+        }
+
+        createPrintWindow(frontID, backID);
+    }).catch(error => {
+        console.error('Error fetching user data:', error);
+        alert('Failed to load ID card data. Please try again.');
     });
 }

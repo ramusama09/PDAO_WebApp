@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\point\\source\\repos\\ramusama09\\PDAO_WebApp\\PDAO_WebApp.csproj": {}
+    "C:\\Users\\point\\OneDrive\\Documents\\GitHub\\PDAO_WebApp\\PDAO_WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\point\\source\\repos\\ramusama09\\PDAO_WebApp\\PDAO_WebApp.csproj": {
+    "C:\\Users\\point\\OneDrive\\Documents\\GitHub\\PDAO_WebApp\\PDAO_WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\point\\source\\repos\\ramusama09\\PDAO_WebApp\\PDAO_WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\point\\OneDrive\\Documents\\GitHub\\PDAO_WebApp\\PDAO_WebApp.csproj",
         "projectName": "PDAO_WebApp",
-        "projectPath": "C:\\Users\\point\\source\\repos\\ramusama09\\PDAO_WebApp\\PDAO_WebApp.csproj",
+        "projectPath": "C:\\Users\\point\\OneDrive\\Documents\\GitHub\\PDAO_WebApp\\PDAO_WebApp.csproj",
         "packagesPath": "C:\\Users\\point\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\point\\source\\repos\\ramusama09\\PDAO_WebApp\\obj\\",
+        "outputPath": "C:\\Users\\point\\OneDrive\\Documents\\GitHub\\PDAO_WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

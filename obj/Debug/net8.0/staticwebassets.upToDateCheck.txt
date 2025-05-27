@@ -15,6 +15,7 @@ wwwroot\img\qr_sample.png
 wwwroot\js\admin-dashboard.js
 wwwroot\js\auth-service.js
 wwwroot\js\firebase-init.js
+wwwroot\js\generate-id-info.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -74,4 +75,4 @@ wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
 wwwroot\pdao-webapp-default-rtdb-users-export.json
-wwwroot\js\generate-id-info.js
+wwwroot\js\generate-id-card.js

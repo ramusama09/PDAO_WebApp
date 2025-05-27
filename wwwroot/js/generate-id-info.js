@@ -173,9 +173,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Function to show toast message
-    function showToast(message, type = 'success') {
+    function showToast(message, type = 'success', autoHide = true) {
+        // Remove any existing toasts if it's not a processing message
+        if (type !== 'info' || message !== 'Processing your request...') {
+            const existingToasts = document.querySelectorAll('.toast');
+            existingToasts.forEach(toast => toast.remove());
+        }
+
         const toastDiv = document.createElement('div');
-        toastDiv.className = `toast align-items-center text-white bg-${type} border-0 position-fixed top-50 start-50 translate-middle`;
+        toastDiv.className = `toast align-items-center text-white bg-${type} border-0 position-fixed bottom-0 start-0 m-3`;
         toastDiv.setAttribute('role', 'alert');
         toastDiv.setAttribute('aria-live', 'assertive');
         toastDiv.setAttribute('aria-atomic', 'true');
@@ -185,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const toastBody = document.createElement('div');
         toastBody.className = 'toast-body';
-        const icon = type === 'success' ? 'check-circle' : 'exclamation-circle';
+        const icon = type === 'success' ? 'check-circle' : type === 'info' ? 'info-circle' : 'exclamation-circle';
         toastBody.innerHTML = `<i class="bi bi-${icon} me-2"></i>${message}`;
 
         const closeButton = document.createElement('button');
@@ -199,7 +205,9 @@ document.addEventListener('DOMContentLoaded', function() {
         toastDiv.appendChild(flexDiv);
         document.body.appendChild(toastDiv);
 
-        const toast = new bootstrap.Toast(toastDiv);
+        const toast = new bootstrap.Toast(toastDiv, {
+            delay: autoHide ? 3000 : Infinity // Only auto-hide if autoHide is true
+        });
         toast.show();
 
         // Remove the element after the toast is hidden
@@ -208,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    document.getElementById('confirmSave').addEventListener('click', async function() {
+    document.getElementById('confirmSave').addEventListener('click', async function () {
         const userId = sessionStorage.getItem('currentGenerateIdUserId');
         if (!userId) {
             showToast('No user ID found. Please try again.', 'danger');
@@ -217,11 +225,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         try {
-            // Get form data
+            // Hide confirmation modal first
+            saveConfirmModal.hide();
+
+            // Show processing toast
+            showToast('Processing your request...', 'info', false);
+
+            // Get form data and prepare user data object
             const formData = new FormData(form);
             const pwdIdNo = formData.get('pwdIdNo');
-            
-            // Prepare user data object
+
             const userData = {
                 firstName: formData.get('firstName'),
                 lastName: formData.get('lastName'),
@@ -248,49 +261,61 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             };
 
-            // First, get the current user data to check for existing photo
+            // Get reference to user data
             const userRef = firebase.database().ref('users/' + userId);
-            const snapshot = await userRef.once('value');
-            const currentUserData = snapshot.val();
-            
-            // Handle photo upload
+
+            // Handle photo upload if present
             const photoFile = uploadPhotoInput.files[0];
             if (photoFile) {
-                try {
-                    // Get Firebase Storage instance
-                    const storage = firebase.storage();
-                    if (!storage) {
-                        throw new Error('Firebase Storage is not initialized');
-                    }
+                // Create data URL for immediate use
+                const reader = new FileReader();
+                const dataUrl = await new Promise(resolve => {
+                    reader.onload = e => resolve(e.target.result);
+                    reader.readAsDataURL(photoFile);
+                });
 
-                    // Create a reference to Firebase Storage
-                    const storageRef = storage.ref();
-                    const photoRef = storageRef.child(`user_images/${pwdIdNo}_image`);
-
-                    // Upload the photo
-                    const photoSnapshot = await photoRef.put(photoFile);
-
-                    // Get the download URL
-                    const photoUrl = await photoSnapshot.ref.getDownloadURL();
-
-                    // Add the photo URL to the idCards data
-                    userData.idCards.photoID = photoUrl;
-                } catch (error) {
-                    console.error('Error uploading photo:', error);
-                    throw new Error('Failed to upload photo: ' + error.message);
+                // Upload to Firebase Storage
+                const storage = firebase.storage();
+                if (!storage) {
+                    throw new Error('Firebase Storage is not initialized');
                 }
+
+                const storageRef = storage.ref();
+                const photoRef = storageRef.child(`user_images/${pwdIdNo}_image`);
+                const photoSnapshot = await photoRef.put(photoFile);
+                const firebaseUrl = await photoSnapshot.ref.getDownloadURL();
+
+                // Store URLs and update preview
+                userData.idCards.photoID = dataUrl;
+                userData.idCards.photoURL = firebaseUrl;
+                photoPreview.src = dataUrl;
+                photoPreview.style.display = 'block';
             }
 
-            // Update Firebase Realtime Database
+            // Update user data in Firebase
             await userRef.update(userData);
 
-            // Show success message and hide modal
-            showToast('ID Card information saved successfully!', 'success');
-            saveConfirmModal.hide();
+            // Generate ID cards
+            const idCardURLs = await generateIDCards(userData, pwdIdNo);
+
+            // Update ID card URLs
+            await userRef.child('idCards').update({
+                frontID: idCardURLs.frontID,
+                backID: idCardURLs.backID
+            });
+
+            // Show success message
+            showToast('ID Cards generated and saved successfully!', 'success', true);
+
+
+            // Redirect after delay
+            setTimeout(() => {
+                window.location.href = '/Home/AdminIndex';
+            }, 1500);
 
         } catch (error) {
-            console.error('Error saving data:', error);
-            showToast('Failed to save ID card information. Please try again.', 'danger');
+            console.error('Error:', error);
+            showToast(error.message || 'Failed to save ID card information. Please try again.', 'danger', true);
         }
     });
 
