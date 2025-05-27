@@ -1,29 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\",
+  "WorkspaceRootPath": "C:\\Users\\point\\source\\repos\\ramusama09\\PDAO_WebApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\itdd-p14\\onedrive\\documents\\github\\pdao_webapp1\\wwwroot\\css\\dashboardadmin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:wwwroot\\css\\dashboardadmin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\itdd-p14\\onedrive\\documents\\github\\pdao_webapp1\\wwwroot\\js\\admin-dashboard.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:wwwroot\\js\\admin-dashboard.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\itdd-p14\\onedrive\\documents\\github\\pdao_webapp1\\wwwroot\\js\\generate-id-info.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\point\\source\\repos\\ramusama09\\pdao_webapp\\wwwroot\\js\\generate-id-info.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:wwwroot\\js\\generate-id-info.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\itdd-p14\\onedrive\\documents\\github\\pdao_webapp1\\pages\\home\\adminindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:pages\\home\\adminindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\itdd-p14\\onedrive\\documents\\github\\pdao_webapp1\\pages\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:pages\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\itdd-p14\\onedrive\\documents\\github\\pdao_webapp1\\pages\\home\\generateid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|c:\\users\\point\\source\\repos\\ramusama09\\pdao_webapp\\pages\\home\\generateid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8143565D-95E3-4FDB-886F-F306B0C9B207}|PDAO_WebApp.csproj|solutionrelative:pages\\home\\generateid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -41,81 +25,33 @@
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "admin-dashboard.js",
-              "DocumentMoniker": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\admin-dashboard.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\admin-dashboard.js",
-              "ToolTip": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\admin-dashboard.js",
-              "RelativeToolTip": "wwwroot\\js\\admin-dashboard.js",
-              "ViewState": "AgIAACcAAAAAAAAAAAAhwDUAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-23T01:26:15.411Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "dashboardAdmin.css",
-              "DocumentMoniker": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\dashboardAdmin.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\dashboardAdmin.css",
-              "ToolTip": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\css\\dashboardAdmin.css",
-              "RelativeToolTip": "wwwroot\\css\\dashboardAdmin.css",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAAAJkAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-23T01:26:11.134Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\Home\\Index.cshtml",
-              "RelativeToolTip": "Pages\\Home\\Index.cshtml",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAhwIoAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-23T01:22:28.06Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "generate-id-info.js",
-              "DocumentMoniker": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\generate-id-info.js",
+              "DocumentMoniker": "C:\\Users\\point\\source\\repos\\ramusama09\\PDAO_WebApp\\wwwroot\\js\\generate-id-info.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\generate-id-info.js",
-              "ToolTip": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\wwwroot\\js\\generate-id-info.js",
+              "ToolTip": "C:\\Users\\point\\source\\repos\\ramusama09\\PDAO_WebApp\\wwwroot\\js\\generate-id-info.js",
               "RelativeToolTip": "wwwroot\\js\\generate-id-info.js",
-              "ViewState": "AgIAAAIBAAAAAAAAAAAhwAsBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAiwB4BAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-23T01:08:07.054Z",
+              "WhenOpened": "2025-05-27T02:09:54.665Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "GenerateID.cshtml",
-              "DocumentMoniker": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\Home\\GenerateID.cshtml",
+              "DocumentMoniker": "C:\\Users\\point\\source\\repos\\ramusama09\\PDAO_WebApp\\Pages\\Home\\GenerateID.cshtml",
               "RelativeDocumentMoniker": "Pages\\Home\\GenerateID.cshtml",
-              "ToolTip": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\Home\\GenerateID.cshtml",
+              "ToolTip": "C:\\Users\\point\\source\\repos\\ramusama09\\PDAO_WebApp\\Pages\\Home\\GenerateID.cshtml",
               "RelativeToolTip": "Pages\\Home\\GenerateID.cshtml",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAhwL0AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAALQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-23T01:07:04.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AdminIndex.cshtml",
-              "DocumentMoniker": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\Home\\AdminIndex.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Home\\AdminIndex.cshtml",
-              "ToolTip": "C:\\Users\\ITDD-P14\\OneDrive\\Documents\\GitHub\\PDAO_WebApp1\\Pages\\Home\\AdminIndex.cshtml",
-              "RelativeToolTip": "Pages\\Home\\AdminIndex.cshtml",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAhwKoAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-15T04:16:18.472Z",
               "EditorCaption": ""
             }
           ]

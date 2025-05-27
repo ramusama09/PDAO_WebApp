@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PDAO_WebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0031996f5d208e79130799a2da411e8765cbc617")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c84cc7bffec8cd0e26df8ad2ef8aed4b29c78c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("PDAO_WebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PDAO_WebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const userRef = firebase.database().ref('users/' + userId);
         userRef.once('value').then((snapshot) => {
             const user = snapshot.val();
+            if (user?.idCards?.photoID) {
+                photoPreview.src = user.idCards.photoID;
+                photoPreview.style.display = 'block';
+            }
             if (user) {
                 // Helper function to safely set form values
                 const setFormValue = (id, value) => {
@@ -215,6 +219,9 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // Get form data
             const formData = new FormData(form);
+            const pwdIdNo = formData.get('pwdIdNo');
+            
+            // Prepare user data object
             const userData = {
                 firstName: formData.get('firstName'),
                 lastName: formData.get('lastName'),
@@ -233,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 emergencyContactNumber: formData.get('emergencyContactNumber'),
                 lastUpdated: new Date().toISOString(),
                 idCards: {
-                    pwdIdNo: formData.get('pwdIdNo'),
+                    pwdIdNo: pwdIdNo,
                     dateIssued: formData.get('dateIssued'),
                     expirationDate: formData.get('expirationDate'),
                     bloodType: formData.get('bloodType'),
@@ -241,26 +248,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             };
 
-            // Handle photo upload if there's a new photo
+            // First, get the current user data to check for existing photo
+            const userRef = firebase.database().ref('users/' + userId);
+            const snapshot = await userRef.once('value');
+            const currentUserData = snapshot.val();
+            
+            // Handle photo upload
             const photoFile = uploadPhotoInput.files[0];
             if (photoFile) {
-                // Create a reference to Firebase Storage
-                const pwdIdNo = formData.get('pwdIdNo');
-                const storageRef = firebase.storage().ref();
-                const photoRef = storageRef.child(`pwd_photos/${userId}/${pwdIdNo}_photo.jpg`);
+                try {
+                    // Get Firebase Storage instance
+                    const storage = firebase.storage();
+                    if (!storage) {
+                        throw new Error('Firebase Storage is not initialized');
+                    }
 
-                // Upload the photo
-                const photoSnapshot = await photoRef.put(photoFile);
-                
-                // Get the download URL
-                const photoUrl = await photoSnapshot.ref.getDownloadURL();
-                
-                // Add the photo URL to the idCards data
-                userData.idCards.idPhoto = photoUrl;
+                    // Create a reference to Firebase Storage
+                    const storageRef = storage.ref();
+                    const photoRef = storageRef.child(`user_images/${pwdIdNo}_image`);
+
+                    // Upload the photo
+                    const photoSnapshot = await photoRef.put(photoFile);
+
+                    // Get the download URL
+                    const photoUrl = await photoSnapshot.ref.getDownloadURL();
+
+                    // Add the photo URL to the idCards data
+                    userData.idCards.photoID = photoUrl;
+                } catch (error) {
+                    console.error('Error uploading photo:', error);
+                    throw new Error('Failed to upload photo: ' + error.message);
+                }
             }
 
             // Update Firebase Realtime Database
-            const userRef = firebase.database().ref('users/' + userId);
             await userRef.update(userData);
 
             // Show success message and hide modal

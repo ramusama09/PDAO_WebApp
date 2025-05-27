@@ -25,7 +25,12 @@
         
         <div class="form-group">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+            <div class="password-container">
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                <span class="password-toggle" data-password-toggle>
+                    <i class="bi bi-eye-slash-fill"></i>
+                </span>
+            </div>
         </div>
         
         <div class="d-flex justify-content-between mb-3">
@@ -41,6 +46,7 @@
         <div class="text-center">
             <p>Don't have an account? <a href="/Identity/Register" class="auth-link">Create account</a></p>
         </div>
+
     </form>
 </div>
 
@@ -51,7 +57,21 @@
             const loginForm = document.getElementById('loginForm');
             const authError = document.getElementById('auth-error');
             const authSuccess = document.getElementById('auth-success');
-            
+
+
+            const passwordToggle = document.querySelector('[data-password-toggle]');
+            const passwordInput = document.getElementById('password');
+
+                if (passwordToggle && passwordInput) {
+                    passwordToggle.addEventListener('click', () => {
+                        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                        passwordInput.setAttribute('type', type);
+                        // Toggle the eye icon
+                        passwordToggle.querySelector('i').classList.toggle('bi-eye-fill');
+                        passwordToggle.querySelector('i').classList.toggle('bi-eye-slash-fill');
+                    });
+                }
+
             loginForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 
@@ -83,20 +103,30 @@
                     setTimeout(() => {
                         window.location.href = '/Home/Index';
                     }, 1500);
+
                 } catch (error) {
-                    // Handle errors
                     let errorMessage = 'An error occurred during login. Please try again.';
-                    
-                    if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
-                        errorMessage = 'Invalid email or password. Please try again.';
-                    } else if (error.code === 'auth/too-many-requests') {
-                        errorMessage = 'Too many unsuccessful login attempts. Please try again later.';
+
+                    switch (error.code) {
+                        case 'auth/invalid-login-credentials':
+                            errorMessage = 'Invalid email or password. Please check your credentials.';
+                            break;
+                        case 'auth/invalid-password':
+                            errorMessage = 'Invalid email or password. Please check your credentials.';
+                            break;
+                        case 'auth/invalid-email':
+                            errorMessage = 'Invalid email or password. Please check your credentials.';
+                            break;
+                        case 'auth/too-many-requests':
+                            errorMessage = 'Too many unsuccessful login attempts. Please try again later.';
+                            break;
+                        case 'auth/network-request-failed':
+                            errorMessage = 'Network error. Please check your internet connection.';
+                            break;
                     }
-                    
                     authError.textContent = errorMessage;
                     authError.style.display = 'block';
-                    console.error('Login error:', error);
-                }
+                }   
             });
             
             // Check for existing authenticated user and redirect if found
