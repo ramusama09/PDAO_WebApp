@@ -1,17 +1,17 @@
 ﻿async function generateIDCards(userData, pwdIdNo) {
     try {
         // Generate front and back ID card HTML with user data
-        const frontHTML = await generateFrontIDHTML(userData);
+        const frontHTML = await generateFrontIDHTML(userData); // Now awaiting the Promise
         const backHTML = await generateBackIDHTML(userData);
-        
+
         // Convert HTML to images using html2canvas
         const frontImage = await htmlToImage(frontHTML);
         const backImage = await htmlToImage(backHTML);
-        
+
         // Upload images to Firebase Storage and get URLs
         const frontURL = await uploadIDCardImage(frontImage, pwdIdNo, 'front');
         const backURL = await uploadIDCardImage(backImage, pwdIdNo, 'back');
-        
+
         // Return the URLs for database storage
         return { frontID: frontURL, backID: backURL };
     } catch (error) {
@@ -26,103 +26,122 @@ function generateFrontIDHTML(userData) {
     container.style.width = '800px';
     container.style.height = '500px';
 
-    // Get the photo URL from userData or use default
-    let photoURL = '/img/default_face.jpg';
+    // Use photoID directly from userData if it exists, otherwise use default
+    const photoID = userData.idCards?.photoID || '/img/default_face.jpg';
 
-    if (userData.idCards?.photoID) {
-        // If we have a data URL from the original upload, use that
-        if (userData.idCards.photoID.startsWith('data:')) {
-            photoURL = userData.idCards.photoID;
-        } else {
-            // If it's a Firebase URL, we'll handle it in htmlToImage
-            photoURL = userData.idCards.photoID;
-        }
-    }
+    // Create QR code container
+    const qrContainer = document.createElement('div');
+    qrContainer.id = 'qrcode-container';
+    qrContainer.style.display = 'none'; // Hide initially
+    document.body.appendChild(qrContainer);
 
-    container.innerHTML = `
-        <div class="card pwd-card" style="border: 1px solid black;">
-            <div class="header">
-                <div class="row p-0 m-0" style="height: 100px;">
-                    <div class="col-3 p-0 m-0 d-flex justify-content-center align-items-center">
-                        <img src="/img/PH_Flag.webp" alt="Philippine Flag" class="flag" style="max-height: 60px;">
+    // Get QR code data - Add this before creating the QR code
+    const userUID = sessionStorage.getItem('currentUserUID') || '';
+
+    // Generate QR code
+    const qr = new QRCode(qrContainer, {
+        text: userUID, // Use the UID from sessionStorage
+        width: 128,
+        height: 128,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+
+    // Get QR code as data URL after a short delay to ensure it's generated
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const qrDataUrl = qrContainer.querySelector('canvas').toDataURL('image/png');
+            document.body.removeChild(qrContainer);
+
+            container.innerHTML = `
+                <div class="card pwd-card" style="border: 1px solid black;">
+                    <div class="header">
+                        <div class="row p-0 m-0" style="height: 100px;">
+                            <div class="col-3 p-0 m-0 d-flex justify-content-center align-items-center">
+                                <img src="/img/PH_Flag.webp" alt="Philippine Flag" class="flag" style="max-height: 60px;">
+                            </div>
+                            <div class="col-6 text-center p-0 m-0 d-flex flex-column justify-content-center">
+                                <h5 class="mb-0 fw-bold">REPUBLIC OF THE PHILIPPINES</h5>
+                                <h4 class="mb-0 helvetica shadowed">CITY OF PARAÑAQUE</h4>
+                                <small>Persons with Disability Affairs Office</small>
+                            </div>
+                            <div class="col-1 p-0 m-0 d-flex justify-content-center align-items-center">
+                                <img src="/img/PQ_Logo.jpg" alt="City Seal" class="logo" style="max-height: 60px;">
+                            </div>
+                            <div class="col-1 p-0 m-0 d-flex justify-content-center align-items-center">
+                                <img src="/img/BP_Logo.jpg" alt="Bagong Pilipinas Logo" class="logo" style="max-height: 60px;">
+                            </div>
+                            <div class="col-1 p-0 m-0 d-flex justify-content-center align-items-center">
+                                <img src="/img/PDAO_Logo.png" alt="PWD Logo" class="logo" style="max-height: 60px;">
+                            </div>
+                        </div>
+                        <div class="row mt-2 p-0 m-0">
+                            <div class="col-3"></div>
+                            <div class="col-6 text-center p-0 m-0">
+                                <strong>PWD ID NO: </strong><span class="underlined-text text-space">${userData.idCards.pwdIdNo}</span>
+                            </div>
+                            <div class="col-3"></div>
+                        </div>
                     </div>
-                    <div class="col-6 text-center p-0 m-0 d-flex flex-column justify-content-center">
-                        <h5 class="mb-0 fw-bold">REPUBLIC OF THE PHILIPPINES</h5>
-                        <h4 class="mb-0 helvetica shadowed">CITY OF PARAÑAQUE</h4>
-                        <small>Persons with Disability Affairs Office</small>
+
+                    <div class="content">
+                        <div class="row p-0 m-0">
+                            <div class="col-md-3 p-0 m-0">
+                                 <div class="photo-box">
+                                     <img src="${photoID}" 
+                                         alt="ID Photo" 
+                                         crossorigin="anonymous" 
+                                         onerror="this.src='/img/default_face.jpg'">
+                                 </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row my-2">
+                                    <div class="col-10 offset-1 border-bottom border-dark">
+                                        <p class="p-0 m-0 text-center helvetica fs-5">${userData.firstName} ${userData.middleName} ${userData.lastName} ${userData.suffix || ''}</p>
+                                    </div>
+                                    <div class="col-10 offset-1">
+                                        <p class="p-0 m-0 text-center fw-bold">Name</p>
+                                    </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col-10 offset-1 border-bottom border-dark">
+                                        <p class="p-0 m-0 text-center helvetica fs-5">${userData.disabilityType}</p>
+                                    </div>
+                                    <div class="col-10 offset-1">
+                                        <p class="p-0 m-0 text-center fw-bold">Type of Disability</p>
+                                    </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col-10 offset-1 border-bottom border-dark">
+                                        <p class="p-0 m-0 text-center helvetica fs-5">Insert Signature</p>
+                                    </div>
+                                    <div class="col-10 offset-1">
+                                        <p class="p-0 m-0 text-center fw-bold">Signature</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 m-0 p-0">
+                                <div class="photo-box-no-border p-1">
+                                    <img src="${qrDataUrl}" alt="QR Code">
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="row mt-4">
+                            <div class="col">
+                                <strong>Expires on: </strong><span class="underlined-text">${formatDate(userData.idCards.expirationDate)}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-1 p-0 m-0 d-flex justify-content-center align-items-center">
-                        <img src="/img/PQ_Logo.jpg" alt="City Seal" class="logo" style="max-height: 60px;">
-                    </div>
-                    <div class="col-1 p-0 m-0 d-flex justify-content-center align-items-center">
-                        <img src="/img/BP_Logo.jpg" alt="Bagong Pilipinas Logo" class="logo" style="max-height: 60px;">
-                    </div>
-                    <div class="col-1 p-0 m-0 d-flex justify-content-center align-items-center">
-                        <img src="/img/PDAO_Logo.png" alt="PWD Logo" class="logo" style="max-height: 60px;">
+                    <div class="footer">
+                        VALID ANYWHERE IN THE PHILIPPINES
                     </div>
                 </div>
-                <div class="row mt-2 p-0 m-0">
-                    <div class="col-3"></div>
-                    <div class="col-6 text-center p-0 m-0">
-                        <strong>PWD ID NO: </strong><span class="underlined-text text-space">${userData.idCards.pwdIdNo}</span>
-                    </div>
-                    <div class="col-3"></div>
-                </div>
-            </div>
-
-            <div class="content">
-                <div class="row p-0 m-0">
-                    <div class="col-md-3 p-0 m-0">
-                        <div class="photo-box">
-                            <img src="${photoURL}" alt="ID Photo" crossorigin="anonymous" onerror="this.src='/img/default_face.jpg'">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row my-2">
-                            <div class="col-10 offset-1 border-bottom border-dark">
-                                <p class="p-0 m-0 text-center helvetica fs-5">${userData.firstName} ${userData.middleName} ${userData.lastName} ${userData.suffix || ''}</p>
-                            </div>
-                            <div class="col-10 offset-1">
-                                <p class="p-0 m-0 text-center fw-bold">Name</p>
-                            </div>
-                        </div>
-                        <div class="row my-2">
-                            <div class="col-10 offset-1 border-bottom border-dark">
-                                <p class="p-0 m-0 text-center helvetica fs-5">${userData.disabilityType}</p>
-                            </div>
-                            <div class="col-10 offset-1">
-                                <p class="p-0 m-0 text-center fw-bold">Type of Disability</p>
-                            </div>
-                        </div>
-                        <div class="row my-2">
-                            <div class="col-10 offset-1 border-bottom border-dark">
-                                <p class="p-0 m-0 text-center helvetica fs-5">Insert Signature</p>
-                            </div>
-                            <div class="col-10 offset-1">
-                                <p class="p-0 m-0 text-center fw-bold">Signature</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 m-0 p-0">
-                        <div class="photo-box-no-border p-1">
-                            <img src="/img/qr_sample.png" alt="QR Code">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row mt-4">
-                    <div class="col">
-                        <strong>Expires on: </strong><span class="underlined-text">${formatDate(userData.idCards.expirationDate)}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="footer">
-                VALID ANYWHERE IN THE PHILIPPINES
-            </div>
-        </div>
-    `;
-
-    return container;
+            `;
+            resolve(container);
+        }, 100);
+    });
 }
 
 function generateBackIDHTML(userData) {
@@ -213,91 +232,85 @@ function generateBackIDHTML(userData) {
 
 async function htmlToImage(container) {
     try {
-        // Add container to document temporarily
         document.body.appendChild(container);
-
-        // Apply necessary styles
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = '/css/id_card_styles.css';
         document.head.appendChild(link);
 
-        // Find all Firebase Storage images
-        const firebaseImages = container.querySelectorAll('img[src^="https://firebasestorage.googleapis.com"]');
-
-        // Convert Firebase images to data URLs
-        await Promise.all(Array.from(firebaseImages).map(async img => {
+        // Find Firebase Storage image (photo)
+        const photoImg = container.querySelector('.photo-box img');
+        if (photoImg && photoImg.src.startsWith('https://firebasestorage.googleapis.com')) {
             try {
-                // Create a new image element
+                // Create a new image with CORS settings
                 const tempImg = new Image();
-
-                // Set crossOrigin to anonymous
                 tempImg.crossOrigin = 'anonymous';
 
-                // Create a canvas element
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-
-                // Wait for the image to load
+                // Convert Firebase image to data URL temporarily for html2canvas
                 await new Promise((resolve, reject) => {
-                    tempImg.onload = resolve;
+                    tempImg.onload = async () => {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = tempImg.width;
+                        canvas.height = tempImg.height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(tempImg, 0, 0);
+                        try {
+                            photoImg.src = canvas.toDataURL('image/png');
+                            resolve();
+                        } catch (e) {
+                            console.error('Canvas to data URL error:', e);
+                            photoImg.src = '/img/default_face.jpg';
+                            resolve();
+                        }
+                    };
                     tempImg.onerror = () => {
                         console.warn('Failed to load image, using default');
-                        img.src = '/img/default_face.jpg';
+                        photoImg.src = '/img/default_face.jpg';
                         resolve();
                     };
-                    tempImg.src = img.src;
+
+                    // Get the Firebase auth token
+                    firebase.auth().currentUser.getIdToken(true)
+                        .then(token => {
+                            // Add the token to the image URL
+                            const imageUrl = new URL(photoImg.src);
+                            imageUrl.searchParams.append('token', token);
+                            tempImg.src = imageUrl.toString();
+                        })
+                        .catch(error => {
+                            console.error('Error getting auth token:', error);
+                            photoImg.src = '/img/default_face.jpg';
+                            resolve();
+                        });
                 });
-
-                if (tempImg.src !== '/img/default_face.jpg') {
-                    // Set canvas dimensions
-                    canvas.width = tempImg.width;
-                    canvas.height = tempImg.height;
-
-                    // Draw image to canvas
-                    ctx.drawImage(tempImg, 0, 0);
-
-                    // Convert to data URL
-                    try {
-                        const dataUrl = canvas.toDataURL('image/png');
-                        img.src = dataUrl;
-                    } catch (e) {
-                        console.warn('Failed to convert to data URL, using default');
-                        img.src = '/img/default_face.jpg';
-                    }
-                }
             } catch (error) {
-                console.error('Error processing image:', error);
-                img.src = '/img/default_face.jpg';
+                console.error('Error processing photo:', error);
+                photoImg.src = '/img/default_face.jpg';
             }
-        }));
+        }
 
-        // Wait for images and styles to load
         await new Promise(resolve => setTimeout(resolve, 1000));
 
-        // Convert to canvas
         const canvas = await html2canvas(container, {
             scale: 2,
             useCORS: true,
             allowTaint: true,
             backgroundColor: '#ffffff',
             logging: false,
+            imageTimeout: 15000,
             onclone: function (clonedDoc) {
-                // Ensure all images in cloned document are loaded
                 const images = clonedDoc.getElementsByTagName('img');
                 for (let img of images) {
                     if (img.src.startsWith('https://firebasestorage.googleapis.com')) {
-                        img.src = img.src;
+                        img.crossOrigin = 'anonymous';
                     }
                 }
             }
         });
 
-        // Clean up
         document.body.removeChild(container);
         document.head.removeChild(link);
 
-        // Convert canvas to blob
         return new Promise((resolve) => {
             canvas.toBlob(resolve, 'image/png', 1.0);
         });

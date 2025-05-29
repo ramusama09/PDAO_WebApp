@@ -91,79 +91,107 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Handle photo upload
-    uploadPhotoInput.addEventListener('change', function(e) {
+    uploadPhotoInput.addEventListener('change', async function (e) {
         const file = e.target.files[0];
         if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                photoPreview.src = e.target.result;
+            try {
+                // Generate a unique filename using timestamp
+                const timestamp = new Date().getTime();
+                const filename = `photos/${userId}_${timestamp}.jpg`;
+
+                // Create storage reference
+                const storageRef = firebase.storage().ref();
+                const photoRef = storageRef.child(filename);
+
+                // Upload the file
+                await photoRef.put(file);
+
+                // Get the download URL
+                const photoURL = await photoRef.getDownloadURL();
+
+                // Update preview
+                photoPreview.src = photoURL;
                 photoPreview.style.display = 'block';
-            };
-            reader.readAsDataURL(file);
+
+                // Store the Firebase Storage URL in the database
+                const userRef = firebase.database().ref(`users/${userId}/idCards`);
+                await userRef.update({
+                    photoID: photoURL // Only store the Firebase Storage URL
+                });
+            } catch (error) {
+                console.error('Error uploading photo:', error);
+                alert('Failed to upload photo. Please try again.');
+            }
         }
     });
 
     // Handle photo capture
-    capturePhotoBtn.addEventListener('click', async function() {
+    capturePhotoBtn.addEventListener('click', async function () {
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-            const video = document.createElement('video');
-            const canvas = document.createElement('canvas');
-            
-            // Create a modal for the camera
-            const modal = document.createElement('div');
-            modal.className = 'camera-modal';
-            modal.innerHTML = `
-                <div class="camera-container">
-                    <video id="camera-preview" autoplay></video>
-                    <button id="capture-btn" class="btn btn-primary">
-                        <i class="bi bi-camera me-2"></i>Capture
-                    </button>
-                    <button id="close-camera" class="btn btn-secondary">
-                        <i class="bi bi-x me-2"></i>Close
-                    </button>
+            const videoElement = document.createElement('video');
+            const canvasElement = document.createElement('canvas');
+
+            // Create and show camera modal
+            const modalHtml = `
+                <div class="camera-modal">
+                    <div class="camera-container">
+                        <video id="camera-preview" autoplay playsinline></video>
+                        <button id="capture-button" class="btn btn-primary">Capture</button>
+                        <button id="cancel-capture" class="btn btn-secondary">Cancel</button>
+                    </div>
                 </div>
             `;
-            
-            document.body.appendChild(modal);
-            
-            const videoElement = modal.querySelector('video');
-            videoElement.srcObject = stream;
-            
-            // Handle capture button click
-            modal.querySelector('#capture-btn').onclick = () => {
-                canvas.width = videoElement.videoWidth;
-                canvas.height = videoElement.videoHeight;
-                canvas.getContext('2d').drawImage(videoElement, 0, 0);
-                
-                // Convert canvas to blob
-                canvas.toBlob((blob) => {
-                    // Get PWD ID number for the filename
-                    const pwdIdNo = document.getElementById('pwdIdNo').value || 'temp';
-                    const file = new File([blob], `${pwdIdNo}_photo.jpg`, { type: 'image/jpeg' });
-                    const dataTransfer = new DataTransfer();
-                    dataTransfer.items.add(file);
-                    uploadPhotoInput.files = dataTransfer.files;
-                    
-                    // Update preview
-                    photoPreview.src = canvas.toDataURL('image/jpeg');
-                    photoPreview.style.display = 'block';
-                    
-                    // Clean up
-                    stream.getTracks().forEach(track => track.stop());
-                    modal.remove();
-                }, 'image/jpeg');
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+            const modal = document.querySelector('.camera-modal');
+            const preview = document.getElementById('camera-preview');
+            preview.srcObject = stream;
+
+            // Handle capture
+            document.getElementById('capture-button').onclick = async () => {
+                // Draw video frame to canvas
+                canvasElement.width = preview.videoWidth;
+                canvasElement.height = preview.videoHeight;
+                canvasElement.getContext('2d').drawImage(preview, 0, 0);
+
+                // Convert to blob
+                const blob = await new Promise(resolve =>
+                    canvasElement.toBlob(resolve, 'image/jpeg')
+                );
+
+                // Upload to Firebase Storage
+                const timestamp = new Date().getTime();
+                const filename = `photos/${userId}_${timestamp}.jpg`;
+                const photoRef = firebase.storage().ref().child(filename);
+
+                await photoRef.put(blob);
+                const photoURL = await photoRef.getDownloadURL();
+
+                // Update preview and database
+                photoPreview.src = photoURL;
+                photoPreview.style.display = 'block';
+
+                const userRef = firebase.database().ref(`users/${userId}/idCards`);
+                await userRef.update({
+                    photoID: photoURL // Only store the Firebase Storage URL
+                });
+
+                // Cleanup
+                cleanupCamera();
             };
-            
-            // Handle close button click
-            modal.querySelector('#close-camera').onclick = () => {
+
+            // Handle cancel
+            document.getElementById('cancel-capture').onclick = cleanupCamera;
+
+            function cleanupCamera() {
                 stream.getTracks().forEach(track => track.stop());
                 modal.remove();
-            };
-            
-        } catch (err) {
-            console.error('Error accessing camera:', err);
-            alert('Could not access camera. Please make sure you have granted camera permissions.');
+            }
+
+        } catch (error) {
+            console.error('Error accessing camera:', error);
+            alert('Failed to access camera. Please check your permissions.');
         }
     });
 
@@ -267,29 +295,26 @@ document.addEventListener('DOMContentLoaded', function() {
             // Handle photo upload if present
             const photoFile = uploadPhotoInput.files[0];
             if (photoFile) {
-                // Create data URL for immediate use
-                const reader = new FileReader();
-                const dataUrl = await new Promise(resolve => {
-                    reader.onload = e => resolve(e.target.result);
-                    reader.readAsDataURL(photoFile);
-                });
-
-                // Upload to Firebase Storage
                 const storage = firebase.storage();
                 if (!storage) {
                     throw new Error('Firebase Storage is not initialized');
                 }
 
+                // Upload to Firebase Storage
                 const storageRef = storage.ref();
-                const photoRef = storageRef.child(`user_images/${pwdIdNo}_image`);
+                const photoRef = storageRef.child(`user_photos/${pwdIdNo}_photo`);
                 const photoSnapshot = await photoRef.put(photoFile);
-                const firebaseUrl = await photoSnapshot.ref.getDownloadURL();
+                const photoURL = await photoSnapshot.ref.getDownloadURL();
 
-                // Store URLs and update preview
-                userData.idCards.photoID = dataUrl;
-                userData.idCards.photoURL = firebaseUrl;
-                photoPreview.src = dataUrl;
+                // Store only the Firebase Storage URL
+                userData.idCards.photoID = photoURL;
+
+                // Update preview
+                photoPreview.src = photoURL;
                 photoPreview.style.display = 'block';
+            } else if (photoPreview.src && !photoPreview.src.includes('default_face.jpg')) {
+                // If no new photo but existing photo is present, preserve it
+                userData.idCards.photoID = photoPreview.src;
             }
 
             // Update user data in Firebase
@@ -306,7 +331,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Show success message
             showToast('ID Cards generated and saved successfully!', 'success', true);
-
 
             // Redirect after delay
             setTimeout(() => {

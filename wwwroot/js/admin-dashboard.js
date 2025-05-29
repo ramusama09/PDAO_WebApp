@@ -150,8 +150,9 @@ function updateID(userId) {
             return;
         }
 
-        // Store the user ID for later use
+        // Store both the user ID and uid for later use
         sessionStorage.setItem('currentGenerateIdUserId', userId);
+        sessionStorage.setItem('currentUserUID', userId); // Using userId as the UID since Firebase Database ID is unique
 
         // Navigate to the Generate ID page
         window.location.href = '/Home/GenerateID';
