@@ -1,75 +1,173 @@
 ﻿document.addEventListener('DOMContentLoaded', function() {
     const database = firebase.database();
     const usersRef = database.ref('users');
+    let allUsers = {};
 
-    usersRef.on('value', (snapshot) => {
-        const usersData = snapshot.val();
+    // Add sort functionality to name column
+    const nameHeader = document.querySelector('#usersTable th:first-child');
+    nameHeader.classList.add('sortable');
+    let sortDirection = 'asc';
+
+    nameHeader.addEventListener('click', function () {
+        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+        this.classList.toggle('asc', sortDirection === 'asc');
+        this.classList.toggle('desc', sortDirection === 'desc');
+        renderUsers(filterUsers());
+    });
+
+    // Search functionality
+    const searchInput = document.querySelector('.search-input');
+    searchInput.addEventListener('input', function () {
+        renderUsers(filterUsers());
+    });
+
+    // Filter functionality
+    const filterInputs = document.querySelectorAll('.filter-container input');
+    filterInputs.forEach(input => {
+        input.addEventListener('change', function () {
+            renderUsers(filterUsers());
+        });
+    });
+
+    function filterUsers() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const idFilter = document.querySelector('input[name="idFilter"]:checked').value;
+        const showExpired = document.getElementById('expiredId').checked;
+
+        return Object.entries(allUsers).filter(([userId, user]) => {
+            // Search filtering
+            const searchMatch =
+                (user.firstName?.toLowerCase().includes(searchTerm) ||
+                    user.lastName?.toLowerCase().includes(searchTerm) ||
+                    user.middleName?.toLowerCase().includes(searchTerm) ||
+                    user.addressLine1?.toLowerCase().includes(searchTerm) ||
+                    user.addressLine2?.toLowerCase().includes(searchTerm) ||
+                    user.email?.toLowerCase().includes(searchTerm) ||
+                    user.contactNumber?.toLowerCase().includes(searchTerm) ||
+                    user.disabilityType?.toLowerCase().includes(searchTerm));
+
+            // ID status filtering
+            const hasId = user.idCards && Object.keys(user.idCards).length > 0;
+            const idStatusMatch =
+                idFilter === 'all' ? true :
+                    idFilter === 'withId' ? hasId :
+                        idFilter === 'withoutId' ? !hasId : true;
+
+            // Expiration filtering
+            const isExpired = user.idCards?.expirationDate &&
+                new Date(user.idCards.expirationDate) < new Date();
+            const expirationMatch = !showExpired || isExpired;
+
+            return searchMatch && idStatusMatch &&
+                (showExpired ? expirationMatch : true);
+        });
+    }
+
+    function renderUsers(filteredUsers) {
         const tableBody = document.querySelector('#usersTable tbody');
         tableBody.innerHTML = '';
 
-        for (const userId in usersData) {
-            if (usersData.hasOwnProperty(userId)) {
-                const user = usersData[userId];
-                const middleInitial = user.middleName ? user.middleName.charAt(0) + '.' : '';
-                const fullName = `${user.firstName} ${middleInitial} ${user.lastName} ${user.suffix}`;
+        // Sort users if needed
+        filteredUsers.sort(([, a], [, b]) => {
+            const nameA = `${a.firstName || ''} ${a.lastName || ''}`.toLowerCase();
+            const nameB = `${b.firstName || ''} ${b.lastName || ''}`.toLowerCase();
+            return sortDirection === 'asc' ?
+                nameA.localeCompare(nameB) :
+                nameB.localeCompare(nameA);
+        });
 
-                const row = document.createElement('tr');
+        filteredUsers.forEach(([userId, user]) => {
+            const middleInitial = user.middleName ? user.middleName.charAt(0) + '.' : '';
+            const fullName = `${user.firstName} ${middleInitial} ${user.lastName} ${user.suffix || ''}`;
 
-                // Name column
-                const nameCell = document.createElement('td');
-                nameCell.innerHTML = `
-                    <div class="d-flex align-items-center">
-                        <div class="status-indicator status-active"></div>
-                        <strong>${fullName}</strong>
-                    </div>
-                    <div class="text-muted small">Age: ${user.age || 'N/A'}</div>
-                `;
-                row.appendChild(nameCell);
+            const row = document.createElement('tr');
 
-                // Contact Details column
-                const contactCell = document.createElement('td');
-                contactCell.innerHTML = `
-                    <div><i class="fas fa-phone me-2 text-muted"></i> ${user.contactNumber || 'N/A'}</div>
-                    <div><i class="fas fa-envelope me-2 text-muted"></i> ${user.email || 'N/A'}</div>
-                `;
-                row.appendChild(contactCell);
+            // Name column
+            const nameCell = document.createElement('td');
+            nameCell.innerHTML = `
+            <div class="d-flex align-items-center">
+                <div class="status-indicator status-active"></div>
+                <strong>${fullName}</strong>
+            </div>
+            <div class="text-muted small">Age: ${calculateAge(user.birthDate) || 'N/A'}</div>
+        `;
+            row.appendChild(nameCell);
 
-                // Disability column
-                const disabilityCell = document.createElement('td');
-                disabilityCell.classList.add('text-center');
-                disabilityCell.innerHTML = `
-                    <span class="badge bg-success bg-opacity-10 text-success">${user.disabilityType || 'N/A'}</span>
-                `;
-                row.appendChild(disabilityCell);
+            // Contact Details column
+            const contactCell = document.createElement('td');
+            contactCell.innerHTML = `
+            <div><i class="fas fa-phone me-2 text-muted"></i> ${user.contactNumber || 'N/A'}</div>
+            <div><i class="fas fa-envelope me-2 text-muted"></i> ${user.email || 'N/A'}</div>
+        `;
+            row.appendChild(contactCell);
 
-                // Action column
-                // Update the action cell creation to include the userId in the print button
-                const actionCell = document.createElement('td');
-                actionCell.classList.add('text-center');
-                actionCell.innerHTML = `
-                    <div class="action-buttons">
-                        <button class="btn-action btn-view" onclick="viewUser('${userId}')">
-                            <i class="bi bi-search"></i> View
-                        </button>
-                        <button class="btn-action btn-edit" onclick="updateID('${userId}')">
-                            <i class="bi bi-info-lg"></i> Update Information
-                        </button>
+            // Disability column
+            const disabilityCell = document.createElement('td');
+            disabilityCell.classList.add('text-center');
+            disabilityCell.innerHTML = `
+            <span class="badge bg-success bg-opacity-10 text-success">${user.disabilityType || 'N/A'}</span>
+        `;
+            row.appendChild(disabilityCell);
 
-                         <button class="btn-action btn-print" onclick="printUserID('${userId}')">
-                            <i class="bi bi-printer"></i> Print ID Card
-                        </button>
-                    </div>
-                `;
+            // Action column
+            const actionCell = document.createElement('td');
+            actionCell.classList.add('text-center');
+            actionCell.innerHTML = `
+            <div class="action-buttons">
+                <button class="btn-action btn-view" onclick="viewUser('${userId}')">
+                    <i class="bi bi-search"></i> View
+                </button>
+                <button class="btn-action btn-edit" onclick="updateID('${userId}')">
+                    <i class="bi bi-info-lg"></i> Update Information
+                </button>
+                <button class="btn-action btn-print" onclick="printUserID('${userId}')">
+                    <i class="bi bi-printer"></i> Print ID Card
+                </button>
+            </div>
+        `;
 
-                row.appendChild(actionCell);
+            row.appendChild(actionCell);
+            tableBody.appendChild(row);
+        });
 
-                tableBody.appendChild(row);
-            }
+        // Add "No results found" message if no users match the filters
+        if (filteredUsers.length === 0) {
+            const emptyRow = document.createElement('tr');
+            emptyRow.innerHTML = `
+            <td colspan="4" class="text-center py-4 text-muted">
+                <i class="bi bi-search me-2"></i>No matching records found
+            </td>
+        `;
+            tableBody.appendChild(emptyRow);
         }
-    }, (error) => {
-        console.error("Error fetching users:", error);
+    }
+
+    usersRef.on('value', (snapshot) => {
+        allUsers = snapshot.val() || {};
+        renderUsers(Object.entries(allUsers));
     });
 });
+
+// Add this after your existing DOMContentLoaded event listener setup
+function updateFilterButtonState() {
+    const filterContainer = document.querySelector('.filter-container');
+    const hasActiveFilters =
+        document.querySelector('input[name="idFilter"]:checked').value !== 'all' ||
+        document.getElementById('expiredId').checked;
+
+    filterContainer.classList.toggle('filter-active', hasActiveFilters);
+}
+
+// Add this to your existing filter event listeners
+filterInputs.forEach(input => {
+    input.addEventListener('change', function () {
+        renderUsers(filterUsers());
+        updateFilterButtonState();
+    });
+});
+
+// Initial state
+updateFilterButtonState();
 
 function viewUser(userId) {
     // Implement view functionality

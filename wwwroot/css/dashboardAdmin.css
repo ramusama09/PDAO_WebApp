@@ -1,4 +1,120 @@
-﻿.table-responsive {
+﻿.search-container {
+    position: relative;
+}
+
+.search-input {
+    height: 50px;
+    border-radius: 30px;
+    padding-left: 35px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+/* Filter Container Styles */
+.filter-container {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-filter {
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+    color: #666;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .btn-filter:hover,
+    .btn-filter:focus {
+        background-color: #f8f9fa;
+        color: #27ae60;
+    }
+
+    .btn-filter .bi-funnel {
+        margin-right: 8px;
+    }
+
+.filter-container .dropdown-menu {
+    width: 250px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+}
+
+.filter-subtitle {
+    color: #2c3e50;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.filter-container .form-check-input:checked {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+.filter-container .form-check-label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.filter-container .dropdown-divider {
+    border-top: 1px solid #e9ecef;
+    margin: 0.5rem 0;
+}
+
+/* Update filter active state visualization */
+.filter-active .btn-filter {
+    color: #27ae60;
+    background-color: #f0f9f4;
+}
+
+    .filter-active .btn-filter .bi-funnel {
+        color: #27ae60;
+    }
+
+/* Sort indicators for table headers */
+.sortable {
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+}
+
+    .sortable::after {
+        content: '↕';
+        position: absolute;
+        right: 5px;
+        opacity: 0.5;
+    }
+
+    .sortable.asc::after {
+        content: '↑';
+        opacity: 1;
+    }
+
+    .sortable.desc::after {
+        content: '↓';
+        opacity: 1;
+    }
+
+.table-responsive {
     overflow-x: auto;
     border-radius: 10px;
 }

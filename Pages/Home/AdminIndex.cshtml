@@ -14,6 +14,45 @@
     </div>
 
     <div class="row">
+        <div class="col-md-10">
+            <div class="search-container">
+                <input type="text" class="form-control search-input" placeholder="Search...">
+            <i class="bi bi-search search-icon"></i>
+        </div>
+        </div>
+        <div class="col-md-2">
+            <div class="filter-container">
+                <button class="btn btn-filter dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-funnel"></i> Filters
+                </button>
+                <div class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="filterDropdown">
+                    <!-- ID Status -->
+                    <h6 class="filter-subtitle">ID Status</h6>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="idFilter" id="allIds" value="all" checked>
+                        <label class="form-check-label" for="allIds">All</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="idFilter" id="withId" value="withId">
+                        <label class="form-check-label" for="withId">With ID</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="idFilter" id="withoutId" value="withoutId">
+                        <label class="form-check-label" for="withoutId">Without ID</label>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <!-- ID Expiration -->
+                    <div class="form-check mt-2">
+                        <input class="form-check-input" type="checkbox" id="expiredId">
+                        <label class="form-check-label" for="expiredId">Show Expired IDs</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
         <div class="col-md-12">
             <div class="card p-3 rounded rounded-3">
                 <div class="card-body">
