@@ -76,3 +76,5 @@ wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
 wwwroot\pdao-webapp-default-rtdb-users-export.json
+wwwroot\css\transactionsAdmin.css
+wwwroot\js\admin-transactions.js

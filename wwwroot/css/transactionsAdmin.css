@@ -1,0 +1,223 @@
+﻿/* Inherit the base styles from dashboardAdmin.css */
+.search-container {
+    position: relative;
+}
+
+.search-input {
+    height: 50px;
+    border-radius: 30px;
+    padding-left: 35px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+/* Add these styles for consistent header appearance */
+.sortable {
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+}
+
+    .sortable::after {
+        content: '↕';
+        position: absolute;
+        right: 5px;
+        opacity: 0.5;
+    }
+
+    .sortable.asc::after {
+        content: '↑';
+        opacity: 1;
+    }
+
+    .sortable.desc::after {
+        content: '↓';
+        opacity: 1;
+    }
+
+/* Update table header styles to match */
+#usersTable th {
+    font-weight: 600;
+    color: #2c3e50;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #27ae60;
+}
+
+    #usersTable th {
+        font-weight: 600;
+        color: #2c3e50;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid #27ae60;
+    }
+
+    #usersTable td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ecf0f1;
+        vertical-align: middle;
+    }
+
+.table-header {
+    background-color: #27ae60;
+    color: white !important;
+}
+
+    .table-header th {
+        border-bottom: none !important;
+        color: white !important;
+    }
+
+.btn-action {
+    position: relative;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background-color: #2196F3;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+    .btn-action:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-active {
+    background-color: #2ecc71;
+}
+
+/* Transaction Modal Styles */
+.transaction-table {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.transaction-info {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0,0,0,0.15);
+}
+
+#transactionSearch {
+    width: 250px;
+}
+
+#transactionSort {
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+    background-color: white;
+}
+
+\/* Update modal table styles to match main table */
+#transactionsTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#transactionsTable th {
+    font-weight: 600;
+    color: #2c3e50;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #27ae60;
+}
+
+#transactionsTable td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ecf0f1;
+    vertical-align: middle;
+}
+
+#transactionsTable tr:last-child td {
+    border-bottom: none;
+}
+
+#transactionsTable tr:hover td {
+    background-color: #f8f9fa;
+}
+
+/* Add zebra striping for rows */
+#transactionsTable tbody tr:nth-child(even) {
+    background-color: #f8fcf9;
+}
+
+/* Update transaction table scrollbar */
+.transaction-table::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.transaction-table::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.transaction-table::-webkit-scrollbar-thumb {
+    background: rgba(76, 175, 80, 0.5);
+    border-radius: 10px;
+}
+
+    .transaction-table::-webkit-scrollbar-thumb:hover {
+        background: var(--green);
+    }
+
+/* Update the existing styles */
+.transaction-date {
+    white-space: nowrap;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.reference-number {
+    font-family: monospace;
+    color: #2196F3;
+    font-weight: 500;
+}
+
+.store-name {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.transaction-description {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #666;
+}
