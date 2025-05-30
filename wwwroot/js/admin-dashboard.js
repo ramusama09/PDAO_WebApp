@@ -1,4 +1,5 @@
-﻿document.addEventListener('DOMContentLoaded', function() {
+﻿let filterInputs;
+document.addEventListener('DOMContentLoaded', function () {
     const database = firebase.database();
     const usersRef = database.ref('users');
     let allUsers = {};
@@ -19,15 +20,31 @@
     const searchInput = document.querySelector('.search-input');
     searchInput.addEventListener('input', function () {
         renderUsers(filterUsers());
-    });
+    }); 
 
     // Filter functionality
-    const filterInputs = document.querySelectorAll('.filter-container input');
+    filterInputs = document.querySelectorAll('.filter-container input');
     filterInputs.forEach(input => {
         input.addEventListener('change', function () {
             renderUsers(filterUsers());
+            updateFilterButtonState();
         });
     });
+
+    // Initial filter state
+    updateFilterButtonState();
+
+    // Update filter button state function
+    function updateFilterButtonState() {
+        const filterContainer = document.querySelector('.filter-container');
+        const hasActiveFilters =
+            document.querySelector('input[name="idFilter"]:checked')?.value !== 'all' ||
+            document.getElementById('expiredId')?.checked;
+
+        if (filterContainer) {
+            filterContainer.classList.toggle('filter-active', hasActiveFilters);
+        }
+    }
 
     function filterUsers() {
         const searchTerm = searchInput.value.toLowerCase();
@@ -148,37 +165,6 @@
     });
 });
 
-// Add this after your existing DOMContentLoaded event listener setup
-function updateFilterButtonState() {
-    const filterContainer = document.querySelector('.filter-container');
-    const hasActiveFilters =
-        document.querySelector('input[name="idFilter"]:checked').value !== 'all' ||
-        document.getElementById('expiredId').checked;
-
-    filterContainer.classList.toggle('filter-active', hasActiveFilters);
-}
-
-// Add this to your existing filter event listeners
-filterInputs.forEach(input => {
-    input.addEventListener('change', function () {
-        renderUsers(filterUsers());
-        updateFilterButtonState();
-    });
-});
-
-// Initial state
-updateFilterButtonState();
-
-function viewUser(userId) {
-    // Implement view functionality
-    console.log("View user:", userId);
-}
-
-function printUser(userId) {
-    // Implement print functionality
-    console.log("Print user:", userId);
-}
-
 function calculateAge(birthDate) {
     if (!birthDate) return '';
     const today = new Date();
@@ -208,7 +194,51 @@ function viewUser(userId) {
             }
         };
 
-        // Populate view modal with basic user info
+        // Set image sources for ID previews
+        const frontIDImage = document.getElementById('frontIDImage');
+        const backIDImage = document.getElementById('backIDImage');
+
+        // Set front ID image with fallback
+        if (idCards.frontID) {
+            frontIDImage.src = idCards.frontID;
+            frontIDImage.style.display = 'block';
+            if (idCards.frontID) {
+                frontIDImage.onclick = function () {
+                    showZoomedImage(this.src, 'Front ID Card');
+                };
+                frontIDImage.style.cursor = 'pointer';
+            }
+        } else {
+            frontIDImage.src = '/img/no-id-placeholder.jpg'; // Add a placeholder image
+            frontIDImage.style.display = 'block';
+        }
+
+        // Set back ID image with fallback
+        if (idCards.backID) {
+            backIDImage.src = idCards.backID;
+            backIDImage.style.display = 'block';
+            if (idCards.backID) {
+                backIDImage.onclick = function () {
+                    showZoomedImage(this.src, 'Back ID Card');
+                };
+                backIDImage.style.cursor = 'pointer';
+            }
+        } else {
+            backIDImage.src = '/img/no-id-placeholder.jpg'; // Add a placeholder image
+            backIDImage.style.display = 'block';
+        }
+
+
+
+        // Handle image loading errors
+        frontIDImage.onerror = function () {
+            this.src = '/img/no-id-placeholder.jpg';
+        };
+        backIDImage.onerror = function () {
+            this.src = '/img/no-id-placeholder.jpg';
+        };
+
+        // Populate other form fields as before
         setFormValue('firstName', user.firstName);
         setFormValue('lastName', user.lastName);
         setFormValue('middleName', user.middleName);
@@ -224,13 +254,9 @@ function viewUser(userId) {
         setFormValue('disabilityType', user.disabilityType);
         setFormValue('emergencyContactName', user.emergencyContactName);
         setFormValue('emergencyContactNumber', user.emergencyContactNumber);
-
-        // Populate ID card information
         setFormValue('pwdIdNo', idCards.pwdIdNo);
         setFormValue('dateIssued', idCards.dateIssued);
         setFormValue('expirationDate', idCards.expirationDate);
-        setFormValue('frontID', idCards.frontID);
-        setFormValue('backID', idCards.backID);
 
         modal.show();
     }).catch(error => {
@@ -238,6 +264,24 @@ function viewUser(userId) {
         alert('Failed to load user data. Please try again.');
     });
 }
+
+// Add this new function for handling image zoom
+function showZoomedImage(imageSrc, title) {
+    const zoomModal = new bootstrap.Modal(document.getElementById('imageZoomModal'));
+    const zoomedImage = document.getElementById('zoomedImage');
+    const modalTitle = document.getElementById('imageZoomModalLabel');
+
+    zoomedImage.src = imageSrc;
+    modalTitle.textContent = title;
+
+    // Handle image loading error in zoom modal
+    zoomedImage.onerror = function () {
+        this.src = '/img/no-id-placeholder.jpg';
+    };
+
+    zoomModal.show();
+}
+
 function updateID(userId) {
     // Get the user data from Firebase
     const userRef = firebase.database().ref('users/' + userId);

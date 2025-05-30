@@ -1,5 +1,4 @@
 wwwroot\css\dashboard.css
-wwwroot\css\dashboardAdmin.css
 wwwroot\css\generate-id-info.css
 wwwroot\css\id_card_styles.css
 wwwroot\css\site.css
@@ -12,7 +11,6 @@ wwwroot\img\PH_Flag.webp
 wwwroot\img\placeholder-logo.png
 wwwroot\img\PQ_Logo.jpg
 wwwroot\img\qr_sample.png
-wwwroot\js\admin-dashboard.js
 wwwroot\js\auth-service.js
 wwwroot\js\firebase-init.js
 wwwroot\js\generate-id-card.js
@@ -76,5 +74,7 @@ wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
 wwwroot\pdao-webapp-default-rtdb-users-export.json
+wwwroot\css\dashboardAdmin.css
 wwwroot\css\transactionsAdmin.css
+wwwroot\js\admin-dashboard.js
 wwwroot\js\admin-transactions.js

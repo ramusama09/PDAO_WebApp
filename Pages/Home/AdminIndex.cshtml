@@ -192,11 +192,15 @@
                         <div class="row mb-3">
                             <div class="col-6">
                                 <label class="form-label">Front ID</label>
-                                <input type="text" class="form-control" name="frontID" readonly>
+                                <div class="id-image-container">
+                                    <img id="frontIDImage" class="id-preview" src="" alt="Front ID">
+                                </div>
                             </div>
                             <div class="col-6">
                                 <label class="form-label">Back ID</label>
-                                <input type="text" class="form-control" name="backID" readonly>
+                                <div class="id-image-container">
+                                    <img id="backIDImage" class="id-preview" src="" alt="Back ID">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -204,6 +208,23 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add this after your existing modals -->
+<div class="modal fade" id="imageZoomModal" tabindex="-2" aria-labelledby="imageZoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="imageZoomModalLabel">ID Card Preview</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="zoom-image-container">
+                    <img id="zoomedImage" class="zoomed-image" src="" alt="Zoomed ID Card">
+                </div>
             </div>
         </div>
     </div>
