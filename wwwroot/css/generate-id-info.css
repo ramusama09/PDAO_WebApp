@@ -31,7 +31,7 @@
     background-color: #fff;
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
     border: 1px solid #f0f0f0;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .form-subsection {
-    background-color: #f8f9fa;
+    background-color: #f4f4f4;
     border-radius: 8px;
     padding: 1.25rem;
     margin-top: 1rem;

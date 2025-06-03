@@ -19,8 +19,6 @@
         throw error;
     }
 }
-
-// Also modify generateFrontIDHTML to handle the photo differently
 function generateFrontIDHTML(userData) {
     const container = document.createElement('div');
     container.style.width = '800px';
@@ -143,7 +141,6 @@ function generateFrontIDHTML(userData) {
         }, 100);
     });
 }
-
 function generateBackIDHTML(userData) {
     const container = document.createElement('div');
     container.style.width = '800px';
@@ -229,7 +226,6 @@ function generateBackIDHTML(userData) {
 
     return container;
 }
-
 async function htmlToImage(container) {
     try {
         document.body.appendChild(container);
@@ -319,7 +315,6 @@ async function htmlToImage(container) {
         throw error;
     }
 }
-
 async function uploadIDCardImage(imageBlob, pwdIdNo, side) {
     const storage = firebase.storage();
     const storageRef = storage.ref();
@@ -335,7 +330,6 @@ async function uploadIDCardImage(imageBlob, pwdIdNo, side) {
     // Get and return the download URL
     return await fileRef.getDownloadURL();
 }
-
 function formatDate(dateString) {
     if (!dateString) return '';
     const date = new Date(dateString);

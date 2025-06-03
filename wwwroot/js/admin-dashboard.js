@@ -184,65 +184,26 @@ function viewUser(userId) {
     userRef.once('value').then((snapshot) => {
         const user = snapshot.val() || {};
         const idCards = user.idCards || {};
+        const healthInfo = user.healthInformation || {};
+        const familyBackground = user.familyBackground || {};
+        const educationAndEmployment = user.educationAndEmployment || {};
+        const idReferenceCards = user.idReferenceCards || {};
         const modal = new bootstrap.Modal(document.getElementById('viewModal'));
 
         // Helper function to safely set form values
         const setFormValue = (name, value) => {
-            const element = document.querySelector(`#viewForm [name="${name}"]`);
+            const element = document.querySelector(`#viewModal .modal-body [name="${name}"]`);
             if (element) {
                 element.value = value || '';
             }
         };
 
-        // Set image sources for ID previews
-        const frontIDImage = document.getElementById('frontIDImage');
-        const backIDImage = document.getElementById('backIDImage');
-
-        // Set front ID image with fallback
-        if (idCards.frontID) {
-            frontIDImage.src = idCards.frontID;
-            frontIDImage.style.display = 'block';
-            if (idCards.frontID) {
-                frontIDImage.onclick = function () {
-                    showZoomedImage(this.src, 'Front ID Card');
-                };
-                frontIDImage.style.cursor = 'pointer';
-            }
-        } else {
-            frontIDImage.src = '/img/no-id-placeholder.jpg'; // Add a placeholder image
-            frontIDImage.style.display = 'block';
-        }
-
-        // Set back ID image with fallback
-        if (idCards.backID) {
-            backIDImage.src = idCards.backID;
-            backIDImage.style.display = 'block';
-            if (idCards.backID) {
-                backIDImage.onclick = function () {
-                    showZoomedImage(this.src, 'Back ID Card');
-                };
-                backIDImage.style.cursor = 'pointer';
-            }
-        } else {
-            backIDImage.src = '/img/no-id-placeholder.jpg'; // Add a placeholder image
-            backIDImage.style.display = 'block';
-        }
-
-
-
-        // Handle image loading errors
-        frontIDImage.onerror = function () {
-            this.src = '/img/no-id-placeholder.jpg';
-        };
-        backIDImage.onerror = function () {
-            this.src = '/img/no-id-placeholder.jpg';
-        };
-
-        // Populate other form fields as before
+        // Set Personal Information
         setFormValue('firstName', user.firstName);
         setFormValue('lastName', user.lastName);
         setFormValue('middleName', user.middleName);
         setFormValue('suffix', user.suffix);
+        setFormValue('civilStatus', user.civilStatus);
         setFormValue('sex', user.sex);
         setFormValue('birthDate', user.birthDate);
         setFormValue('age', calculateAge(user.birthDate));
@@ -250,13 +211,183 @@ function viewUser(userId) {
         setFormValue('contactNumber', user.contactNumber);
         setFormValue('addressLine1', user.addressLine1);
         setFormValue('addressLine2', user.addressLine2);
+
+        // Set Health Information
         setFormValue('bloodType', user.bloodType);
         setFormValue('disabilityType', user.disabilityType);
+        setFormValue('physicianName', healthInfo.physicianName);
+        setFormValue('physicianLicenseNumber', healthInfo.physicianLicenseNumber);
         setFormValue('emergencyContactName', user.emergencyContactName);
         setFormValue('emergencyContactNumber', user.emergencyContactNumber);
+
+        // Set Family Background
+        // Mother's Information
+        setFormValue('motherFirstName', familyBackground.Mother?.firstName);
+        setFormValue('motherMiddleName', familyBackground.Mother?.middleName);
+        setFormValue('motherLastName', familyBackground.Mother?.lastName);
+
+        // Father's Information
+        setFormValue('fatherFirstName', familyBackground.Father?.firstName);
+        setFormValue('fatherMiddleName', familyBackground.Father?.middleName);
+        setFormValue('fatherLastName', familyBackground.Father?.lastName);
+
+        // Guardian's Information
+        setFormValue('guardianFirstName', familyBackground.Guardian?.firstName);
+        setFormValue('guardianMiddleName', familyBackground.Guardian?.middleName);
+        setFormValue('guardianLastName', familyBackground.Guardian?.lastName);
+
+        // Set Education and Employment
+        setFormValue('educationalAttainment', educationAndEmployment.educationalAttainment);
+        setFormValue('employmentStatus', educationAndEmployment.employmentStatus);
+        setFormValue('employmentCategory', educationAndEmployment.employmentCategory);
+        setFormValue('employmentType', educationAndEmployment.employmentType);
+        setFormValue('occupation', educationAndEmployment.occupation);
+
+        // Set Organization Information
+        setFormValue('organizationAffiliated', educationAndEmployment.organizationInformation?.organizationAffiliated);
+        setFormValue('organizationContactPerson', educationAndEmployment.organizationInformation?.organizationContactPerson);
+        setFormValue('organizationContactNum', educationAndEmployment.organizationInformation?.organizationContactNum);
+        setFormValue('organizationAddress', educationAndEmployment.organizationInformation?.organizationAddress);
+
+        // Set ID Reference Numbers
+        setFormValue('SSS', idReferenceCards.SSS);
+        setFormValue('GSIS', idReferenceCards.GSIS);
+        setFormValue('PagIbig', idReferenceCards['Pag-Ibig']);
+        setFormValue('PSN', idReferenceCards.PSN);
+        setFormValue('Philhealth', idReferenceCards.Philhealth);
+
+        // Set ID Card Information
         setFormValue('pwdIdNo', idCards.pwdIdNo);
         setFormValue('dateIssued', idCards.dateIssued);
         setFormValue('expirationDate', idCards.expirationDate);
+
+        // Set images
+        const photoIDImage = document.getElementById('photoIDImage');
+        const frontIDImage = document.getElementById('frontIDImage');
+        const backIDImage = document.getElementById('backIDImage');
+        const supportingDocsContainer = document.getElementById('supportingDocumentsContainer');
+
+        // Set ID Photo
+        if (idCards.photoID) {
+            photoIDImage.src = idCards.photoID;
+            photoIDImage.style.display = 'block';
+            photoIDImage.onclick = () => showZoomedImage(idCards.photoID, 'ID Photo');
+            photoIDImage.style.cursor = 'pointer';
+        } else {
+            photoIDImage.src = '/img/no-id-placeholder.jpg';
+            photoIDImage.style.display = 'block';
+        }
+
+        // Set Front ID
+        if (idCards.frontID) {
+            frontIDImage.src = idCards.frontID;
+            frontIDImage.style.display = 'block';
+            frontIDImage.onclick = () => showZoomedImage(idCards.frontID, 'Front ID Card');
+            frontIDImage.style.cursor = 'pointer';
+        } else {
+            frontIDImage.src = '/img/no-id-placeholder.jpg';
+            frontIDImage.style.display = 'block';
+        }
+
+        // Set Back ID
+        if (idCards.backID) {
+            backIDImage.src = idCards.backID;
+            backIDImage.style.display = 'block';
+            backIDImage.onclick = () => showZoomedImage(idCards.backID, 'Back ID Card');
+            backIDImage.style.cursor = 'pointer';
+        } else {
+            backIDImage.src = '/img/no-id-placeholder.jpg';
+            backIDImage.style.display = 'block';
+        }
+
+        // Handle Supporting Documents
+        supportingDocsContainer.innerHTML = ''; // Clear existing content
+        const docsList = document.createElement('div');
+        docsList.className = 'supporting-docs-list';
+
+        // Create a loading indicator
+        const loadingIndicator = document.createElement('div');
+        loadingIndicator.className = 'text-muted';
+        loadingIndicator.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Loading documents...';
+        supportingDocsContainer.appendChild(loadingIndicator);
+
+        // Get reference to the user's documents folder
+        const storageRef = firebase.storage().ref(`user-documents/${userId}`);
+
+        // List all files in the user's folder
+        storageRef.listAll()
+            .then((result) => {
+                loadingIndicator.remove(); // Remove loading indicator
+
+                if (result.items.length === 0) {
+                    supportingDocsContainer.innerHTML = '<p class="text-muted">No supporting documents available</p>';
+                    return;
+                }
+
+                // Process each file
+                const promises = result.items.map((item) => {
+                    return item.getDownloadURL().then(url => {
+                        return {
+                            name: item.name,
+                            url: url
+                        };
+                    });
+                });
+
+                // Wait for all promises to resolve
+                Promise.all(promises)
+                    .then((documents) => {
+                        documents.forEach((doc, index) => {
+                            const docLink = document.createElement('a');
+                            docLink.href = doc.url;
+                            docLink.target = '_blank';
+                            docLink.className = 'btn btn-outline-primary m-1';
+
+                            // Format the document name
+                            const displayName = doc.name.length > 30
+                                ? doc.name.substring(0, 27) + '...'
+                                : doc.name;
+
+                            docLink.innerHTML = `
+                        <i class="bi bi-file-earmark-text me-2"></i>
+                        ${displayName}
+                    `;
+
+                            // Add tooltip for long names
+                            if (doc.name.length > 30) {
+                                docLink.setAttribute('data-bs-toggle', 'tooltip');
+                                docLink.setAttribute('data-bs-placement', 'top');
+                                docLink.setAttribute('title', doc.name);
+                            }
+
+                            docsList.appendChild(docLink);
+                        });
+
+                        supportingDocsContainer.appendChild(docsList);
+
+                        // Initialize tooltips
+                        const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+                        tooltips.forEach(tooltip => {
+                            new bootstrap.Tooltip(tooltip);
+                        });
+                    });
+            })
+            .catch((error) => {
+                console.error('Error listing documents:', error);
+                supportingDocsContainer.innerHTML = `
+            <div class="alert alert-danger" role="alert">
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                Failed to load supporting documents
+            </div>
+        `;
+         });
+
+        // Handle image loading errors
+        [photoIDImage, frontIDImage, backIDImage].forEach(img => {
+            img.onerror = function () {
+                this.src = '/img/no-id-placeholder.jpg';
+            };
+        });
 
         modal.show();
     }).catch(error => {

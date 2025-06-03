@@ -85,126 +85,298 @@
                 <h5 class="modal-title" id="viewModalLabel">User Details</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <!-- Replace the existing modal-body content with this updated version -->
             <div class="modal-body">
-                <form id="viewForm">
-                    <div class="modal-body">
-                        <h5 class="text-success mb-3">Personal Information</h5>
-                        <div class="row mb-3">
-                            <h6 class="text-secondary">Name</h6>
-                            <div class="col-6">
-                                <label class="form-label">First Name</label>
-                                <input type="text" class="form-control" name="firstName" readonly>
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">Middle Name</label>
-                                <input type="text" class="form-control" name="middleName" readonly>
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">Last Name</label>
-                                <input type="text" class="form-control" name="lastName" readonly>
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">Suffix</label>
-                                <input type="text" class="form-control" name="suffix" readonly>
-                            </div>
-                        </div>
+                <!-- Personal Information -->
+                <h5 class="text-success mb-3">Personal Information</h5>
+                <div class="row mb-3">
+                    <h6 class="text-secondary">Name</h6>
+                    <div class="col-md-6">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="firstName" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Middle Name</label>
+                        <input type="text" class="form-control" name="middleName" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="lastName" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Suffix</label>
+                        <input type="text" class="form-control" name="suffix" readonly>
+                    </div>
+                </div>
 
-                        <div class="row mb-3">
-                            <h6 class="text-secondary">Sex and Age</h6>
-                            <div class="col-4">
-                                <label class="form-label">Sex</label>
-                                <input type="text" class="form-control" name="sex" readonly>
-                            </div>
-                            <div class="col-4">
-                                <label class="form-label">Date of Birth</label>
-                                <input type="date" class="form-control" name="birthDate" readonly>
-                            </div>
-                            <div class="col-4">
-                                <label class="form-label">Age</label>
-                                <input type="number" class="form-control" name="age" readonly>
-                            </div>
-                        </div>
+                <div class="row mb-3">
+                    <h6 class="text-secondary">Civil Status</h6>
+                    <div class="col-md-12">
+                        <label class="form-label">Civil Status</label>
+                        <input type="text" class="form-control" name="civilStatus" readonly>
+                    </div>
+                </div>
 
-                        <div class="row mb-3">
-                            <h6 class="text-secondary">Contact Information</h6>
-                            <div class="col-6">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" readonly>
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">Contact Number</label>
-                                <input type="tel" class="form-control" name="contactNumber" readonly>
-                            </div>
-                        </div>
+                <div class="row mb-3">
+                    <h6 class="text-secondary">Sex and Age</h6>
+                    <div class="col-md-4">
+                        <label class="form-label">Sex</label>
+                        <input type="text" class="form-control" name="sex" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Birth Date</label>
+                        <input type="date" class="form-control" name="birthDate" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Age</label>
+                        <input type="text" class="form-control" name="age" readonly>
+                    </div>
+                </div>
 
-                        <div class="row mb-3">
-                            <h6 class="text-secondary">Address</h6>
-                            <div class="col-6">
-                                <label class="form-label">Address Line 1</label>
-                                <input type="text" class="form-control" name="addressLine1" readonly>
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">Address Line 2</label>
-                                <input type="text" class="form-control" name="addressLine2" readonly>
-                            </div>
-                        </div>
+                <div class="row mb-3">
+                    <h6 class="text-secondary">Contact Information</h6>
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Contact Number</label>
+                        <input type="tel" class="form-control" name="contactNumber" readonly>
+                    </div>
+                </div>
 
-                        <h5 class="text-success mb-3">Health Information</h5>
+                <div class="row mb-3">
+                    <h6 class="text-secondary">Address</h6>
+                    <div class="col-md-6">
+                        <label class="form-label">Address Line 1</label>
+                        <input type="text" class="form-control" name="addressLine1" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Address Line 2</label>
+                        <input type="text" class="form-control" name="addressLine2" readonly>
+                    </div>
+                </div>
 
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <label class="form-label">Blood Type</label>
-                                <input type="text" class="form-control" name="bloodType" readonly>
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">Type of Disability</label>
-                                <input type="text" class="form-control" name="disabilityType" readonly>
-                            </div>
-                        </div>
+                <!-- Health Information -->
+                <h5 class="text-success mb-3">Health Information</h5>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Blood Type</label>
+                        <input type="text" class="form-control" name="bloodType" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Type of Disability</label>
+                        <input type="text" class="form-control" name="disabilityType" readonly>
+                    </div>
+                </div>
 
-                        <div class="row mb-3">
-                            <h6 class="text-secondary">Emergency Contact</h6>
-                            <div class="col-6">
-                                <label class="form-label">Emergency Contact Name</label>
-                                <input type="text" class="form-control" name="emergencyContactName" readonly>
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">Emergency Contact Number</label>
-                                <input type="text" class="form-control" name="emergencyContactNumber" readonly>
-                            </div>
-                        </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Certifying Physician</label>
+                        <input type="text" class="form-control" name="physicianName" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">License Number</label>
+                        <input type="text" class="form-control" name="physicianLicenseNumber" readonly>
+                    </div>
+                </div>
 
-                        <h5 class="text-success">Account Information</h5>
-                        <div class="row mb-3">
-                            <div class="col-4">
-                                <label class="form-label">PWD ID No.</label>
-                                <input type="text" class="form-control" name="pwdIdNo" readonly>
-                            </div>
-                            <div class="col-4">
-                                <label class="form-label">Date Issued</label>
-                                <input type="text" class="form-control" name="dateIssued" readonly>
-                            </div>
-                            <div class="col-4">
-                                <label class="form-label">Expiration Date</label>
-                                <input type="text" class="form-control" name="expirationDate" readonly>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <label class="form-label">Front ID</label>
-                                <div class="id-image-container">
-                                    <img id="frontIDImage" class="id-preview" src="" alt="Front ID">
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">Back ID</label>
-                                <div class="id-image-container">
-                                    <img id="backIDImage" class="id-preview" src="" alt="Back ID">
-                                </div>
-                            </div>
+                <div class="row mb-3">
+                    <h6 class="text-secondary">Emergency Contact</h6>
+                    <div class="col-md-6">
+                        <label class="form-label">Emergency Contact Name</label>
+                        <input type="text" class="form-control" name="emergencyContactName" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Emergency Contact Number</label>
+                        <input type="text" class="form-control" name="emergencyContactNumber" readonly>
+                    </div>
+                </div>
+
+                <!-- Family Background -->
+                <h5 class="text-success mb-3">Family Background</h5>
+                <div class="row mb-3">
+                    <h6 class="text-secondary">Mother's Information</h6>
+                    <div class="col-md-4">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="motherFirstName" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Middle Name</label>
+                        <input type="text" class="form-control" name="motherMiddleName" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="motherLastName" readonly>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <h6 class="text-secondary">Father's Information</h6>
+                    <div class="col-md-4">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="fatherFirstName" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Middle Name</label>
+                        <input type="text" class="form-control" name="fatherMiddleName" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="fatherLastName" readonly>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <h6 class="text-secondary">Guardian's Information</h6>
+                    <div class="col-md-4">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="guardianFirstName" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Middle Name</label>
+                        <input type="text" class="form-control" name="guardianMiddleName" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="guardianLastName" readonly>
+                    </div>
+                </div>
+
+                <!-- Education and Employment -->
+                <h5 class="text-success mb-3">Education and Employment</h5>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Educational Attainment</label>
+                        <input type="text" class="form-control" name="educationalAttainment" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Employment Status</label>
+                        <input type="text" class="form-control" name="employmentStatus" readonly>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Category of Employment</label>
+                        <input type="text" class="form-control" name="employmentCategory" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Type of Employment</label>
+                        <input type="text" class="form-control" name="employmentType" readonly>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label class="form-label">Occupation</label>
+                        <input type="text" class="form-control" name="occupation" readonly>
+                    </div>
+                </div>
+
+                <!-- Organization Information -->
+                <h5 class="text-success mb-3">Organization Information</h5>
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label class="form-label">Organization Affiliated</label>
+                        <input type="text" class="form-control" name="organizationAffiliated" readonly>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Contact Person</label>
+                        <input type="text" class="form-control" name="organizationContactPerson" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Contact Number</label>
+                        <input type="text" class="form-control" name="organizationContactNum" readonly>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label class="form-label">Office Address</label>
+                        <input type="text" class="form-control" name="organizationAddress" readonly>
+                    </div>
+                </div>
+
+                <!-- ID Reference Numbers -->
+                <h5 class="text-success mb-3">ID Reference Numbers</h5>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">SSS No.</label>
+                        <input type="text" class="form-control" name="SSS" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">GSIS No.</label>
+                        <input type="text" class="form-control" name="GSIS" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Pag-Ibig No.</label>
+                        <input type="text" class="form-control" name="PagIbig" readonly>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">PSN No.</label>
+                        <input type="text" class="form-control" name="PSN" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Philhealth No.</label>
+                        <input type="text" class="form-control" name="Philhealth" readonly>
+                    </div>
+                </div>
+
+                <!-- Account Information -->
+                <h5 class="text-success">ID Card Information</h5>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">PWD ID No.</label>
+                        <input type="text" class="form-control" name="pwdIdNo" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Date Issued</label>
+                        <input type="text" class="form-control" name="dateIssued" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Expiration Date</label>
+                        <input type="text" class="form-control" name="expirationDate" readonly>
+                    </div>
+                </div>
+
+                <!-- ID Photos -->
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">ID Photo</label>
+                        <div class="id-image-container">
+                            <img id="photoIDImage" class="id-preview" src="" alt="ID Photo">
                         </div>
                     </div>
-                </form>
+                    <div class="col-md-4">
+                        <label class="form-label">Front ID</label>
+                        <div class="id-image-container">
+                            <img id="frontIDImage" class="id-preview" src="" alt="Front ID">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Back ID</label>
+                        <div class="id-image-container">
+                            <img id="backIDImage" class="id-preview" src="" alt="Back ID">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supporting Documents -->
+                <div class="row mb-3">
+                    <h6 class="text-secondary">Supporting Documents</h6>
+                    <div class="col-md-12">
+                        <div id="supportingDocumentsContainer">
+                            <!-- Supporting documents will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>

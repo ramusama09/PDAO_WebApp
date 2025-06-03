@@ -23,43 +23,64 @@
                             <div class="col-md-8">
                                 <!-- Personal Information Section -->
                                 <div class="form-section">
-                                    <h3><i class="fas fa-user me-2"></i>Personal Information</h3>
-                                    <div class="row">
-                                        <div class="col-md-6 form-group">
-                                            <label for="firstName">First Name</label>
-                                            <input type="text" id="firstName" name="firstName" class="form-control">
+                                    <h3><i class="bi bi-person-fill me-2"></i>Personal Information</h3>
+                                    <!-- Full Name Subsection-->
+                                    <div class="form-subsection mt-4">
+                                        <h4>
+                                            <i class="bi bi-person-fill-gear me-2"></i>Civil Status
+                                        </h4>
+                                        <div class="row">
+                                            <div class="col-6 form-group">
+                                                <label for="firstName">First Name</label>
+                                                <input type="text" id="firstName" name="firstName" class="form-control" minlength="2" required>
+                                                <div class="invalid-feedback">First Name must be at least 2 characters.</div>
+                                            </div>
+                                            <div class="col-6 form-group">
+                                                <label for="lastName">Last Name</label>
+                                                <input type="text" id="lastName" name="lastName" class="form-control" minlength="2" required>
+                                                <div class="invalid-feedback">Last Name must be at least 2 characters.</div>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6 form-group">
-                                            <label for="lastName">Last Name</label>
-                                            <input type="text" id="lastName" name="lastName" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-md-6 form-group">
-                                            <label for="middleName">Middle Name</label>
-                                            <input type="text" id="middleName" name="middleName" class="form-control">
-                                        </div>
-                                        <div class="col-md-6 form-group">
-                                            <label for="suffix">Suffix</label>
-                                            <input type="text" id="suffix" name="suffix" class="form-control">
+                                        <div class="row">
+                                            <div class="col-6 form-group">
+                                                <label for="middleName">Middle Name</label>
+                                                <input type="text" id="middleName" name="middleName" class="form-control">
+                                            </div>
+                                            <div class="col-6 form-group">
+                                                <label for="suffix">Suffix</label>
+                                                <select id="suffix" name="suffix" class="form-control">
+                                                    <option value="" disabled selected>Select Suffix</option>
+                                                    <option value="">None</option>
+                                                    <option value="Sr.">Sr.</option>
+                                                    <option value="Jr.">Jr.</option>
+                                                    <option value="I">I</option>
+                                                    <option value="II">II</option>
+                                                    <option value="III">III</option>
+                                                    <option value="IV">IV</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                                <input type="text" id="otherSuffix" name="otherSuffix" class="form-control mt-2" style="display: none;" placeholder="Enter suffix">
+                                            </div>
                                         </div>
                                     </div>
 
                                     <!-- Sex and Age Subsection -->
                                     <div class="form-subsection mt-4">
-                                        <h4><i class="fas fa-venus-mars me-2"></i>Sex and Age</h4>
+                                        <h4><i class="bi bi-gender-ambiguous me-2"></i>Sex and Age</h4>
                                         <div class="row">
                                             <div class="col-md-4 form-group">
                                                 <label for="sex">Sex</label>
-                                                <select id="sex" name="sex" class="form-control">
-                                                    <option value="">Select Sex</option>
+                                                <select id="sex" name="sex" class="form-control" required>
+                                                    <option value="" disabled selected>Select Sex</option>
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                 </select>
+                                                <div class="invalid-feedback">Please select a valid sex.</div>
                                             </div>
                                             <div class="col-md-4 form-group">
                                                 <label for="birthDate">Birth Date</label>
-                                                <input type="date" id="birthDate" name="birthDate" class="form-control">
+                                                <input type="date" id="birthDate" name="birthDate" class="form-control" required>
+                                                <div class="invalid-feedback">Please select a valid birth date.</div>
                                             </div>
                                             <div class="col-md-4 form-group">
                                                 <label for="age">Age</label>
@@ -70,68 +91,356 @@
 
                                     <!-- Contact Information Subsection -->
                                     <div class="form-subsection mt-4">
-                                        <h4><i class="fas fa-address-book me-2"></i>Contact Information</h4>
+                                        <h4><i class="bi bi-telephone-fill me-2"></i>Contact Information</h4>
                                         <div class="row">
                                             <div class="col-md-6 form-group">
                                                 <label for="email">Email</label>
-                                                <input type="email" id="email" name="email" class="form-control">
+                                                <input type="email" id="email" name="email" class="form-control" required>
+                                                <div class="invalid-feedback">Please enter a valid email address.</div>
                                             </div>
                                             <div class="col-md-6 form-group">
                                                 <label for="contactNumber">Contact Number</label>
-                                                <input type="tel" id="contactNumber" name="contactNumber" class="form-control">
+                                                <input type="tel" id="contactNumber" name="contactNumber" class="form-control" pattern="0[0-9]{10}" required>
+                                                <div class="invalid-feedback">Contact Number must start with 0 and be 11 digits.</div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Address Subsection -->
                                     <div class="form-subsection mt-4">
-                                        <h4><i class="fas fa-home me-2"></i>Address</h4>
+                                        <h4><i class="bi bi-geo-alt-fill me-2"></i>Address</h4>
                                         <div class="form-group">
                                             <label for="addressLine1">Address Line 1</label>
-                                            <input type="text" id="addressLine1" name="addressLine1" class="form-control">
+                                            <input type="text" id="addressLine1" name="addressLine1" class="form-control" minlength="3" required>
+                                            <div class="invalid-feedback">Address Line 1 must be at least 3 characters.</div>
                                         </div>
                                         <div class="form-group mt-3">
                                             <label for="addressLine2">Address Line 2</label>
-                                            <input type="text" id="addressLine2" name="addressLine2" class="form-control">
+                                            <input type="text" id="addressLine2" name="addressLine2" class="form-control" minlength="3" required>
+                                            <div class="invalid-feedback">Address Line 2 must be at least 3 characters.</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Civil Status -->
+                                    <div class="form-subsection mt-4">
+                                        <h4>
+                                            <i class="bi bi-file-earmark-person-fill me-2"></i>Civil Status
+                                        </h4>
+                                        <div class="form-group">
+                                            <label for="civilStatus">Civil Status</label>
+                                            <select id="civilStatus" name="civilStatus" class="form-control" required>
+                                                <option value="" disabled selected>Select One</option>
+                                                <option value="Single">Single</option>
+                                                <option value="Separated">Separated</option>
+                                                <option value="Cohabitation (Live In)">Cohabitation (Live In)</option>
+                                                <option value="Married">Married</option>
+                                                <option value="Widow/er">Widow/er</option>
+                                            </select>
+                                            <div class="invalid-feedback">Please select your civil status.</div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Health Information Section -->
                                 <div class="form-section mt-4">
-                                    <h3><i class="fas fa-heartbeat me-2"></i>Health Information</h3>
-                                    <div class="row">
-                                        <div class="col-md-6 form-group">
-                                            <label for="bloodType">Blood Type</label>
-                                            <select id="bloodType" name="bloodType" class="form-control">
-                                                <option value="">Select Blood Type</option>
-                                                <option value="A+">A+</option>
-                                                <option value="A-">A-</option>
-                                                <option value="B+">B+</option>
-                                                <option value="B-">B-</option>
-                                                <option value="AB+">AB+</option>
-                                                <option value="AB-">AB-</option>
-                                                <option value="O+">O+</option>
-                                                <option value="O-">O-</option>
-                                            </select>
+                                    <h3><i class="bi bi-heart-pulse me-2"></i>Health Information</h3>
+
+                                    <div class="form-subsection mt-4">
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <label for="bloodType">Blood Type</label>
+                                                <select id="bloodType" name="bloodType" class="form-control">
+                                                    <option value="">Select Blood Type</option>
+                                                    <option value="Unknown">Unknown</option>
+                                                    <option value="A+">A+</option>
+                                                    <option value="A-">A-</option>
+                                                    <option value="B+">B+</option>
+                                                    <option value="B-">B-</option>
+                                                    <option value="AB+">AB+</option>
+                                                    <option value="AB-">AB-</option>
+                                                    <option value="O+">O+</option>
+                                                    <option value="O-">O-</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <label for="disabilityType">Disability Type</label>
+                                                <select id="disabilityType" name="disabilityType" class="form-control">
+                                                    <option value="">Select Disability Type</option>
+                                                    <option value="Deaf or Hard of Hearing">Deaf or Hard of Hearing</option>
+                                                    <option value="Intellectual Disability">Intellectual Disability</option>
+                                                    <option value="Learning Disability">Learning Disability</option>
+                                                    <option value="Mental Disability">Mental Disability</option>
+                                                    <option value="Physical Disability (Orthopedic)">Physical Disability (Orthopedic)</option>
+                                                    <option value="Psychosocial Disability">Psychosocial Disability</option>
+                                                    <option value="Speech and Language Impairment">Speech and Language Impairment</option>
+                                                    <option value="Visual Disability">Visual Disability</option>
+                                                    <option value="Cancer (RA 11215)">Cancer (RA 11215)</option>
+                                                    <option value="Rare Disease (RA 10747)">Rare Disease (RA 10747)</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6 form-group">
-                                            <label for="disabilityType">Disability Type</label>
-                                            <input type="text" id="disabilityType" name="disabilityType" class="form-control">
+                                    </div>
+
+                                    <div class="form-subsection mt-4">
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <label for="certifyingPhysician">Name of Certifying Physician</label>
+                                                <input type="text" id="certifyingPhysician" name="certifyingPhysician" class="form-control" minlength="3" required>
+                                                <div class="invalid-feedback">Name of Certifying Physician must be at least 3 characters.</div>
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <label for="licenseNo">License No.</label>
+                                                <input type="text" id="licenseNo" name="licenseNo" class="form-control" minlength="3" required>
+                                                <div class="invalid-feedback">License No. must be at least 3 characters.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 form-group">
+                                                <label for="supportingDocuments">Supporting Document/s (maximum of 3 files)</label>
+                                                <input type="file" id="supportingDocuments1" name="supportingDocuments1" class="form-control" accept=".pdf, .doc, .docx">
+                                                <input type="file" id="supportingDocuments2" name="supportingDocuments2" class="form-control mt-2" accept=".pdf, .doc, .docx">
+                                                <input type="file" id="supportingDocuments3" name="supportingDocuments3" class="form-control mt-2" accept=".pdf, .doc, .docx">
+                                            </div>
                                         </div>
                                     </div>
 
                                     <!-- Emergency Contact Subsection -->
                                     <div class="form-subsection mt-4">
-                                        <h4><i class="fas fa-ambulance me-2"></i>Emergency Contact</h4>
+                                        <h4><i class="bi bi-telephone-plus-fill me-2"></i>Emergency Contact</h4>
                                         <div class="row">
                                             <div class="col-md-6 form-group">
                                                 <label for="emergencyContactName">Emergency Contact Name</label>
-                                                <input type="text" id="emergencyContactName" name="emergencyContactName" class="form-control">
+                                                <input type="text" id="emergencyContactName" name="emergencyContactName" class="form-control" minlength="3" required>
+                                                <div class="invalid-feedback">Emergency Contact Name must be at least 3 characters.</div>
                                             </div>
                                             <div class="col-md-6 form-group">
                                                 <label for="emergencyContactNumber">Emergency Contact Number</label>
-                                                <input type="tel" id="emergencyContactNumber" name="emergencyContactNumber" class="form-control">
+                                                <input type="tel" id="emergencyContactNumber" name="emergencyContactNumber" class="form-control" pattern="0[0-9]{10}" required>
+                                                <div class="invalid-feedback">Emergency Contact Number must start with 0 and be 11 digits.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Family Background Section -->
+                                <div class="form-section mt-4">
+                                    <h3><i class="bi bi-person-plus-fill me-2"></i>Family Background</h3>
+                                    <div class="form-subsection">
+                                        <h4>Mother's Name</h4>
+                                        <div class="row">
+                                            <div class="col-6 form-group">
+                                                <label for="motherFirstName">First Name</label>
+                                                <input type="text" id="motherFirstName" name="motherFirstName" class="form-control">
+                                            </div>
+                                            <div class="col-6 form-group">
+                                                <label for="motherLastName">Last Name</label>
+                                                <input type="text" id="motherLastName" name="motherLastName" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 form-group">
+                                                <label for="motherMiddleName">Middle Name</label>
+                                                <input type="text" id="motherMiddleName" name="motherMiddleName" class="form-control">
+                                            </div>
+                                            <div class="col-6 form-group">
+                                                <label for="motherSuffix">Suffix</label>
+                                                <select id="motherSuffix" name="suffix" class="form-control">
+                                                    <option value="" disabled selected>Select Suffix</option>
+                                                    <option value="">None</option>
+                                                    <option value="Sr.">Sr.</option>
+                                                    <option value="Jr.">Jr.</option>
+                                                    <option value="I">I</option>
+                                                    <option value="II">II</option>
+                                                    <option value="III">III</option>
+                                                    <option value="IV">IV</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                                <input type="text" id="otherSuffixMother" name="otherSuffixMother" class="form-control mt-2" style="display: none;" placeholder="Enter suffix">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-subsection mt-4">
+                                        <h4>Father's Name</h4>
+                                        <div class="row">
+                                            <div class="col-6 form-group">
+                                                <label for="fatherFirstName">First Name</label>
+                                                <input type="text" id="fatherFirstName" name="fatherFirstName" class="form-control">
+                                            </div>
+                                            <div class="col-6 form-group">
+                                                <label for="fatherLastName">Last Name</label>
+                                                <input type="text" id="fatherLastName" name="fatherLastName" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 form-group">
+                                                <label for="fatherMiddleName">Middle Name</label>
+                                                <input type="text" id="fatherMiddleName" name="fatherMiddleName" class="form-control">
+                                            </div>
+                                            <div class="col-6 form-group">
+                                                <label for="fatherSuffix">Suffix</label>
+                                                <select id="fatherSuffix" name="suffix" class="form-control">
+                                                    <option value="" disabled selected>Select Suffix</option>
+                                                    <option value="">None</option>
+                                                    <option value="Sr.">Sr.</option>
+                                                    <option value="Jr.">Jr.</option>
+                                                    <option value="I">I</option>
+                                                    <option value="II">II</option>
+                                                    <option value="III">III</option>
+                                                    <option value="IV">IV</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                                <input type="text" id="otherSuffixFather" name="otherSuffixFather" class="form-control mt-2" style="display: none;" placeholder="Enter suffix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-subsection mt-4">
+                                        <h4>Guardian's Name</h4>
+                                        <div class="row">
+                                            <div class="col-6 form-group">
+                                                <label for="guardianFirstName">First Name</label>
+                                                <input type="text" id="guardianFirstName" name="guardianFirstName" class="form-control">
+                                            </div>
+                                            <div class="col-6 form-group">
+                                                <label for="guardianLastName">Last Name</label>
+                                                <input type="text" id="guardianLastName" name="guardianLastName" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 form-group">
+                                                <label for="guardianMiddleName">Middle Name</label>
+                                                <input type="text" id="guardianMiddleName" name="guardianMiddleName" class="form-control">
+                                            </div>
+                                            <div class="col-6 form-group">
+                                                <label for="guardianSuffix">Suffix</label>
+                                                <select id="guardianSuffix" name="suffix" class="form-control">
+                                                    <option value="" disabled selected>Select Suffix</option>
+                                                    <option value="">None</option>
+                                                    <option value="Sr.">Sr.</option>
+                                                    <option value="Jr.">Jr.</option>
+                                                    <option value="I">I</option>
+                                                    <option value="II">II</option>
+                                                    <option value="III">III</option>
+                                                    <option value="IV">IV</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                                <input type="text" id="otherSuffixGuardian" name="otherSuffixGuardian" class="form-control mt-2" style="display: none;" placeholder="Enter suffix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Education and Employment Section -->
+                                <div class="form-section mt-4">
+                                    <h3><i class="bi bi-suitcase-lg-fill me-2"></i>Education and Employment</h3>
+                                    <div class="form-subsection">
+                                        <div class="row">
+                                            <div class="col-12 form-group">
+                                                <label for="educationalAttainment">Educational Attainment</label>
+                                                <select id="educationalAttainment" name="educationalAttainment" class="form-control" required>
+                                                    <option value="" disabled selected>Select One</option>
+                                                    <option value="None">None</option>
+                                                    <option value="Kindergarten">Kindergarten</option>
+                                                    <option value="Elementary">Elementary</option>
+                                                    <option value="Junior High School">Junior High School</option>
+                                                    <option value="Senior High School">Senior High School</option>
+                                                    <option value="College">College</option>
+                                                    <option value="Vocational">Vocational</option>
+                                                    <option value="Post Graduate">Post Graduate</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please select your educational attainment.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-subsection">
+                                        <div class="row">
+                                            <div class="col-6 form-group">
+                                                <label for="employmentStatus">Status of Employment</label>
+                                                <select id="employmentStatus" name="employmentStatus" class="form-control" required>
+                                                    <option value="" disabled selected>Select One</option>
+                                                    <option value="N/A">Not Applicable</option>
+                                                    <option value="Employed">Employed</option>
+                                                    <option value="Unemployed">Unemployed</option>
+                                                    <option value="Self-Employed">Self-Employed</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please select your employment status.</div>
+                                            </div>
+
+                                            <div class="col-6 form-group">
+                                                <label for="categoryOfEmployment">Category of Employment</label>
+                                                <select id="categoryOfEmployment" name="categoryOfEmployment" class="form-control" required>
+                                                    <option value="" disabled selected>Select One</option>
+                                                    <option value="N/A">Not Applicable</option>
+                                                    <option value="Government">Government</option>
+                                                    <option value="Private">Private</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please select the category of employment.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 form-group">
+                                                <label for="typeOfEmployment">Type of Employment</label>
+                                                <select id="typeOfEmployment" name="typeOfEmployment" class="form-control" required>
+                                                    <option value="" disabled selected>Select One</option>
+                                                    <option value="N/A">Not Applicable</option>
+                                                    <option value="Permanent">Permanent</option>
+                                                    <option value="Seasonal">Seasonal</option>
+                                                    <option value="Casual">Casual</option>
+                                                    <option value="Emergency">Emergency</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please select the type of employment.</div>
+                                            </div>
+
+                                            <div class="col-6 form-group">
+                                                <label for="occupation">Occupation</label>
+                                                <select id="occupation" name="occupation" class="form-control" required>
+                                                    <option value="" disabled selected>Select One</option>
+                                                    <option value="Managers">Managers</option>
+                                                    <option value="Professionals">Professionals</option>
+                                                    <option value="Technician and Associate Professionals">Technician and Associate Professionals</option>
+                                                    <option value="Clerical Support Workers">Clerical Support Workers</option>
+                                                    <option value="Service and Sales Workers">Service and Sales Workers</option>
+                                                    <option value="Skilled Agricultural Forestry and Fisher Workers">Skilled Agricultural Forestry and Fisher Workers</option>
+                                                    <option value="Craft and Related Trade Workers">Craft and Related Trade Workers</option>
+                                                    <option value="Plant and Machine Operators and Assemblers">Plant and Machine Operators and Assemblers</option>
+                                                    <option value="Elementary Occupations">Elementary Occupations</option>
+                                                    <option value="Armed Force Occupations">Armed Force Occupations</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please select your occupation.</div>
+                                                <input type="text" id="otherOccupation" name="otherOccupation" class="form-control mt-2" style="display: none;" placeholder="Enter occupation">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Organization Information Section -->
+                                    <div class="form-subsection mt-4">
+                                        <h3><i class="bi bi-building-fill me-2"></i>Organization Information</h3>
+                                        <div class="row">
+                                            <div class="col-12 form-group">
+                                                <label for="organizationAffiliated">Organization Affiliated</label>
+                                                <input type="text" id="organizationAffiliated" name="organizationAffiliated" class="form-control" minlength="3">
+                                                <div class="invalid-feedback">Organization Affiliated must be at least 3 characters.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 form-group">
+                                                <label for="contactPerson">Contact Person</label>
+                                                <input type="text" id="contactPerson" name="contactPerson" class="form-control" minlength="3">
+                                                <div class="invalid-feedback">Contact Person must be at least 3 characters.</div>
+                                            </div>
+                                            <div class="col-6 form-group">
+                                                <label for="telContactNum">Tel No./Contact Num</label>
+                                                <input type="tel" id="telContactNum" name="telContactNum" class="form-control" pattern="[0-9]{0,11}">
+                                                <div class="invalid-feedback">Telephone/Contact Number must be up to 11 digits and contain numbers only.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 form-group">
+                                                <label for="officeAddress">Office Address</label>
+                                                <input type="text" id="officeAddress" name="officeAddress" class="form-control" minlength="3">
+                                                <div class="invalid-feedback">Office Address must be at least 3 characters.</div>
                                             </div>
                                         </div>
                                     </div>
@@ -142,25 +451,31 @@
                             <div class="col-md-4">
                                 <!-- Account Information Section -->
                                 <div class="form-section">
-                                    <h3><i class="fas fa-info-circle me-2"></i>Account Information</h3>
-                                    <div class="form-group">
-                                        <label for="pwdIdNo">PWD ID Number</label>
-                                        <input type="text" id="pwdIdNo" name="pwdIdNo" class="form-control">
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        <label for="dateIssued">Date Issued</label>
-                                        <input type="date" id="dateIssued" name="dateIssued" class="form-control">
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        <label for="expirationDate">Expiration Date</label>
-                                        <input type="date" id="expirationDate" name="expirationDate" class="form-control">
+                                    <h3><i class="bi bi-info-circle-fill me-2"></i>Account Information</h3>
+                                    <div class="form-subsection">
+                                        <div class="form-group">
+                                            <label for="pwdIdNo">PWD ID Number</label>
+                                            <input type="text" id="pwdIdNo" name="pwdIdNo" class="form-control" readonly
+                                                   pattern="137604000-[0-9]{5}"
+                                                   title="PWD ID Number format: 137604000-XXXXX">
+                                            <div class="invalid-feedback">Invalid PWD ID Number format.</div>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="dateIssued">Date Issued</label>
+                                            <input type="date" id="dateIssued" name="dateIssued" class="form-control" required>
+                                            <div class="invalid-feedback">Please select the date of issuance.</div>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="expirationDate">Expiration Date</label>
+                                            <input type="date" id="expirationDate" name="expirationDate" class="form-control" readonly>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- ID Photo Section -->
                                 <div class="form-section mt-4">
-                                    <h3><i class="fas fa-camera me-2"></i>ID Photo</h3>
-                                    <div class="photo-upload-container">
+                                    <h3><i class="bi bi-person-bounding-box me-2"></i>ID Photo</h3>
+                                    <div class="photo-upload-container form-subsection">
                                         <div class="preview-container">
                                             <img id="photoPreview" src="#" alt="Preview" style="display: none;">
                                             <div class="preview-placeholder">
@@ -179,15 +494,47 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- ID Reference Numbers Section -->
+                                <div class="form-section mt-4">
+                                    <h3><i class="bi bi-person-vcard-fill me-2"></i>ID Reference Numbers</h3>
+                                    <div class="form-subsection">
+                                        <div class="form-group">
+                                            <label for="sssNo">SSS No.</label>
+                                            <input type="text" id="sssNo" name="sssNo" class="form-control" pattern="[0-9]*">
+                                            <div class="invalid-feedback">SSS No. must contain numbers only.</div>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="gsisNo">GSIS No.</label>
+                                            <input type="text" id="gsisNo" name="gsisNo" class="form-control" pattern="[0-9]*">
+                                            <div class="invalid-feedback">GSIS No. must contain numbers only.</div>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="pagIbigNo">Pag-Ibig No.</label>
+                                            <input type="text" id="pagIbigNo" name="pagIbigNo" class="form-control" pattern="[0-9]*">
+                                            <div class="invalid-feedback">Pag-Ibig No. must contain numbers only.</div>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="psnNo">PSN No.</label>
+                                            <input type="text" id="psnNo" name="psnNo" class="form-control" pattern="[0-9]*">
+                                            <div class="invalid-feedback">PSN No. must contain numbers only.</div>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="philhealthNo">Philhealth No.</label>
+                                            <input type="text" id="philhealthNo" name="philhealthNo" class="form-control" pattern="[0-9]*">
+                                            <div class="invalid-feedback">Philhealth No. must contain numbers only.</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
+                        
                         <!-- Action Buttons -->
                         <div class="form-actions">
                             <button type="button" id="saveIdCard" class="btn btn-primary">
                                 <i class="bi bi-floppy me-2"></i>Save ID Card
                             </button>
-                          
+
                             <button type="button" id="cancelButton" class="btn btn-danger">
                                 <i class="bi bi-x-lg me-2"></i>Cancel
                             </button>
