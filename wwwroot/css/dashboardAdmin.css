@@ -314,6 +314,9 @@
     background-color: #e74c3c;
 }
 
+.status-wip {
+    background-color: #f39c12;
+}
 /* Add these styles for ID images in the modal */
 .id-image-container {
     width: 100%;

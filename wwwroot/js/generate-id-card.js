@@ -112,7 +112,7 @@ function generateFrontIDHTML(userData) {
                                 </div>
                                 <div class="row my-2">
                                     <div class="col-10 offset-1 border-bottom border-dark">
-                                        <p class="p-0 m-0 text-center helvetica fs-5">Insert Signature</p>
+                                        <p class="p-0 m-0 text-center helvetica fs-5 invisible">Insert Signature</p>
                                     </div>
                                     <div class="col-10 offset-1">
                                         <p class="p-0 m-0 text-center fw-bold">Signature</p>
