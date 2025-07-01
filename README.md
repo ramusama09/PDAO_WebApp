@@ -24,14 +24,20 @@ This system serves three types of users:
 - Update sensitive health information.
 - View all user transactions.
 
-### 👤 PWD Users (Mobile App)
-- Update personal information (excluding health-related data).
+> 🔗 **Looking for the Mobile App version?** Visit the companion repo here:  
+> [https://github.com/ramusama09/PDAO_App](https://github.com/ramusama09/PDAO_App)
+
+---
+
+### 👤 PWD Users & 🛒 Store Owners / Cashiers (Mobile App)
+- PWDs can update personal information (excluding health-related data).
 - View their PWD ID and status.
 - Access full transaction history.
+- Store owners/cashiers can scan QR codes to verify identity and status.
+- Record and track transactions linked to the PWD ID.
 
-### 🛒 Store Owners / Cashiers (Mobile App)
-- Scan QR codes from PWD IDs to verify authenticity and status.
-- Log transactions related to PWD discounts and benefits.
+> 🔗 **Looking for the Admin Web Console?** Visit the web app repo here:  
+> [https://github.com/ramusama09/PDAO_WebApp](https://github.com/ramusama09/PDAO_WebApp)
 
 ---
 
